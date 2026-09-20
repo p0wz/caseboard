@@ -45,15 +45,29 @@ public struct CaseboardCanvasView: View {
                 ForEach(caseProgress.connections) { connection in
                     if let source = nodeMap[connection.sourceId],
                        let target = nodeMap[connection.targetId] {
-                        let start = CGPoint(x: source.x + 72, y: source.y + 47)
-                        let end = CGPoint(x: target.x + 72, y: target.y + 47)
+                        let start = CGPoint(x: source.x + 76, y: source.y + 2)
+                        let end = CGPoint(x: target.x + 76, y: target.y + 2)
 
-                        ConnectionLineShape(start: start, end: end, curvature: 0.15)
+                        ConnectionLineShape(start: start, end: end, curvature: 0.12)
                             .stroke(
                                 Color(hex: connection.connectionType.threadColorHex),
-                                style: StrokeStyle(lineWidth: connection.evaluation == .critical ? 3.5 : 2.0, lineCap: .round, dash: connection.evaluation == .untested ? [6, 4] : [])
+                                style: StrokeStyle(
+                                    lineWidth: connection.evaluation == .critical ? 3.5 : 2.2,
+                                    lineCap: .round,
+                                    dash: connection.evaluation == .untested ? [6, 4] : []
+                                )
                             )
-                            .shadow(color: Color(hex: connection.connectionType.threadColorHex).opacity(0.4), radius: 3)
+                            .shadow(color: Color(hex: connection.connectionType.threadColorHex).opacity(0.5), radius: 4)
+
+                        // Knot anchor rings on pushpin heads
+                        Circle()
+                            .fill(Color(hex: connection.connectionType.threadColorHex))
+                            .frame(width: 6, height: 6)
+                            .position(start)
+                        Circle()
+                            .fill(Color(hex: connection.connectionType.threadColorHex))
+                            .frame(width: 6, height: 6)
+                            .position(end)
                     }
                 }
 
@@ -73,12 +87,12 @@ public struct CaseboardCanvasView: View {
                             handleNodeTap(node.nodeId)
                         }
                     )
-                    .position(x: node.x + 72, y: node.y + 47)
+                    .position(x: node.x + 76, y: node.y + 54)
                     .gesture(
                         DragGesture()
                             .onChanged { value in
-                                let newX = max(10, min(geometry.size.width - 150, value.location.x - 72))
-                                let newY = max(10, min(geometry.size.height - 100, value.location.y - 47))
+                                let newX = max(10, min(geometry.size.width - 160, value.location.x - 76))
+                                let newY = max(10, min(geometry.size.height - 120, value.location.y - 54))
                                 progressStore.updateNodePosition(caseId: caseModel.caseId, nodeId: node.nodeId, x: newX, y: newY)
                             }
                     )
