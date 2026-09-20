@@ -55,4 +55,24 @@ public final class SoundManager: ObservableObject {
     public func playAlibiBroken() {
         playDiscoveryChime()
     }
+
+    public func playCameraShutter() {
+        guard isEnabled else { return }
+        AnalogAudioEngine.shared.playCameraShutter()
+    }
+
+    public func playTypewriter() {
+        guard isEnabled else { return }
+        AnalogAudioEngine.shared.playTypewriterKey()
+    }
+
+    public func playCassetteClick() {
+        guard isEnabled else { return }
+        AnalogAudioEngine.shared.playCassetteLatch()
+    }
+
+    public func playPaperRustle() {
+        guard isEnabled else { return }
+        AnalogAudioEngine.shared.playPaperRustle()
+    }
 }

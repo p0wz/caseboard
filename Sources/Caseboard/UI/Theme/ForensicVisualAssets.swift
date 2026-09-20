@@ -319,9 +319,54 @@ public struct LoupeModifier: ViewModifier {
     }
 }
 
+public enum MultispectralFilter: String, CaseIterable, Identifiable {
+    case visible = "Visible (Standard)"
+    case ultraviolet = "UV 365nm (Fluorescence)"
+    case infraredNegative = "IR / Negative"
+
+    public var id: String { rawValue }
+
+    public var sfSymbol: String {
+        switch self {
+        case .visible: return "sun.max.fill"
+        case .ultraviolet: return "waveform.path.ecg"
+        case .infraredNegative: return "circle.lefthalf.striped.horizontal"
+        }
+    }
+}
+
+public struct MultispectralFilterModifier: ViewModifier {
+    public let filter: MultispectralFilter
+
+    public func body(content: Content) -> some View {
+        switch filter {
+        case .visible:
+            content
+        case .ultraviolet:
+            content
+                .colorMultiply(Color(red: 0.75, green: 0.5, blue: 1.0))
+                .contrast(1.3)
+                .saturation(1.4)
+                .overlay(
+                    Color.purple.opacity(0.15)
+                        .blendMode(.colorDodge)
+                )
+        case .infraredNegative:
+            content
+                .colorInvert()
+                .contrast(1.35)
+                .grayscale(0.8)
+        }
+    }
+}
+
 public extension View {
     func forensicLoupeInspection() -> some View {
         self.modifier(LoupeModifier())
+    }
+
+    func multispectralFilter(_ filter: MultispectralFilter) -> some View {
+        self.modifier(MultispectralFilterModifier(filter: filter))
     }
 }
 

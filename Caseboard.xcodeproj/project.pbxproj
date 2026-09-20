@@ -10,6 +10,7 @@
 		1D9F091497E60851BCDA62FA /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49145B7E0B96290931A99BC /* AppState.swift */; };
 		731EBDFECF43B7F576F11F88 /* CaseboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184E02FAFCF8806B019553B /* CaseboardApp.swift */; };
 		E037AE7AF1125531A3EB07C7 /* CaseboardRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015A1DEE4FE04CDD598B2B1C /* CaseboardRootView.swift */; };
+		2ED8A2340A674A7E46BFA10C /* AnalogAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B92BD7DA58A15B086CCB05 /* AnalogAudioEngine.swift */; };
 		1C1A9C4F9B6FD17A0C284DC5 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFB23D03178AC73E79318C /* SoundManager.swift */; };
 		018DB846C4F1043475F95535 /* CaseContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26678D5886FEFEF366EFA993 /* CaseContentLoader.swift */; };
 		234739E1ECFDC3B471A6447E /* CaseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C9D611CF6B0557D1318E5 /* CaseValidator.swift */; };
@@ -56,11 +57,19 @@
 		56FCC3A7675F2B4AB2182341 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */; };
 		78186FE5D86F942959B7B0FB /* ForensicTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FEBB3A875673702677A6E /* ForensicTheme.swift */; };
 		F80284A504FDE3C222B643E2 /* ForensicVisualAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0CFF444FD2E156E6C0F73 /* ForensicVisualAssets.swift */; };
+		6CED7602E602F3B6E604493D /* coroner_chen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B75CC1786B7A67016F5B5CFA /* coroner_chen.jpg */; };
+		36199997C387C2E533FAC780 /* elevator_maintenance_log.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2592657754C2430C593E418 /* elevator_maintenance_log.jpg */; };
 		FEA45400BA6C69384A481440 /* evidence_solvent_bottle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6F10FBA64545A1A855E12D9 /* evidence_solvent_bottle.jpg */; };
 		C00C6CC3D707CC49809E9CC6 /* evidence_vault_crime_scene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03B6D420E7C0F30E7871EBD7 /* evidence_vault_crime_scene.jpg */; };
+		317B6FF3C603B1AA9EC15391 /* suspect_andre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26A2583E2894D9C1193BEC2D /* suspect_andre.jpg */; };
+		05583A7A02FFEF8473D806EA /* suspect_david.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12947CDB8F42582F54BCCFFF /* suspect_david.jpg */; };
+		F9A01797B62329E9F178EE28 /* suspect_elena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 855F4101FE5234EFA456A2E5 /* suspect_elena.jpg */; };
+		1D4A21325BF10ABBAB7CA446 /* suspect_julian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90DAFB23F4DCB704CCB59B48 /* suspect_julian.jpg */; };
 		5E54AE15804E4ECE9FD81EDF /* suspect_lin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41D09E7BC4BD958303F3D41E /* suspect_lin.jpg */; };
 		7BB6D275C5E46A79075B43E7 /* suspect_mara.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26576D3ABF050A23CAE6482D /* suspect_mara.jpg */; };
+		0EC36BBD23BEF2ED08D6DD9F /* suspect_maria.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 641805A85A34243252F2987B /* suspect_maria.jpg */; };
 		AF89F29ED697EF52C52FE695 /* suspect_theo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AABE89D332D5EF41EFAF1ABC /* suspect_theo.jpg */; };
+		B26000B1F84472D8C8B885B1 /* suspect_victor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49EC48B5F318CF41A9233F49 /* suspect_victor.jpg */; };
 		B19359AFF191945F3763FAD6 /* cold_signal.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A4102A7C1C4308B127AACE6 /* cold_signal.json */; };
 		B6781329B47AA1947B3FBE66 /* dead_drop.json in Resources */ = {isa = PBXBuildFile; fileRef = 91068A3EF5D3F6C35C605920 /* dead_drop.json */; };
 		B1229E4499E6FCC46D620ABB /* glass_house.json in Resources */ = {isa = PBXBuildFile; fileRef = 0824C10A5F896DAEB84E6DB8 /* glass_house.json */; };
@@ -104,6 +113,7 @@
 		E49145B7E0B96290931A99BC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/App/AppState.swift"; sourceTree = SOURCE_ROOT; };
 		0184E02FAFCF8806B019553B /* CaseboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/App/CaseboardApp.swift"; sourceTree = SOURCE_ROOT; };
 		015A1DEE4FE04CDD598B2B1C /* CaseboardRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/App/CaseboardRootView.swift"; sourceTree = SOURCE_ROOT; };
+		60B92BD7DA58A15B086CCB05 /* AnalogAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Audio/AnalogAudioEngine.swift"; sourceTree = SOURCE_ROOT; };
 		BACFB23D03178AC73E79318C /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Audio/SoundManager.swift"; sourceTree = SOURCE_ROOT; };
 		26678D5886FEFEF366EFA993 /* CaseContentLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Content/CaseContentLoader.swift"; sourceTree = SOURCE_ROOT; };
 		D24C9D611CF6B0557D1318E5 /* CaseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Engine/CaseValidator.swift"; sourceTree = SOURCE_ROOT; };
@@ -150,11 +160,19 @@
 		A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Settings/SettingsView.swift"; sourceTree = SOURCE_ROOT; };
 		AF5FEBB3A875673702677A6E /* ForensicTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Theme/ForensicTheme.swift"; sourceTree = SOURCE_ROOT; };
 		A0D0CFF444FD2E156E6C0F73 /* ForensicVisualAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Theme/ForensicVisualAssets.swift"; sourceTree = SOURCE_ROOT; };
+		B75CC1786B7A67016F5B5CFA /* coroner_chen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/coroner_chen.jpg"; sourceTree = SOURCE_ROOT; };
+		F2592657754C2430C593E418 /* elevator_maintenance_log.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/elevator_maintenance_log.jpg"; sourceTree = SOURCE_ROOT; };
 		D6F10FBA64545A1A855E12D9 /* evidence_solvent_bottle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/evidence_solvent_bottle.jpg"; sourceTree = SOURCE_ROOT; };
 		03B6D420E7C0F30E7871EBD7 /* evidence_vault_crime_scene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/evidence_vault_crime_scene.jpg"; sourceTree = SOURCE_ROOT; };
+		26A2583E2894D9C1193BEC2D /* suspect_andre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_andre.jpg"; sourceTree = SOURCE_ROOT; };
+		12947CDB8F42582F54BCCFFF /* suspect_david.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_david.jpg"; sourceTree = SOURCE_ROOT; };
+		855F4101FE5234EFA456A2E5 /* suspect_elena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_elena.jpg"; sourceTree = SOURCE_ROOT; };
+		90DAFB23F4DCB704CCB59B48 /* suspect_julian.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_julian.jpg"; sourceTree = SOURCE_ROOT; };
 		41D09E7BC4BD958303F3D41E /* suspect_lin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_lin.jpg"; sourceTree = SOURCE_ROOT; };
 		26576D3ABF050A23CAE6482D /* suspect_mara.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_mara.jpg"; sourceTree = SOURCE_ROOT; };
+		641805A85A34243252F2987B /* suspect_maria.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_maria.jpg"; sourceTree = SOURCE_ROOT; };
 		AABE89D332D5EF41EFAF1ABC /* suspect_theo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_theo.jpg"; sourceTree = SOURCE_ROOT; };
+		49EC48B5F318CF41A9233F49 /* suspect_victor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_victor.jpg"; sourceTree = SOURCE_ROOT; };
 		8A4102A7C1C4308B127AACE6 /* cold_signal.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Sources/Caseboard/Resources/Cases/cold_signal.json"; sourceTree = SOURCE_ROOT; };
 		91068A3EF5D3F6C35C605920 /* dead_drop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Sources/Caseboard/Resources/Cases/dead_drop.json"; sourceTree = SOURCE_ROOT; };
 		0824C10A5F896DAEB84E6DB8 /* glass_house.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Sources/Caseboard/Resources/Cases/glass_house.json"; sourceTree = SOURCE_ROOT; };
@@ -219,6 +237,7 @@
 				E49145B7E0B96290931A99BC /* AppState.swift */,
 				0184E02FAFCF8806B019553B /* CaseboardApp.swift */,
 				015A1DEE4FE04CDD598B2B1C /* CaseboardRootView.swift */,
+				60B92BD7DA58A15B086CCB05 /* AnalogAudioEngine.swift */,
 				BACFB23D03178AC73E79318C /* SoundManager.swift */,
 				26678D5886FEFEF366EFA993 /* CaseContentLoader.swift */,
 				D24C9D611CF6B0557D1318E5 /* CaseValidator.swift */,
@@ -265,11 +284,19 @@
 				A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */,
 				AF5FEBB3A875673702677A6E /* ForensicTheme.swift */,
 				A0D0CFF444FD2E156E6C0F73 /* ForensicVisualAssets.swift */,
+				B75CC1786B7A67016F5B5CFA /* coroner_chen.jpg */,
+				F2592657754C2430C593E418 /* elevator_maintenance_log.jpg */,
 				D6F10FBA64545A1A855E12D9 /* evidence_solvent_bottle.jpg */,
 				03B6D420E7C0F30E7871EBD7 /* evidence_vault_crime_scene.jpg */,
+				26A2583E2894D9C1193BEC2D /* suspect_andre.jpg */,
+				12947CDB8F42582F54BCCFFF /* suspect_david.jpg */,
+				855F4101FE5234EFA456A2E5 /* suspect_elena.jpg */,
+				90DAFB23F4DCB704CCB59B48 /* suspect_julian.jpg */,
 				41D09E7BC4BD958303F3D41E /* suspect_lin.jpg */,
 				26576D3ABF050A23CAE6482D /* suspect_mara.jpg */,
+				641805A85A34243252F2987B /* suspect_maria.jpg */,
 				AABE89D332D5EF41EFAF1ABC /* suspect_theo.jpg */,
+				49EC48B5F318CF41A9233F49 /* suspect_victor.jpg */,
 				8A4102A7C1C4308B127AACE6 /* cold_signal.json */,
 				91068A3EF5D3F6C35C605920 /* dead_drop.json */,
 				0824C10A5F896DAEB84E6DB8 /* glass_house.json */,
@@ -397,11 +424,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CED7602E602F3B6E604493D /* coroner_chen.jpg in Resources */,
+				36199997C387C2E533FAC780 /* elevator_maintenance_log.jpg in Resources */,
 				FEA45400BA6C69384A481440 /* evidence_solvent_bottle.jpg in Resources */,
 				C00C6CC3D707CC49809E9CC6 /* evidence_vault_crime_scene.jpg in Resources */,
+				317B6FF3C603B1AA9EC15391 /* suspect_andre.jpg in Resources */,
+				05583A7A02FFEF8473D806EA /* suspect_david.jpg in Resources */,
+				F9A01797B62329E9F178EE28 /* suspect_elena.jpg in Resources */,
+				1D4A21325BF10ABBAB7CA446 /* suspect_julian.jpg in Resources */,
 				5E54AE15804E4ECE9FD81EDF /* suspect_lin.jpg in Resources */,
 				7BB6D275C5E46A79075B43E7 /* suspect_mara.jpg in Resources */,
+				0EC36BBD23BEF2ED08D6DD9F /* suspect_maria.jpg in Resources */,
 				AF89F29ED697EF52C52FE695 /* suspect_theo.jpg in Resources */,
+				B26000B1F84472D8C8B885B1 /* suspect_victor.jpg in Resources */,
 				B19359AFF191945F3763FAD6 /* cold_signal.json in Resources */,
 				B6781329B47AA1947B3FBE66 /* dead_drop.json in Resources */,
 				B1229E4499E6FCC46D620ABB /* glass_house.json in Resources */,
@@ -427,11 +462,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CED7602E602F3B6E604493D /* coroner_chen.jpg in Resources */,
+				36199997C387C2E533FAC780 /* elevator_maintenance_log.jpg in Resources */,
 				FEA45400BA6C69384A481440 /* evidence_solvent_bottle.jpg in Resources */,
 				C00C6CC3D707CC49809E9CC6 /* evidence_vault_crime_scene.jpg in Resources */,
+				317B6FF3C603B1AA9EC15391 /* suspect_andre.jpg in Resources */,
+				05583A7A02FFEF8473D806EA /* suspect_david.jpg in Resources */,
+				F9A01797B62329E9F178EE28 /* suspect_elena.jpg in Resources */,
+				1D4A21325BF10ABBAB7CA446 /* suspect_julian.jpg in Resources */,
 				5E54AE15804E4ECE9FD81EDF /* suspect_lin.jpg in Resources */,
 				7BB6D275C5E46A79075B43E7 /* suspect_mara.jpg in Resources */,
+				0EC36BBD23BEF2ED08D6DD9F /* suspect_maria.jpg in Resources */,
 				AF89F29ED697EF52C52FE695 /* suspect_theo.jpg in Resources */,
+				B26000B1F84472D8C8B885B1 /* suspect_victor.jpg in Resources */,
 				B19359AFF191945F3763FAD6 /* cold_signal.json in Resources */,
 				B6781329B47AA1947B3FBE66 /* dead_drop.json in Resources */,
 				B1229E4499E6FCC46D620ABB /* glass_house.json in Resources */,
@@ -463,6 +506,7 @@
 				1D9F091497E60851BCDA62FA /* AppState.swift in Sources */,
 				731EBDFECF43B7F576F11F88 /* CaseboardApp.swift in Sources */,
 				E037AE7AF1125531A3EB07C7 /* CaseboardRootView.swift in Sources */,
+				2ED8A2340A674A7E46BFA10C /* AnalogAudioEngine.swift in Sources */,
 				1C1A9C4F9B6FD17A0C284DC5 /* SoundManager.swift in Sources */,
 				018DB846C4F1043475F95535 /* CaseContentLoader.swift in Sources */,
 				234739E1ECFDC3B471A6447E /* CaseValidator.swift in Sources */,

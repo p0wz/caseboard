@@ -6,6 +6,7 @@ public struct EvidenceDetailView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var progressStore = ProgressStore.shared
     @State private var notesText: String = ""
+    @State private var selectedSpectralFilter: MultispectralFilter = .visible
 
     public init(item: EvidenceItem, caseModel: CaseModel) {
         self.item = item
@@ -62,8 +63,42 @@ public struct EvidenceDetailView: View {
                                 .foregroundColor(ForensicTheme.forensicBlue)
                         }
 
+                        // Multispectral Filter Selector Pills
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 8) {
+                                ForEach(MultispectralFilter.allCases) { filter in
+                                    Button {
+                                        HapticsManager.shared.lightTap()
+                                        SoundManager.shared.playCameraShutter()
+                                        withAnimation(.easeInOut(duration: 0.2)) {
+                                            selectedSpectralFilter = filter
+                                        }
+                                    } label: {
+                                        HStack(spacing: 4) {
+                                            Image(systemName: filter.sfSymbol)
+                                                .font(.system(size: 9))
+                                            Text(filter.rawValue)
+                                                .font(.system(size: 9, weight: .semibold, design: .monospaced))
+                                        }
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 5)
+                                        .background(
+                                            Capsule()
+                                                .fill(selectedSpectralFilter == filter ? ForensicTheme.forensicBlue.opacity(0.3) : Color.white.opacity(0.06))
+                                        )
+                                        .overlay(
+                                            Capsule()
+                                                .stroke(selectedSpectralFilter == filter ? ForensicTheme.forensicBlue : Color.white.opacity(0.12), lineWidth: 1)
+                                        )
+                                        .foregroundColor(selectedSpectralFilter == filter ? .white : .secondary)
+                                    }
+                                }
+                            }
+                        }
+
                         ZStack(alignment: .bottomTrailing) {
                             ForensicImageView(name: imageName, contentMode: .fill)
+                                .multispectralFilter(selectedSpectralFilter)
                                 .frame(height: 220)
                                 .frame(maxWidth: .infinity)
                                 .clipped()
@@ -206,6 +241,12 @@ public struct EvidenceDetailView: View {
         }
         if item.evidenceId == "door_sensor_824" || item.evidenceId == "service_door_override_log" {
             return "evidence_vault_crime_scene"
+        }
+        if item.evidenceId == "coroner_chen" || item.evidenceId == "connecting_balcony_lock" {
+            return "coroner_chen"
+        }
+        if item.evidenceId == "elevator_maintenance_log" {
+            return "elevator_maintenance_log"
         }
         if ForensicAssetLoader.image(named: item.evidenceId) != nil {
             return item.evidenceId

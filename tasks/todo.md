@@ -61,3 +61,25 @@
   - Perform 5-axis code review (Correctness, Readability, Architecture, Security, Performance).
   - Run headless `xcodebuild test` on iPhone 17 Pro Simulator and `swift test` on macOS (23/23 passed).
 
+## Phase 3: Massive Asset & Sensory Leap Forward
+
+- [x] Task 12: High-Resolution Character Mugshot & Crime Scene Asset Suite
+  - Generate & add portraits for Andre Dupuis, Victor Reyes, Maria Santos (Room 312).
+  - Generate & add crime scene & evidence photos for Room 312 (Hotel suite 312, service elevator panel).
+  - Generate & add portraits for Elena Ward, David Cross, Julian Blackwood (Rain at Mercer Street).
+  - Copy to `Sources/Caseboard/Resources/Assets/`.
+
+- [x] Task 13: Multispectral Forensic Evidence Inspection Engine
+  - Upgrade `ForensicVisualAssets.swift` with `MultispectralFilter` (.visible, .ultraviolet365nm, .infraredNegative).
+  - Update `EvidenceDetailView.swift` to add spectral filter selection and real-time shader effects on Loupe magnification.
+
+- [x] Task 14: Tactile Analog Audio Engine
+  - Build `AnalogAudioEngine.swift` using native `AVAudioEngine` for tape clicks, camera shutter, paper rustle, and typewriter mechanical clicks.
+  - Integrate with `SoundManager.swift`.
+
+- [x] Task 15: Project Regeneration, Test Suite & Verification
+  - Update `tools/generate_xcodeproj.py` and regenerate `Caseboard.xcodeproj`.
+  - Run `swift test` and `xcodebuild test` (23/23 tests passed in 0.155s).
+  - Capture simulator screenshots and update `walkthrough.md`.
+
+

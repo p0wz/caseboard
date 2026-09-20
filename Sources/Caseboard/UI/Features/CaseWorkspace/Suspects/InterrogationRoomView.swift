@@ -110,6 +110,9 @@ public struct InterrogationRoomView: View {
                 .foregroundColor(.white)
             }
         }
+        .onAppear {
+            SoundManager.shared.playCassetteClick()
+        }
     }
 
     // MARK: - Header & Stress Meter
@@ -291,6 +294,7 @@ public struct InterrogationRoomView: View {
     private func askTopic(_ topic: InterrogationTopic) {
         guard !askedTopicIds.contains(topic.topicId) else { return }
         HapticsManager.shared.lightTap()
+        SoundManager.shared.playTypewriter()
         askedTopicIds.insert(topic.topicId)
 
         dialogueHistory.append((speaker: "DETECTIVE", text: topic.questionText, isBreakthrough: false))
