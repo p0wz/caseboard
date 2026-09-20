@@ -4,6 +4,8 @@ public struct CaseboardRootView: View {
     @ObservedObject var appState = AppState.shared
     @ObservedObject var progressStore = ProgressStore.shared
 
+    @State private var isShowingSplash: Bool = true
+
     public init() {}
 
     private var colorSchemeOverride: ColorScheme? {
@@ -24,6 +26,17 @@ public struct CaseboardRootView: View {
                 }
             } else {
                 DashboardView()
+            }
+
+            // Cinematic Launch Splash Screen
+            if isShowingSplash {
+                SplashScreenView {
+                    withAnimation(.easeInOut(duration: 0.4)) {
+                        isShowingSplash = false
+                    }
+                }
+                .transition(.opacity)
+                .zIndex(200)
             }
 
             // Achievement Toast HUD

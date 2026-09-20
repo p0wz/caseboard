@@ -16,10 +16,18 @@ for root, _, files in os.walk(sources_dir):
 sources_swift.sort()
 
 resources = []
+has_xcassets = False
 for root, _, files in os.walk(sources_dir):
+    if "Assets.xcassets" in root:
+        has_xcassets = True
+        continue
     for f in files:
         if f.endswith(".json") or f.endswith(".storekit") or f.endswith(".plist") or f.endswith(".jpg") or f.endswith(".png") or f.endswith(".jpeg") or f.endswith(".xcprivacy") or f.endswith(".wav"):
             resources.append(os.path.relpath(os.path.join(root, f), base_dir))
+
+if has_xcassets:
+    resources.append("Sources/Caseboard/Resources/Assets.xcassets")
+
 resources.sort()
 
 tests_swift = []
@@ -59,6 +67,8 @@ for rf in resources:
         file_type = "image.png"
     elif rf.endswith(".wav"):
         file_type = "audio.wav"
+    elif rf.endswith(".xcassets"):
+        file_type = "folder.assetcatalog"
     else:
         file_type = "text"
     pbx_file_refs.append(f'\t\t{file_id} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = {file_type}; path = "{rf}"; sourceTree = SOURCE_ROOT; }};')
@@ -378,6 +388,7 @@ pbxproj_content = f"""// !$*UTF8*$!
 		{app_config_debug_id} /* Debug */ = {{
 			isa = XCBuildConfiguration;
 			buildSettings = {{
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -401,6 +412,7 @@ pbxproj_content = f"""// !$*UTF8*$!
 		{app_config_release_id} /* Release */ = {{
 			isa = XCBuildConfiguration;
 			buildSettings = {{
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

@@ -58,9 +58,12 @@
 		ACCEE1CF9214C9E48A692D9C /* PremiumPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81297931D8EE2B91D86C864E /* PremiumPaywallView.swift */; };
 		67B92E4E4471C71BF37CB562 /* LegalDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B050B22BC12CA12F24CDF1 /* LegalDocumentsView.swift */; };
 		56FCC3A7675F2B4AB2182341 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */; };
+		8D9A9AF3E9C3B4717D5EB299 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8875F5EA00B5CCE369566 /* SplashScreenView.swift */; };
 		00D80CCFC06C29DECF73B5A6 /* CaseIdentityTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBD5631443B3F3B40DFE2D9 /* CaseIdentityTheme.swift */; };
 		78186FE5D86F942959B7B0FB /* ForensicTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FEBB3A875673702677A6E /* ForensicTheme.swift */; };
 		F80284A504FDE3C222B643E2 /* ForensicVisualAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0CFF444FD2E156E6C0F73 /* ForensicVisualAssets.swift */; };
+		431FAD46C96ED0523D5388E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01867DB33FD34D06EC0D3525 /* Assets.xcassets */; };
+		EEDD1255D7C598D7C8B01CA3 /* app_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9630835FB54F15A44FDA90B9 /* app_logo.jpg */; };
 		6CED7602E602F3B6E604493D /* coroner_chen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B75CC1786B7A67016F5B5CFA /* coroner_chen.jpg */; };
 		36199997C387C2E533FAC780 /* elevator_maintenance_log.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2592657754C2430C593E418 /* elevator_maintenance_log.jpg */; };
 		FEA45400BA6C69384A481440 /* evidence_solvent_bottle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6F10FBA64545A1A855E12D9 /* evidence_solvent_bottle.jpg */; };
@@ -172,9 +175,12 @@
 		81297931D8EE2B91D86C864E /* PremiumPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Premium/PremiumPaywallView.swift"; sourceTree = SOURCE_ROOT; };
 		24B050B22BC12CA12F24CDF1 /* LegalDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Settings/LegalDocumentsView.swift"; sourceTree = SOURCE_ROOT; };
 		A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Settings/SettingsView.swift"; sourceTree = SOURCE_ROOT; };
+		4FE8875F5EA00B5CCE369566 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Splash/SplashScreenView.swift"; sourceTree = SOURCE_ROOT; };
 		5EBD5631443B3F3B40DFE2D9 /* CaseIdentityTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Theme/CaseIdentityTheme.swift"; sourceTree = SOURCE_ROOT; };
 		AF5FEBB3A875673702677A6E /* ForensicTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Theme/ForensicTheme.swift"; sourceTree = SOURCE_ROOT; };
 		A0D0CFF444FD2E156E6C0F73 /* ForensicVisualAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Theme/ForensicVisualAssets.swift"; sourceTree = SOURCE_ROOT; };
+		01867DB33FD34D06EC0D3525 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Sources/Caseboard/Resources/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		9630835FB54F15A44FDA90B9 /* app_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/app_logo.jpg"; sourceTree = SOURCE_ROOT; };
 		B75CC1786B7A67016F5B5CFA /* coroner_chen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/coroner_chen.jpg"; sourceTree = SOURCE_ROOT; };
 		F2592657754C2430C593E418 /* elevator_maintenance_log.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/elevator_maintenance_log.jpg"; sourceTree = SOURCE_ROOT; };
 		D6F10FBA64545A1A855E12D9 /* evidence_solvent_bottle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/evidence_solvent_bottle.jpg"; sourceTree = SOURCE_ROOT; };
@@ -307,9 +313,12 @@
 				81297931D8EE2B91D86C864E /* PremiumPaywallView.swift */,
 				24B050B22BC12CA12F24CDF1 /* LegalDocumentsView.swift */,
 				A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */,
+				4FE8875F5EA00B5CCE369566 /* SplashScreenView.swift */,
 				5EBD5631443B3F3B40DFE2D9 /* CaseIdentityTheme.swift */,
 				AF5FEBB3A875673702677A6E /* ForensicTheme.swift */,
 				A0D0CFF444FD2E156E6C0F73 /* ForensicVisualAssets.swift */,
+				01867DB33FD34D06EC0D3525 /* Assets.xcassets */,
+				9630835FB54F15A44FDA90B9 /* app_logo.jpg */,
 				B75CC1786B7A67016F5B5CFA /* coroner_chen.jpg */,
 				F2592657754C2430C593E418 /* elevator_maintenance_log.jpg */,
 				D6F10FBA64545A1A855E12D9 /* evidence_solvent_bottle.jpg */,
@@ -457,6 +466,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431FAD46C96ED0523D5388E6 /* Assets.xcassets in Resources */,
+				EEDD1255D7C598D7C8B01CA3 /* app_logo.jpg in Resources */,
 				6CED7602E602F3B6E604493D /* coroner_chen.jpg in Resources */,
 				36199997C387C2E533FAC780 /* elevator_maintenance_log.jpg in Resources */,
 				FEA45400BA6C69384A481440 /* evidence_solvent_bottle.jpg in Resources */,
@@ -502,6 +513,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431FAD46C96ED0523D5388E6 /* Assets.xcassets in Resources */,
+				EEDD1255D7C598D7C8B01CA3 /* app_logo.jpg in Resources */,
 				6CED7602E602F3B6E604493D /* coroner_chen.jpg in Resources */,
 				36199997C387C2E533FAC780 /* elevator_maintenance_log.jpg in Resources */,
 				FEA45400BA6C69384A481440 /* evidence_solvent_bottle.jpg in Resources */,
@@ -601,6 +614,7 @@
 				ACCEE1CF9214C9E48A692D9C /* PremiumPaywallView.swift in Sources */,
 				67B92E4E4471C71BF37CB562 /* LegalDocumentsView.swift in Sources */,
 				56FCC3A7675F2B4AB2182341 /* SettingsView.swift in Sources */,
+				8D9A9AF3E9C3B4717D5EB299 /* SplashScreenView.swift in Sources */,
 				00D80CCFC06C29DECF73B5A6 /* CaseIdentityTheme.swift in Sources */,
 				78186FE5D86F942959B7B0FB /* ForensicTheme.swift in Sources */,
 				F80284A504FDE3C222B643E2 /* ForensicVisualAssets.swift in Sources */,
@@ -689,6 +703,7 @@
 		B9F89151A13CF0E2919C551D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -712,6 +727,7 @@
 		FD99A792C35879A07A5D56D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
