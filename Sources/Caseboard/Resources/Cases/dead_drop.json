@@ -1,0 +1,321 @@
+{
+  "caseId": "dead_drop",
+  "title": "Dead Drop",
+  "subtitle": "Intelligence operative found dead on park bench with decrypted cryptographic ledger.",
+  "difficulty": "expert",
+  "estimatedMinutes": 28,
+  "isPremium": true,
+  "briefing": {
+    "location": "Oakhaven Arboretum",
+    "date": "2026-05-15",
+    "victimOrSubject": "Agent Martin Cole",
+    "summary": "Undercover agent poisoned via transdermal patch on neck while retrieving dead drop from hollow monument.",
+    "objective": "Expose the truth behind the incident at Oakhaven Arboretum."
+  },
+  "suspects": [
+    {
+      "suspectId": "suspect_roman",
+      "caseId": "dead_drop",
+      "name": "Roman Kane",
+      "role": "Double Agent Analyst",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Intelligence officer selling operative identities to foreign buyers",
+      "motiveScore": 0.7,
+      "meansScore": 0.5,
+      "opportunityScore": 0.5,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "moderate",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_maya",
+      "caseId": "dead_drop",
+      "name": "Maya Lin",
+      "role": "Field Contact",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Courier assigned to exchange encrypted token",
+      "motiveScore": 0.3,
+      "meansScore": 0.2,
+      "opportunityScore": 0.2,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_sergei",
+      "caseId": "dead_drop",
+      "name": "Sergei Vane",
+      "role": "Diplomatic Cultural Attache",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Foreign embassy liaison under surveillance",
+      "motiveScore": 0.4,
+      "meansScore": 0.1,
+      "opportunityScore": 0.1,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "ev_incident_dead_drop",
+      "caseId": "dead_drop",
+      "title": "Incident & Autopsy File",
+      "type": "medical_report",
+      "summary": "Incident analysis confirms foul play targeting Agent Martin Cole.",
+      "fullText": "Forensic analysis reveals clear evidence of premeditated action resulting in the death of Agent Martin Cole.",
+      "timestamp": "23:00",
+      "source": "Forensic Bureau",
+      "reliability": "verified",
+      "tags": [
+        "Forensics"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_roman"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "treason_escrow_deposit",
+      "caseId": "dead_drop",
+      "title": "Critical Financial / Motive Record",
+      "type": "financial_record",
+      "summary": "Documentation establishing definitive motive against the accused.",
+      "fullText": "Classified communication and financial transactions exposing urgent criminal motivation.",
+      "timestamp": "18:00",
+      "source": "Encrypted Safe File",
+      "reliability": "high",
+      "tags": [
+        "Motive"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_roman"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "transdermal_fentanyl_patch",
+      "caseId": "dead_drop",
+      "title": "Instrument & Technical Means",
+      "type": "object_report",
+      "summary": "Physical mechanism or weapon matching incident marks.",
+      "fullText": "Specialized equipment registered to or possessed by the primary suspect.",
+      "timestamp": "21:30",
+      "source": "Scene Recovery",
+      "reliability": "verified",
+      "tags": [
+        "Means"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_roman"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "park_cellular_triangulation",
+      "caseId": "dead_drop",
+      "title": "Telemetry Log A",
+      "type": "security_record",
+      "summary": "Access or sensor telemetry establishing presence at scene.",
+      "fullText": "Electronic sensor audit trails contradicting the suspect's public statement.",
+      "timestamp": "21:15",
+      "source": "Infrastructure DB",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_roman"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "bench_infrared_cctv",
+      "caseId": "dead_drop",
+      "title": "Telemetry Log B",
+      "type": "location_data",
+      "summary": "Corroborating physical or digital surveillance record.",
+      "fullText": "Independent digital trail verifying uncompromised opportunity window.",
+      "timestamp": "21:20",
+      "source": "Auxiliary Sensor",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_roman"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_statement_dead_drop",
+      "caseId": "dead_drop",
+      "title": "Suspect Alibi Deposition",
+      "type": "statement",
+      "summary": "Formal interview claiming complete absence from incident zone.",
+      "fullText": "\"I was completely separated from the area and have zero knowledge of these events.\"",
+      "timestamp": "23:30",
+      "source": "Investigator Deposition",
+      "reliability": "medium",
+      "tags": [
+        "Alibi"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_roman"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_unlocked_dead_drop",
+      "caseId": "dead_drop",
+      "title": "Concealed Artifact Recovery",
+      "type": "object_report",
+      "summary": "Crucial evidence recovered following contradiction breakthrough.",
+      "fullText": "Concealed personal item linking the suspect beyond reasonable doubt to the crime scene.",
+      "timestamp": "02:00",
+      "source": "Targeted Warrant Search",
+      "reliability": "verified",
+      "tags": [
+        "Physical"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_roman"
+      ],
+      "discoveredInitially": false,
+      "unlockCondition": "contradiction_cellular_mast"
+    }
+  ],
+  "timeline": [
+    {
+      "eventId": "t_motive_dead_drop",
+      "caseId": "dead_drop",
+      "title": "Motive Trigger Event",
+      "eventDescription": "Financial or legal crisis triggers action.",
+      "timeWindow": "18:00",
+      "exactTime": "18:00",
+      "canonicalOrder": 1,
+      "sourceEvidenceId": "treason_escrow_deposit"
+    },
+    {
+      "eventId": "t_incident_dead_drop",
+      "caseId": "dead_drop",
+      "title": "Incident at Oakhaven Arboretum",
+      "eventDescription": "Offense executed against Agent Martin Cole.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 2,
+      "sourceEvidenceId": "ev_incident_dead_drop"
+    },
+    {
+      "eventId": "t_claim_dead_drop",
+      "caseId": "dead_drop",
+      "title": "Fabricated Alibi Claim",
+      "eventDescription": "Suspect claims offsite presence.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 3,
+      "sourceEvidenceId": "ev_statement_dead_drop",
+      "isFalseClaim": true,
+      "conflictsWithEventIds": [
+        "t_incident_dead_drop"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "contradictionId": "contradiction_cellular_mast",
+      "caseId": "dead_drop",
+      "title": "Critical Discrepancy: Dead Drop",
+      "requiredEvidenceIds": [
+        "ev_statement_dead_drop",
+        "park_cellular_triangulation"
+      ],
+      "type": "alibi_break",
+      "explanation": "Roman claimed he was at headquarters review, but his encrypted secondary phone pinged the park repeater adjacent to the monument at 22:14.",
+      "severity": "critical",
+      "affectedSuspectId": "suspect_roman",
+      "motiveDelta": 0.3,
+      "meansDelta": 0.3,
+      "opportunityDelta": 0.6,
+      "newAlibiStatus": "broken",
+      "unlocks": [
+        "ev_unlocked_dead_drop"
+      ]
+    }
+  ],
+  "solution": {
+    "culpritId": "suspect_roman",
+    "requiredMotiveEvidenceIds": [
+      "treason_escrow_deposit"
+    ],
+    "requiredMeansEvidenceIds": [
+      "transdermal_fentanyl_patch"
+    ],
+    "requiredOpportunityEvidenceIds": [
+      "park_cellular_triangulation"
+    ],
+    "requiredContradictionIds": [
+      "contradiction_cellular_mast"
+    ],
+    "requiredTimelineEventIds": [
+      "t_incident_dead_drop"
+    ],
+    "resolutionNarrative": "The case against suspect_roman is proven conclusively. Forensic logs, shattered alibis, and recovered physical mechanisms establish culpability beyond reasonable doubt."
+  },
+  "hints": [
+    {
+      "tier": "nudge",
+      "text": "Scrutinize the statement of suspect_roman against the telemetry sensor logs.",
+      "targetSuspectId": "suspect_roman",
+      "relatedEvidenceIds": [
+        "ev_statement_dead_drop",
+        "park_cellular_triangulation"
+      ]
+    },
+    {
+      "tier": "direction",
+      "text": "Connect the alibi deposition with park_cellular_triangulation to expose the chronological contradiction.",
+      "targetSuspectId": "suspect_roman",
+      "relatedEvidenceIds": [
+        "park_cellular_triangulation"
+      ]
+    },
+    {
+      "tier": "near_solution",
+      "text": "Roman claimed he was at headquarters review, but his encrypted secondary phone pinged the park repeater adjacent to the monument at 22:14.",
+      "targetSuspectId": "suspect_roman",
+      "relatedEvidenceIds": [
+        "ev_unlocked_dead_drop"
+      ]
+    }
+  ]
+}

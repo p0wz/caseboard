@@ -153,4 +153,29 @@ public struct EvidenceItem: Identifiable, Codable, Sendable, Hashable {
         self.unlockCondition = unlockCondition
         self.metadata = metadata
     }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.evidenceId = try container.decode(String.self, forKey: .evidenceId)
+        self.caseId = try container.decode(String.self, forKey: .caseId)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.type = try container.decode(EvidenceType.self, forKey: .type)
+        self.summary = try container.decode(String.self, forKey: .summary)
+        self.fullText = try container.decode(String.self, forKey: .fullText)
+        self.timestamp = try container.decodeIfPresent(String.self, forKey: .timestamp)
+        self.source = try container.decode(String.self, forKey: .source)
+        self.reliability = try container.decodeIfPresent(Reliability.self, forKey: .reliability) ?? .high
+        self.tags = try container.decodeIfPresent([String].self, forKey: .tags) ?? []
+        self.isKeyEvidence = try container.decodeIfPresent(Bool.self, forKey: .isKeyEvidence) ?? false
+        self.isPinned = try container.decodeIfPresent(Bool.self, forKey: .isPinned) ?? false
+        self.relatedSuspectIds = try container.decodeIfPresent([String].self, forKey: .relatedSuspectIds) ?? []
+        self.relatedEvidenceIds = try container.decodeIfPresent([String].self, forKey: .relatedEvidenceIds) ?? []
+        self.discoveredInitially = try container.decodeIfPresent(Bool.self, forKey: .discoveredInitially) ?? true
+        self.unlockCondition = try container.decodeIfPresent(String.self, forKey: .unlockCondition)
+        self.metadata = try container.decodeIfPresent([MetadataEntry].self, forKey: .metadata)
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case evidenceId, caseId, title, type, summary, fullText, timestamp, source, reliability, tags, isKeyEvidence, isPinned, relatedSuspectIds, relatedEvidenceIds, discoveredInitially, unlockCondition, metadata
+    }
 }

@@ -133,6 +133,30 @@ public struct Suspect: Identifiable, Codable, Sendable, Hashable {
         self.playerNotes = playerNotes
     }
 
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.suspectId = try container.decode(String.self, forKey: .suspectId)
+        self.caseId = try container.decode(String.self, forKey: .caseId)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.role = try container.decode(String.self, forKey: .role)
+        self.age = try container.decodeIfPresent(Int.self, forKey: .age)
+        self.relationshipToVictim = try container.decode(String.self, forKey: .relationshipToVictim)
+        self.profile = try container.decode(String.self, forKey: .profile)
+        self.motiveScore = try container.decodeIfPresent(Double.self, forKey: .motiveScore) ?? 0.0
+        self.meansScore = try container.decodeIfPresent(Double.self, forKey: .meansScore) ?? 0.0
+        self.opportunityScore = try container.decodeIfPresent(Double.self, forKey: .opportunityScore) ?? 0.0
+        self.alibiStatus = try container.decodeIfPresent(AlibiStatus.self, forKey: .alibiStatus) ?? .unknown
+        self.suspicionLevel = try container.decodeIfPresent(SuspicionLevel.self, forKey: .suspicionLevel) ?? .low
+        self.initialAlibi = try container.decodeIfPresent(String.self, forKey: .initialAlibi)
+        self.knownFacts = try container.decodeIfPresent([String].self, forKey: .knownFacts) ?? []
+        self.unlockedFacts = try container.decodeIfPresent([String].self, forKey: .unlockedFacts) ?? []
+        self.playerNotes = try container.decodeIfPresent(String.self, forKey: .playerNotes)
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case suspectId, caseId, name, role, age, relationshipToVictim, profile, motiveScore, meansScore, opportunityScore, alibiStatus, suspicionLevel, initialAlibi, knownFacts, unlockedFacts, playerNotes
+    }
+
     public var compositeThreatIndex: Double {
         return (motiveScore * 0.35) + (meansScore * 0.35) + (opportunityScore * 0.30)
     }

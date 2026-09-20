@@ -39,4 +39,23 @@ public struct TimelineEvent: Identifiable, Codable, Sendable, Hashable {
         self.dependsOnEvidenceIds = dependsOnEvidenceIds
         self.conflictsWithEventIds = conflictsWithEventIds
     }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.eventId = try container.decode(String.self, forKey: .eventId)
+        self.caseId = try container.decodeIfPresent(String.self, forKey: .caseId)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.eventDescription = try container.decode(String.self, forKey: .eventDescription)
+        self.timeWindow = try container.decode(String.self, forKey: .timeWindow)
+        self.exactTime = try container.decodeIfPresent(String.self, forKey: .exactTime)
+        self.canonicalOrder = try container.decode(Int.self, forKey: .canonicalOrder)
+        self.sourceEvidenceId = try container.decode(String.self, forKey: .sourceEvidenceId)
+        self.isFalseClaim = try container.decodeIfPresent(Bool.self, forKey: .isFalseClaim) ?? false
+        self.dependsOnEvidenceIds = try container.decodeIfPresent([String].self, forKey: .dependsOnEvidenceIds)
+        self.conflictsWithEventIds = try container.decodeIfPresent([String].self, forKey: .conflictsWithEventIds)
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case eventId, caseId, title, eventDescription, timeWindow, exactTime, canonicalOrder, sourceEvidenceId, isFalseClaim, dependsOnEvidenceIds, conflictsWithEventIds
+    }
 }

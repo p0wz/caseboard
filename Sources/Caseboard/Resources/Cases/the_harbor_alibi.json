@@ -1,0 +1,321 @@
+{
+  "caseId": "the_harbor_alibi",
+  "title": "The Harbor Alibi",
+  "subtitle": "Yacht club commodore found drowned in harbor basin with severed scuba regulator.",
+  "difficulty": "advanced",
+  "estimatedMinutes": 22,
+  "isPremium": true,
+  "briefing": {
+    "location": "Pelican Point Yacht Basin",
+    "date": "2026-05-15",
+    "victimOrSubject": "Harrison Gray",
+    "summary": "Harrison Gray's body recovered trapped beneath hull of racing sloop 'Pegasus'. Air tank regulator was intentionally jammed.",
+    "objective": "Expose the truth behind the incident at Pelican Point Yacht Basin."
+  },
+  "suspects": [
+    {
+      "suspectId": "suspect_brett",
+      "caseId": "the_harbor_alibi",
+      "name": "Brett Sterling",
+      "role": "Racing Rival",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Skipper whose vessel was disqualified by Gray",
+      "motiveScore": 0.6,
+      "meansScore": 0.5,
+      "opportunityScore": 0.4,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "moderate",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_valerie",
+      "caseId": "the_harbor_alibi",
+      "name": "Valerie Gray",
+      "role": "Estranged Spouse",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Facing unfavorable prenuptial agreement",
+      "motiveScore": 0.4,
+      "meansScore": 0.2,
+      "opportunityScore": 0.2,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_samuel",
+      "caseId": "the_harbor_alibi",
+      "name": "Samuel Finn",
+      "role": "Dockmaster",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Harbor technician with dive locker keys",
+      "motiveScore": 0.1,
+      "meansScore": 0.3,
+      "opportunityScore": 0.2,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "ev_incident_the_harbor_alibi",
+      "caseId": "the_harbor_alibi",
+      "title": "Incident & Autopsy File",
+      "type": "medical_report",
+      "summary": "Incident analysis confirms foul play targeting Harrison Gray.",
+      "fullText": "Forensic analysis reveals clear evidence of premeditated action resulting in the death of Harrison Gray.",
+      "timestamp": "23:00",
+      "source": "Forensic Bureau",
+      "reliability": "verified",
+      "tags": [
+        "Forensics"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_brett"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "disqualification_grievance",
+      "caseId": "the_harbor_alibi",
+      "title": "Critical Financial / Motive Record",
+      "type": "financial_record",
+      "summary": "Documentation establishing definitive motive against the accused.",
+      "fullText": "Classified communication and financial transactions exposing urgent criminal motivation.",
+      "timestamp": "18:00",
+      "source": "Encrypted Safe File",
+      "reliability": "high",
+      "tags": [
+        "Motive"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_brett"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "dive_knife_tamper_marks",
+      "caseId": "the_harbor_alibi",
+      "title": "Instrument & Technical Means",
+      "type": "object_report",
+      "summary": "Physical mechanism or weapon matching incident marks.",
+      "fullText": "Specialized equipment registered to or possessed by the primary suspect.",
+      "timestamp": "21:30",
+      "source": "Scene Recovery",
+      "reliability": "verified",
+      "tags": [
+        "Means"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_brett"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "tide_gauge_telemetry",
+      "caseId": "the_harbor_alibi",
+      "title": "Telemetry Log A",
+      "type": "security_record",
+      "summary": "Access or sensor telemetry establishing presence at scene.",
+      "fullText": "Electronic sensor audit trails contradicting the suspect's public statement.",
+      "timestamp": "21:15",
+      "source": "Infrastructure DB",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_brett"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "fuel_dock_camera",
+      "caseId": "the_harbor_alibi",
+      "title": "Telemetry Log B",
+      "type": "location_data",
+      "summary": "Corroborating physical or digital surveillance record.",
+      "fullText": "Independent digital trail verifying uncompromised opportunity window.",
+      "timestamp": "21:20",
+      "source": "Auxiliary Sensor",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_brett"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_statement_the_harbor_alibi",
+      "caseId": "the_harbor_alibi",
+      "title": "Suspect Alibi Deposition",
+      "type": "statement",
+      "summary": "Formal interview claiming complete absence from incident zone.",
+      "fullText": "\"I was completely separated from the area and have zero knowledge of these events.\"",
+      "timestamp": "23:30",
+      "source": "Investigator Deposition",
+      "reliability": "medium",
+      "tags": [
+        "Alibi"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_brett"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_unlocked_the_harbor_alibi",
+      "caseId": "the_harbor_alibi",
+      "title": "Concealed Artifact Recovery",
+      "type": "object_report",
+      "summary": "Crucial evidence recovered following contradiction breakthrough.",
+      "fullText": "Concealed personal item linking the suspect beyond reasonable doubt to the crime scene.",
+      "timestamp": "02:00",
+      "source": "Targeted Warrant Search",
+      "reliability": "verified",
+      "tags": [
+        "Physical"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_brett"
+      ],
+      "discoveredInitially": false,
+      "unlockCondition": "contradiction_tide_draft"
+    }
+  ],
+  "timeline": [
+    {
+      "eventId": "t_motive_the_harbor_alibi",
+      "caseId": "the_harbor_alibi",
+      "title": "Motive Trigger Event",
+      "eventDescription": "Financial or legal crisis triggers action.",
+      "timeWindow": "18:00",
+      "exactTime": "18:00",
+      "canonicalOrder": 1,
+      "sourceEvidenceId": "disqualification_grievance"
+    },
+    {
+      "eventId": "t_incident_the_harbor_alibi",
+      "caseId": "the_harbor_alibi",
+      "title": "Incident at Pelican Point Yacht Basin",
+      "eventDescription": "Offense executed against Harrison Gray.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 2,
+      "sourceEvidenceId": "ev_incident_the_harbor_alibi"
+    },
+    {
+      "eventId": "t_claim_the_harbor_alibi",
+      "caseId": "the_harbor_alibi",
+      "title": "Fabricated Alibi Claim",
+      "eventDescription": "Suspect claims offsite presence.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 3,
+      "sourceEvidenceId": "ev_statement_the_harbor_alibi",
+      "isFalseClaim": true,
+      "conflictsWithEventIds": [
+        "t_incident_the_harbor_alibi"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "contradictionId": "contradiction_tide_draft",
+      "caseId": "the_harbor_alibi",
+      "title": "Critical Discrepancy: The Harbor Alibi",
+      "requiredEvidenceIds": [
+        "ev_statement_the_harbor_alibi",
+        "tide_gauge_telemetry"
+      ],
+      "type": "alibi_break",
+      "explanation": "Brett claimed his yacht was anchored out in deep water all night, but the low tide harbor gauge proves a boat of his draft could only have been berthed at the crime slip.",
+      "severity": "critical",
+      "affectedSuspectId": "suspect_brett",
+      "motiveDelta": 0.3,
+      "meansDelta": 0.3,
+      "opportunityDelta": 0.6,
+      "newAlibiStatus": "broken",
+      "unlocks": [
+        "ev_unlocked_the_harbor_alibi"
+      ]
+    }
+  ],
+  "solution": {
+    "culpritId": "suspect_brett",
+    "requiredMotiveEvidenceIds": [
+      "disqualification_grievance"
+    ],
+    "requiredMeansEvidenceIds": [
+      "dive_knife_tamper_marks"
+    ],
+    "requiredOpportunityEvidenceIds": [
+      "tide_gauge_telemetry"
+    ],
+    "requiredContradictionIds": [
+      "contradiction_tide_draft"
+    ],
+    "requiredTimelineEventIds": [
+      "t_incident_the_harbor_alibi"
+    ],
+    "resolutionNarrative": "The case against suspect_brett is proven conclusively. Forensic logs, shattered alibis, and recovered physical mechanisms establish culpability beyond reasonable doubt."
+  },
+  "hints": [
+    {
+      "tier": "nudge",
+      "text": "Scrutinize the statement of suspect_brett against the telemetry sensor logs.",
+      "targetSuspectId": "suspect_brett",
+      "relatedEvidenceIds": [
+        "ev_statement_the_harbor_alibi",
+        "tide_gauge_telemetry"
+      ]
+    },
+    {
+      "tier": "direction",
+      "text": "Connect the alibi deposition with tide_gauge_telemetry to expose the chronological contradiction.",
+      "targetSuspectId": "suspect_brett",
+      "relatedEvidenceIds": [
+        "tide_gauge_telemetry"
+      ]
+    },
+    {
+      "tier": "near_solution",
+      "text": "Brett claimed his yacht was anchored out in deep water all night, but the low tide harbor gauge proves a boat of his draft could only have been berthed at the crime slip.",
+      "targetSuspectId": "suspect_brett",
+      "relatedEvidenceIds": [
+        "ev_unlocked_the_harbor_alibi"
+      ]
+    }
+  ]
+}
