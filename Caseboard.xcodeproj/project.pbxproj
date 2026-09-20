@@ -43,6 +43,10 @@
 		C0DDB85CBAFF7DE0B4F25CD3 /* TimelineReconstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825C5AED109598FE8DC8E4FE /* TimelineReconstructionView.swift */; };
 		F941B8D66578E80DB889AB2E /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFE631CE1590CBC4655972 /* DashboardView.swift */; };
 		5A7CA2640BDA3AE6DA023B97 /* DebugDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF04685FE93D0FBC5035ABD /* DebugDashboardView.swift */; };
+		E27CE1D8EDFCB187A178ADA9 /* AudioSpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8F8BAF82C0E29BEA67D81 /* AudioSpectrogramView.swift */; };
+		BC8597EFE5A96FD062D0B040 /* BallisticComparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B81F14D153F94C642B49B7F /* BallisticComparatorView.swift */; };
+		B5582C02F93CB714D10A1D36 /* BiometricFingerprintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD619C0B02F0E244B85C647 /* BiometricFingerprintView.swift */; };
+		63CA4C524B2590D37A6BFA47 /* RedactedDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5864E87394BADFE4C11388B /* RedactedDocumentView.swift */; };
 		81CDE26A996DA71A0432414F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CB78B85CA39187C8330FC4 /* OnboardingView.swift */; };
 		ACCEE1CF9214C9E48A692D9C /* PremiumPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81297931D8EE2B91D86C864E /* PremiumPaywallView.swift */; };
 		56FCC3A7675F2B4AB2182341 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */; };
@@ -122,6 +126,10 @@
 		825C5AED109598FE8DC8E4FE /* TimelineReconstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/CaseWorkspace/Timeline/TimelineReconstructionView.swift"; sourceTree = SOURCE_ROOT; };
 		9ADFE631CE1590CBC4655972 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Dashboard/DashboardView.swift"; sourceTree = SOURCE_ROOT; };
 		ADF04685FE93D0FBC5035ABD /* DebugDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Debug/DebugDashboardView.swift"; sourceTree = SOURCE_ROOT; };
+		B3A8F8BAF82C0E29BEA67D81 /* AudioSpectrogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/ForensicLab/AudioSpectrogramView.swift"; sourceTree = SOURCE_ROOT; };
+		1B81F14D153F94C642B49B7F /* BallisticComparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/ForensicLab/BallisticComparatorView.swift"; sourceTree = SOURCE_ROOT; };
+		8DD619C0B02F0E244B85C647 /* BiometricFingerprintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/ForensicLab/BiometricFingerprintView.swift"; sourceTree = SOURCE_ROOT; };
+		C5864E87394BADFE4C11388B /* RedactedDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/ForensicLab/RedactedDocumentView.swift"; sourceTree = SOURCE_ROOT; };
 		B9CB78B85CA39187C8330FC4 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Onboarding/OnboardingView.swift"; sourceTree = SOURCE_ROOT; };
 		81297931D8EE2B91D86C864E /* PremiumPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Premium/PremiumPaywallView.swift"; sourceTree = SOURCE_ROOT; };
 		A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Settings/SettingsView.swift"; sourceTree = SOURCE_ROOT; };
@@ -222,6 +230,10 @@
 				825C5AED109598FE8DC8E4FE /* TimelineReconstructionView.swift */,
 				9ADFE631CE1590CBC4655972 /* DashboardView.swift */,
 				ADF04685FE93D0FBC5035ABD /* DebugDashboardView.swift */,
+				B3A8F8BAF82C0E29BEA67D81 /* AudioSpectrogramView.swift */,
+				1B81F14D153F94C642B49B7F /* BallisticComparatorView.swift */,
+				8DD619C0B02F0E244B85C647 /* BiometricFingerprintView.swift */,
+				C5864E87394BADFE4C11388B /* RedactedDocumentView.swift */,
 				B9CB78B85CA39187C8330FC4 /* OnboardingView.swift */,
 				81297931D8EE2B91D86C864E /* PremiumPaywallView.swift */,
 				A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */,
@@ -439,6 +451,10 @@
 				C0DDB85CBAFF7DE0B4F25CD3 /* TimelineReconstructionView.swift in Sources */,
 				F941B8D66578E80DB889AB2E /* DashboardView.swift in Sources */,
 				5A7CA2640BDA3AE6DA023B97 /* DebugDashboardView.swift in Sources */,
+				E27CE1D8EDFCB187A178ADA9 /* AudioSpectrogramView.swift in Sources */,
+				BC8597EFE5A96FD062D0B040 /* BallisticComparatorView.swift in Sources */,
+				B5582C02F93CB714D10A1D36 /* BiometricFingerprintView.swift in Sources */,
+				63CA4C524B2590D37A6BFA47 /* RedactedDocumentView.swift in Sources */,
 				81CDE26A996DA71A0432414F /* OnboardingView.swift in Sources */,
 				ACCEE1CF9214C9E48A692D9C /* PremiumPaywallView.swift in Sources */,
 				56FCC3A7675F2B4AB2182341 /* SettingsView.swift in Sources */,
