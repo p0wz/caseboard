@@ -252,10 +252,23 @@ public final class ProgressStore: ObservableObject {
         save()
     }
 
+    // MARK: - Notes
+
+    public func saveNotes(caseId: String, notes: String) {
+        userProgress.playerNotes[caseId] = notes
+        save()
+    }
+
     // MARK: - Debug Tools
 
     public func debugResetAll() {
         userProgress = UserProgress()
+        save()
+    }
+
+    public func debugAddScore(_ points: Int) {
+        userProgress.totalScore += points
+        recalculateRank()
         save()
     }
 
