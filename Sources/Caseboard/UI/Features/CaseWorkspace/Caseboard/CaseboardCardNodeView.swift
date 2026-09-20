@@ -97,8 +97,9 @@ public struct CaseboardCardNodeView: View {
                 Circle()
                     .fill(badgeColor.opacity(0.15))
                     .frame(width: 22, height: 22)
-                Image(systemName: iconSymbol)
-                    .font(.system(size: 11, weight: .bold))
+                ForensicImageView(name: node.nodeId, fallbackSymbol: iconSymbol, contentMode: .fill)
+                    .frame(width: 22, height: 22)
+                    .clipShape(Circle())
                     .foregroundColor(badgeColor)
             }
 

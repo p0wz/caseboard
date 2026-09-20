@@ -18,7 +18,7 @@ sources_swift.sort()
 resources = []
 for root, _, files in os.walk(sources_dir):
     for f in files:
-        if f.endswith(".json") or f.endswith(".storekit") or f.endswith(".plist"):
+        if f.endswith(".json") or f.endswith(".storekit") or f.endswith(".plist") or f.endswith(".jpg") or f.endswith(".png") or f.endswith(".jpeg"):
             resources.append(os.path.relpath(os.path.join(root, f), base_dir))
 resources.sort()
 
@@ -48,8 +48,14 @@ for rf in resources:
         continue  # Handled by build settings
     file_id = gen_id("FILEREF_" + rf)
     build_id = gen_id("BUILDFILE_" + rf)
-    name = os.path.basename(rf)
-    file_type = "text.json" if rf.endswith(".json") else "text"
+    if rf.endswith(".json"):
+        file_type = "text.json"
+    elif rf.endswith(".jpg") or rf.endswith(".jpeg"):
+        file_type = "image.jpeg"
+    elif rf.endswith(".png"):
+        file_type = "image.png"
+    else:
+        file_type = "text"
     pbx_file_refs.append(f'\t\t{file_id} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = {file_type}; path = "{rf}"; sourceTree = SOURCE_ROOT; }};')
     pbx_build_files.append(f'\t\t{build_id} /* {name} in Resources */ = {{isa = PBXBuildFile; fileRef = {file_id} /* {name} */; }};')
     resources_build_phase_files.append(f'\t\t\t\t{build_id} /* {name} in Resources */,')

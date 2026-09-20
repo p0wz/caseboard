@@ -49,7 +49,50 @@ public struct EvidenceDetailView: View {
                     }
                 }
 
-                // Full Forensic Transcript
+                // Crime Scene Macro Photography & Loupe Inspection
+                if let imageName = matchingImageAsset(for: item) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Label("CRIME SCENE MACRO PHOTOGRAPHY", systemImage: "camera.viewfinder")
+                                .font(.system(size: 11, weight: .bold))
+                                .foregroundColor(.secondary)
+                            Spacer()
+                            Text("DRAG TO INSPECT (2.5X LOUPE)")
+                                .font(.system(size: 8, weight: .bold, design: .monospaced))
+                                .foregroundColor(ForensicTheme.forensicBlue)
+                        }
+
+                        ZStack(alignment: .bottomTrailing) {
+                            ForensicImageView(name: imageName, contentMode: .fill)
+                                .frame(height: 220)
+                                .frame(maxWidth: .infinity)
+                                .clipped()
+                                .cornerRadius(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.primary.opacity(0.15), lineWidth: 1)
+                                )
+                                .forensicLoupeInspection()
+
+                            BarcodeEvidenceTagView(
+                                serialId: item.evidenceId,
+                                category: item.reliability.displayName
+                            )
+                            .padding(8)
+                        }
+                    }
+                }
+
+                // Interactive Forensic Lab Workbench (Biometric, Spectrogram, Ballistics, Redacted)
+                if isLabWorkbenchItem(item) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Label("INTERACTIVE FORENSIC BENCH", systemImage: "waveform.path.ecg")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundColor(.secondary)
+
+                        labWorkbenchView(for: item)
+                    }
+                }
                 VStack(alignment: .leading, spacing: 8) {
                     Label("FORENSIC RECORD / TRANSCRIPT", systemImage: "doc.text.fill")
                         .font(.system(size: 11, weight: .bold))
@@ -152,6 +195,50 @@ public struct EvidenceDetailView: View {
                     dismiss()
                 }
             }
+        }
+    }
+
+    // MARK: - Forensic Visual Matching
+
+    private func matchingImageAsset(for item: EvidenceItem) -> String? {
+        if item.evidenceId == "coroner_report_vorn" || item.evidenceId == "restoration_solvent_inventory" {
+            return "evidence_solvent_bottle"
+        }
+        if item.evidenceId == "door_sensor_824" || item.evidenceId == "service_door_override_log" {
+            return "evidence_vault_crime_scene"
+        }
+        if ForensicAssetLoader.image(named: item.evidenceId) != nil {
+            return item.evidenceId
+        }
+        return nil
+    }
+
+    private func isLabWorkbenchItem(_ item: EvidenceItem) -> Bool {
+        let id = item.evidenceId.lowercased()
+        let tags = item.tags.map { $0.lowercased() }
+        let typeStr = item.type.rawValue.lowercased()
+        return typeStr.contains("audio") || tags.contains("audio") ||
+               typeStr.contains("biometric") || tags.contains("fingerprint") || tags.contains("biometric") ||
+               typeStr.contains("ballistic") || tags.contains("ballistics") ||
+               tags.contains("classified") || tags.contains("redacted") || id.contains("override")
+    }
+
+    @ViewBuilder
+    private func labWorkbenchView(for item: EvidenceItem) -> some View {
+        let id = item.evidenceId.lowercased()
+        let tags = item.tags.map { $0.lowercased() }
+        let typeStr = item.type.rawValue.lowercased()
+
+        if typeStr.contains("audio") || tags.contains("audio") {
+            AudioSpectrogramView(tapeTitle: item.title, durationSeconds: 18.4)
+        } else if typeStr.contains("biometric") || tags.contains("fingerprint") || tags.contains("biometric") {
+            BiometricFingerprintView(evidenceTitle: item.title, matchConfidence: 96.0)
+        } else if typeStr.contains("ballistic") || tags.contains("ballistics") {
+            BallisticComparatorView()
+        } else if tags.contains("classified") || tags.contains("redacted") || id.contains("override") {
+            RedactedDocumentView(documentTitle: item.title)
+        } else {
+            EmptyView()
         }
     }
 }

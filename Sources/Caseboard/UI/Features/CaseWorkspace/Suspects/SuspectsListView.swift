@@ -51,14 +51,19 @@ struct SuspectCardRow: View {
             ForensicCard {
                 VStack(alignment: .leading, spacing: 12) {
                     HStack(spacing: 12) {
-                        Circle()
-                            .fill(Color(hex: suspect.suspicionLevel.colorHex).opacity(0.18))
-                            .frame(width: 48, height: 48)
-                            .overlay(
-                                Image(systemName: "person.fill")
-                                    .font(.system(size: 22))
-                                    .foregroundColor(Color(hex: suspect.suspicionLevel.colorHex))
-                            )
+                        ZStack {
+                            Circle()
+                                .fill(Color(hex: suspect.suspicionLevel.colorHex).opacity(0.18))
+                                .frame(width: 48, height: 48)
+
+                            ForensicImageView(name: suspect.suspectId, fallbackSymbol: "person.fill", contentMode: .fill)
+                                .frame(width: 48, height: 48)
+                                .clipShape(Circle())
+                                .overlay(
+                                    Circle()
+                                        .strokeBorder(Color(hex: suspect.suspicionLevel.colorHex).opacity(0.4), lineWidth: 1.5)
+                                )
+                        }
 
                         VStack(alignment: .leading, spacing: 3) {
                             Text(suspect.name)
@@ -158,50 +163,77 @@ public struct SuspectDetailView: View {
                         ZStack(alignment: .topTrailing) {
                             HStack(spacing: 16) {
                                 // Police Booking Mugshot
-                                ZStack {
-                                    // Height chart background
-                                    VStack(spacing: 6) {
-                                        ForEach([ "6'2\"", "6'0\"", "5'10\"", "5'8\"", "5'6\""], id: \.self) { ht in
-                                            HStack(spacing: 2) {
-                                                Text(ht)
-                                                    .font(.system(size: 6, weight: .bold, design: .monospaced))
-                                                    .foregroundColor(.secondary.opacity(0.6))
-                                                Rectangle()
-                                                    .fill(Color.primary.opacity(0.12))
-                                                    .frame(height: 0.8)
+                                if ForensicAssetLoader.image(named: suspect.suspectId) != nil {
+                                    ZStack(alignment: .bottom) {
+                                        ForensicImageView(name: suspect.suspectId, contentMode: .fill)
+                                            .frame(width: 95, height: 120)
+                                            .clipped()
+
+                                        VStack(spacing: 1) {
+                                            Text("METRO POLICE // FORENSIC")
+                                                .font(.system(size: 5, weight: .black, design: .monospaced))
+                                                .foregroundColor(.white)
+                                            Text("ID: \(suspect.suspectId.prefix(8).uppercased())")
+                                                .font(.system(size: 6, weight: .bold, design: .monospaced))
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding(.horizontal, 4)
+                                        .padding(.vertical, 2)
+                                        .background(Color.black.opacity(0.85), in: RoundedRectangle(cornerRadius: 2))
+                                        .padding(.bottom, 4)
+                                    }
+                                    .frame(width: 95, height: 120)
+                                    .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                            .strokeBorder(Color.primary.opacity(0.25), lineWidth: 1)
+                                    )
+                                } else {
+                                    ZStack {
+                                        // Height chart background
+                                        VStack(spacing: 6) {
+                                            ForEach([ "6'2\"", "6'0\"", "5'10\"", "5'8\"", "5'6\""], id: \.self) { ht in
+                                                HStack(spacing: 2) {
+                                                    Text(ht)
+                                                        .font(.system(size: 6, weight: .bold, design: .monospaced))
+                                                        .foregroundColor(.secondary.opacity(0.6))
+                                                    Rectangle()
+                                                        .fill(Color.primary.opacity(0.12))
+                                                        .frame(height: 0.8)
+                                                }
                                             }
                                         }
-                                    }
-                                    .padding(.horizontal, 4)
+                                        .padding(.horizontal, 4)
 
-                                    // Silhouette / Avatar
-                                    Image(systemName: "person.crop.rectangle.fill")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height: 75)
-                                        .foregroundColor(Color(hex: suspect.suspicionLevel.colorHex).opacity(0.75))
+                                        // Silhouette / Avatar
+                                        Image(systemName: "person.crop.rectangle.fill")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(height: 75)
+                                            .foregroundColor(Color(hex: suspect.suspicionLevel.colorHex).opacity(0.75))
 
-                                    // Booking placard at chest level
-                                    VStack(spacing: 1) {
-                                        Text("METRO POLICE // FORENSIC DIV")
-                                            .font(.system(size: 5, weight: .black, design: .monospaced))
-                                            .foregroundColor(.white)
-                                        Text("ID: \(suspect.suspectId.prefix(8).uppercased())")
-                                            .font(.system(size: 6, weight: .bold, design: .monospaced))
-                                            .foregroundColor(.white)
+                                        // Booking placard at chest level
+                                        VStack(spacing: 1) {
+                                            Text("METRO POLICE // FORENSIC DIV")
+                                                .font(.system(size: 5, weight: .black, design: .monospaced))
+                                                .foregroundColor(.white)
+                                            Text("ID: \(suspect.suspectId.prefix(8).uppercased())")
+                                                .font(.system(size: 6, weight: .bold, design: .monospaced))
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding(.horizontal, 4)
+                                        .padding(.vertical, 2)
+                                        .background(Color.black.opacity(0.85), in: RoundedRectangle(cornerRadius: 2))
+                                        .offset(y: 30)
                                     }
-                                    .padding(.horizontal, 4)
-                                    .padding(.vertical, 2)
-                                    .background(Color.black.opacity(0.85), in: RoundedRectangle(cornerRadius: 2))
-                                    .offset(y: 30)
+                                    .frame(width: 85, height: 95)
+                                    .background(Color.secondary.opacity(0.12))
+                                    .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                            .strokeBorder(Color.primary.opacity(0.15), lineWidth: 1)
+                                    )
                                 }
-                                .frame(width: 85, height: 95)
-                                .background(Color(UIColor.tertiarySystemBackground))
-                                .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 6, style: .continuous)
-                                        .strokeBorder(Color.primary.opacity(0.15), lineWidth: 1)
-                                )
 
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(suspect.name)

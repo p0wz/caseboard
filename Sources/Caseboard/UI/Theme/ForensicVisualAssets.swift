@@ -324,3 +324,91 @@ public extension View {
         self.modifier(LoupeModifier())
     }
 }
+
+// MARK: - Forensic Asset Loader & Image View
+
+#if canImport(UIKit)
+import UIKit
+public typealias PlatformImage = UIImage
+#elseif canImport(AppKit)
+import AppKit
+public typealias PlatformImage = NSImage
+#endif
+
+public enum ForensicAssetLoader {
+    public static func image(named name: String) -> PlatformImage? {
+        let cleanName = (name as NSString).deletingPathExtension
+        
+        #if canImport(UIKit)
+        for ext in ["jpg", "jpeg", "png"] {
+            if let path = Bundle.main.path(forResource: cleanName, ofType: ext) {
+                if let img = UIImage(contentsOfFile: path) { return img }
+            }
+        }
+        
+        if let resPath = Bundle.main.resourcePath {
+            for ext in ["jpg", "jpeg", "png"] {
+                let p1 = (resPath as NSString).appendingPathComponent("\(cleanName).\(ext)")
+                if FileManager.default.fileExists(atPath: p1), let img = UIImage(contentsOfFile: p1) {
+                    return img
+                }
+                let p2 = (resPath as NSString).appendingPathComponent("Assets/\(cleanName).\(ext)")
+                if FileManager.default.fileExists(atPath: p2), let img = UIImage(contentsOfFile: p2) {
+                    return img
+                }
+            }
+        }
+        return UIImage(named: cleanName)
+        #elseif canImport(AppKit)
+        for ext in ["jpg", "jpeg", "png"] {
+            if let path = Bundle.main.path(forResource: cleanName, ofType: ext) {
+                if let img = NSImage(contentsOfFile: path) { return img }
+            }
+        }
+        return NSImage(named: cleanName)
+        #else
+        return nil
+        #endif
+    }
+}
+
+public struct ForensicImageView: View {
+    public let name: String
+    public let fallbackSymbol: String
+    public let contentMode: ContentMode
+
+    public init(name: String, fallbackSymbol: String = "photo", contentMode: ContentMode = .fill) {
+        self.name = name
+        self.fallbackSymbol = fallbackSymbol
+        self.contentMode = contentMode
+    }
+
+    public var body: some View {
+        #if canImport(UIKit)
+        if let uiImage = ForensicAssetLoader.image(named: name) {
+            Image(uiImage: uiImage)
+                .resizable()
+                .aspectRatio(contentMode: contentMode)
+        } else {
+            Image(systemName: fallbackSymbol)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+        #elseif canImport(AppKit)
+        if let nsImage = ForensicAssetLoader.image(named: name) {
+            Image(nsImage: nsImage)
+                .resizable()
+                .aspectRatio(contentMode: contentMode)
+        } else {
+            Image(systemName: fallbackSymbol)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+        #else
+        Image(systemName: fallbackSymbol)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+        #endif
+    }
+}
+

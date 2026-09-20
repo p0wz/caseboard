@@ -106,7 +106,7 @@ public struct RedactedDocumentView: View {
         .padding(16)
         .background(
             RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(Color(UIColor.secondarySystemBackground))
+                .fill(Color.secondary.opacity(0.08))
         )
     }
 

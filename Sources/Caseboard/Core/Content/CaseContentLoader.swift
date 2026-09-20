@@ -1,10 +1,16 @@
 import Foundation
 
+#if !SWIFT_PACKAGE
+extension Bundle {
+    static var module: Bundle { Bundle.main }
+}
+#endif
+
 public final class CaseContentLoader: @unchecked Sendable {
     public static let shared = CaseContentLoader()
 
     private var cachedCases: [String: CaseModel] = [:]
-    private let lock = NSLock()
+    private let lock = NSRecursiveLock()
 
     public init() {}
 

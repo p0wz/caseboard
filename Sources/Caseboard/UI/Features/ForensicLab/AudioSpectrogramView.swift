@@ -135,7 +135,7 @@ public struct AudioSpectrogramView: View {
         .padding(16)
         .background(
             RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(Color(UIColor.secondarySystemBackground))
+                .fill(Color.secondary.opacity(0.08))
         )
     }
 
@@ -170,12 +170,14 @@ public struct AudioSpectrogramView: View {
     private func startTimer() {
         timerSubscription?.invalidate()
         timerSubscription = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            if currentTime < durationSeconds {
-                currentTime += 0.1
-            } else {
-                currentTime = 0.0
-                isPlaying = false
-                stopTimer()
+            Task { @MainActor in
+                if currentTime < durationSeconds {
+                    currentTime += 0.1
+                } else {
+                    currentTime = 0.0
+                    isPlaying = false
+                    stopTimer()
+                }
             }
         }
     }

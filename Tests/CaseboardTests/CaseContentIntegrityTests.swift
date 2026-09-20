@@ -1,6 +1,12 @@
 import XCTest
 @testable import Caseboard
 
+#if !SWIFT_PACKAGE
+extension Bundle {
+    static var module: Bundle { Bundle(for: CaseContentIntegrityTests.self) }
+}
+#endif
+
 final class CaseContentIntegrityTests: XCTestCase {
     var validator: CaseValidator!
 
