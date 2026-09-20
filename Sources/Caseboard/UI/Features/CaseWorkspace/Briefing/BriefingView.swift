@@ -12,36 +12,43 @@ public struct BriefingView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 // Header Banner
-                ForensicCard {
-                    VStack(alignment: .leading, spacing: 12) {
-                        HStack {
-                            FrostedBadge(
-                                title: caseModel.difficulty.displayName,
-                                sfSymbol: "gauge.with.needle.fill",
-                                color: Color(hex: caseModel.difficulty.badgeColorHex)
-                            )
-                            Spacer()
-                            FrostedBadge(
-                                title: "\(caseModel.estimatedMinutes) MIN EST.",
-                                sfSymbol: "clock.fill",
-                                color: ForensicTheme.forensicBlue
-                            )
-                        }
+                // Confidential Case File Folder Header
+                ZStack(alignment: .topTrailing) {
+                    ForensicCard {
+                        VStack(alignment: .leading, spacing: 12) {
+                            HStack {
+                                FrostedBadge(
+                                    title: caseModel.difficulty.displayName,
+                                    sfSymbol: "gauge.with.needle.fill",
+                                    color: Color(hex: caseModel.difficulty.badgeColorHex)
+                                )
+                                Spacer()
+                                FrostedBadge(
+                                    title: "\(caseModel.estimatedMinutes) MIN EST.",
+                                    sfSymbol: "clock.fill",
+                                    color: ForensicTheme.forensicBlue
+                                )
+                            }
 
-                        Text(caseModel.title)
-                            .font(.system(size: 26, weight: .bold, design: .default))
+                            Text(caseModel.title)
+                                .font(.system(size: 26, weight: .bold, design: .default))
 
-                        Text(caseModel.subtitle)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                            Text(caseModel.subtitle)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
 
-                        Divider().padding(.vertical, 4)
+                            Divider().padding(.vertical, 4)
 
-                        HStack(spacing: 20) {
-                            MetricPill(label: "Location", value: caseModel.briefing.location, sfSymbol: "mappin.and.ellipse")
-                            MetricPill(label: "Incident Date", value: caseModel.briefing.date, sfSymbol: "calendar")
+                            HStack(spacing: 20) {
+                                MetricPill(label: "Location", value: caseModel.briefing.location, sfSymbol: "mappin.and.ellipse")
+                                MetricPill(label: "Incident Date", value: caseModel.briefing.date, sfSymbol: "calendar")
+                            }
                         }
                     }
+
+                    // Official Top Secret Stamp Overlay
+                    RubberStampView(kind: .topSecret, customAngle: -6.0)
+                        .offset(x: -8, y: -10)
                 }
 
                 // Executive Incident Narrative

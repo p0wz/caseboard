@@ -152,26 +152,85 @@ public struct SuspectDetailView: View {
     public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                // Profile header card
+                // Profile header card with police booking mugshot
                 ForensicCard {
                     VStack(alignment: .leading, spacing: 14) {
-                        HStack(spacing: 14) {
-                            Circle()
-                                .fill(Color(hex: suspect.suspicionLevel.colorHex).opacity(0.18))
-                                .frame(width: 56, height: 56)
+                        ZStack(alignment: .topTrailing) {
+                            HStack(spacing: 16) {
+                                // Police Booking Mugshot
+                                ZStack {
+                                    // Height chart background
+                                    VStack(spacing: 6) {
+                                        ForEach([ "6'2\"", "6'0\"", "5'10\"", "5'8\"", "5'6\""], id: \.self) { ht in
+                                            HStack(spacing: 2) {
+                                                Text(ht)
+                                                    .font(.system(size: 6, weight: .bold, design: .monospaced))
+                                                    .foregroundColor(.secondary.opacity(0.6))
+                                                Rectangle()
+                                                    .fill(Color.primary.opacity(0.12))
+                                                    .frame(height: 0.8)
+                                            }
+                                        }
+                                    }
+                                    .padding(.horizontal, 4)
+
+                                    // Silhouette / Avatar
+                                    Image(systemName: "person.crop.rectangle.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height: 75)
+                                        .foregroundColor(Color(hex: suspect.suspicionLevel.colorHex).opacity(0.75))
+
+                                    // Booking placard at chest level
+                                    VStack(spacing: 1) {
+                                        Text("METRO POLICE // FORENSIC DIV")
+                                            .font(.system(size: 5, weight: .black, design: .monospaced))
+                                            .foregroundColor(.white)
+                                        Text("ID: \(suspect.suspectId.prefix(8).uppercased())")
+                                            .font(.system(size: 6, weight: .bold, design: .monospaced))
+                                            .foregroundColor(.white)
+                                    }
+                                    .padding(.horizontal, 4)
+                                    .padding(.vertical, 2)
+                                    .background(Color.black.opacity(0.85), in: RoundedRectangle(cornerRadius: 2))
+                                    .offset(y: 30)
+                                }
+                                .frame(width: 85, height: 95)
+                                .background(Color(UIColor.tertiarySystemBackground))
+                                .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                                 .overlay(
-                                    Image(systemName: "person.crop.circle.fill")
-                                        .font(.system(size: 40))
-                                        .foregroundColor(Color(hex: suspect.suspicionLevel.colorHex))
+                                    RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                        .strokeBorder(Color.primary.opacity(0.15), lineWidth: 1)
                                 )
 
-                            VStack(alignment: .leading, spacing: 3) {
-                                Text(suspect.name)
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                Text(suspect.role)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(suspect.name)
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                    Text(suspect.role)
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+
+                                    HStack(spacing: 6) {
+                                        FrostedBadge(
+                                            title: suspect.alibiStatus.displayName,
+                                            sfSymbol: suspect.alibiStatus.sfSymbol,
+                                            color: Color(hex: suspect.alibiStatus.colorHex)
+                                        )
+                                        FrostedBadge(
+                                            title: suspect.suspicionLevel.displayName,
+                                            sfSymbol: "exclamationmark.shield",
+                                            color: Color(hex: suspect.suspicionLevel.colorHex)
+                                        )
+                                    }
+                                    .padding(.top, 4)
+                                }
+                            }
+
+                            // Dynamic Rubber Stamp Overlay if alibi broken
+                            if suspect.alibiStatus == .broken || suspect.alibiStatus == .weak {
+                                RubberStampView(kind: .alibiCompromised, isSlammed: true)
+                                    .offset(x: 10, y: -5)
                             }
                         }
 
