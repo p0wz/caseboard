@@ -263,6 +263,10 @@ public struct CaseResolutionView: View {
                             .fontWeight(.bold)
                     }
 
+                    // Slammed S+ Rubber Stamp
+                    RubberStampView(kind: result.isPerfectSolve ? .caseClosedSPlus : .matchConfirmed, isSlammed: true)
+                        .padding(.vertical, 4)
+
                     ForensicCard {
                         VStack(alignment: .leading, spacing: 10) {
                             Text("OFFICIAL DISTRICT DISCLOSURE")
