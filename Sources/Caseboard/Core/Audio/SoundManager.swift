@@ -47,4 +47,12 @@ public final class SoundManager: ObservableObject {
         AudioServicesPlaySystemSound(1026)
         #endif
     }
+
+    public func playEvidenceAdmitted() {
+        playDiscoveryChime()
+    }
+
+    public func playAlibiBroken() {
+        playDiscoveryChime()
+    }
 }

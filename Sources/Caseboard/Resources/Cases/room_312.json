@@ -35,7 +35,36 @@
       "knownFacts": [
         "Possessed master service elevator card"
       ],
-      "unlockedFacts": []
+      "unlockedFacts": [],
+      "interrogationTopics": [
+        {
+          "topicId": "andre_whereabouts",
+          "questionText": "Where were you between 21:00 and 22:30 when Sophia Chen was killed?",
+          "initialResponse": "I was stationed right behind the front concierge desk greeting international delegates all night. I never stepped foot on the guest room floors. Ask anyone who entered the lobby.",
+          "stressDelta": 0.15
+        },
+        {
+          "topicId": "andre_debts",
+          "questionText": "We understand you have urgent financial demands from offshore sportsbooks.",
+          "initialResponse": "My personal finances are entirely private! I run a five-star hospitality operation. A few unlucky wagers don't make me a killer.",
+          "stressDelta": 0.25
+        },
+        {
+          "topicId": "andre_access",
+          "questionText": "Who holds authorization for the service elevator override and utility closets?",
+          "initialResponse": "Only senior management and engineering hold those keycards. Badge AD-01 is assigned directly to me, which proves our security protocols are air-tight.",
+          "stressDelta": 0.2
+        }
+      ],
+      "confrontations": [
+        {
+          "evidenceId": "elevator_maintenance_log",
+          "contradictionId": "contradiction_elevator_lobby",
+          "defenseReaction": "A telemetry log? Anyone could have used the override code.",
+          "brokenReaction": "Mon Dieu... the system recorded the manual override?! Look, I was ruined! The loan sharks gave me until midnight. I only wanted the bearer bonds in her satchel! She woke up... she screamed... I just held the pillow over her face to stop the alarm! I never meant for this to happen!",
+          "newFactUnlocked": "Confessed to using Badge AD-01 to bypass Floor 3, breaking in via the balcony, and suffocating Sophia Chen over bearer bonds."
+        }
+      ]
     },
     {
       "suspectId": "suspect_victor",
@@ -54,7 +83,22 @@
       "knownFacts": [
         "Ballroom photographs confirm presence"
       ],
-      "unlockedFacts": []
+      "unlockedFacts": [],
+      "interrogationTopics": [
+        {
+          "topicId": "victor_corridor",
+          "questionText": "Did you see or hear anyone entering Suite 312 across from your room?",
+          "initialResponse": "I was at the gala ballroom on the ground floor until well past midnight toasted by dozens of diplomats and photographers. I never went up to the third floor until the sirens arrived.",
+          "stressDelta": 0.05
+        },
+        {
+          "topicId": "victor_trade",
+          "questionText": "Were there conflicts between your trade mission and Ms. Chen?",
+          "initialResponse": "Political disputes are settled across the negotiating table with ink and compromises, detective. Not with brute force in private hotel suites.",
+          "stressDelta": 0.1
+        }
+      ],
+      "confrontations": []
     },
     {
       "suspectId": "suspect_maria",
@@ -73,7 +117,22 @@
       "knownFacts": [
         "Logged on 7th floor cameras"
       ],
-      "unlockedFacts": []
+      "unlockedFacts": [],
+      "interrogationTopics": [
+        {
+          "topicId": "maria_penthouse",
+          "questionText": "Can you verify where you were between 21:00 and 22:30?",
+          "initialResponse": "I was deep-cleaning the Presidential Penthouse on the 7th floor the entire evening. The security cameras at the 7th floor elevator lobby will prove I never went downstairs.",
+          "stressDelta": 0.05
+        },
+        {
+          "topicId": "maria_balcony_keys",
+          "questionText": "Are third-floor utility balcony doors usually unlocked?",
+          "initialResponse": "Never! Those balcony ledges are hazardous. Only Mr. Andre keeps the master brass latch keys on his personal key ring. Housekeeping isn't allowed out there.",
+          "stressDelta": 0.1
+        }
+      ],
+      "confrontations": []
     }
   ],
   "evidence": [

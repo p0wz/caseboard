@@ -55,6 +55,10 @@ public final class HapticsManager: ObservableObject {
         #endif
     }
 
+    public func mediumTap() {
+        evidencePin()
+    }
+
     public func connectionStart() {
         guard isEnabled else { return }
         #if canImport(UIKit) && !os(macOS)
@@ -87,6 +91,11 @@ public final class HapticsManager: ObservableObject {
         generator.prepare()
         generator.notificationOccurred(.success)
         #endif
+    }
+
+    public func alibiBroken() {
+        guard isEnabled else { return }
+        criticalContradiction()
     }
 
     public func wrongConnection() {

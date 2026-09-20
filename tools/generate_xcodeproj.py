@@ -18,7 +18,7 @@ sources_swift.sort()
 resources = []
 for root, _, files in os.walk(sources_dir):
     for f in files:
-        if f.endswith(".json") or f.endswith(".storekit") or f.endswith(".plist") or f.endswith(".jpg") or f.endswith(".png") or f.endswith(".jpeg"):
+        if f.endswith(".json") or f.endswith(".storekit") or f.endswith(".plist") or f.endswith(".jpg") or f.endswith(".png") or f.endswith(".jpeg") or f.endswith(".xcprivacy"):
             resources.append(os.path.relpath(os.path.join(root, f), base_dir))
 resources.sort()
 
@@ -48,8 +48,11 @@ for rf in resources:
         continue  # Handled by build settings
     file_id = gen_id("FILEREF_" + rf)
     build_id = gen_id("BUILDFILE_" + rf)
+    name = os.path.basename(rf)
     if rf.endswith(".json"):
         file_type = "text.json"
+    elif rf.endswith(".xcprivacy"):
+        file_type = "text.xml"
     elif rf.endswith(".jpg") or rf.endswith(".jpeg"):
         file_type = "image.jpeg"
     elif rf.endswith(".png"):

@@ -36,7 +36,50 @@
         "Possesses laboratory access",
         "Scheduled the private viewing"
       ],
-      "unlockedFacts": []
+      "unlockedFacts": [],
+      "interrogationTopics": [
+        {
+          "topicId": "mara_topic_rain",
+          "questionText": "When exactly did you leave the museum?",
+          "initialResponse": "As I said in my initial statement, I left right around 7:55 PM. The pavement was completely dry.",
+          "stressDelta": 0.15
+        },
+        {
+          "topicId": "mara_topic_solvent",
+          "questionText": "What chemicals do you use in restoration?",
+          "initialResponse": "Standard non-reactive varnishes and xylene compounds for oil varnish removal. All locked in my studio under bio-metric key.",
+          "stressDelta": 0.2
+        },
+        {
+          "topicId": "mara_topic_elias_dispute",
+          "questionText": "Did Elias confront you about provenance audits?",
+          "initialResponse": "Elias was paranoid about every auction item. He questioned everyone, not just me.",
+          "stressDelta": 0.25
+        }
+      ],
+      "confrontations": [
+        {
+          "evidenceId": "weather_log_811",
+          "contradictionId": "contradiction_alibi_time",
+          "defenseReaction": "A weather report doesn't change when I stepped through the door.",
+          "brokenReaction": "...Fine. The rain started at 8:11, yes. But my badge was scanned later because the front turnstile jammed!",
+          "newFactUnlocked": "Mara admits presence in the gallery lobby after 8:11 PM."
+        },
+        {
+          "evidenceId": "dry_umbrella_locker",
+          "contradictionId": "contradiction_dry_umbrella",
+          "defenseReaction": "I left my spare umbrella in the locker. What does that prove?",
+          "brokenReaction": "You think I walked out into an 18mm/hour downpour without an umbrella? ...Damn you.",
+          "newFactUnlocked": "Mara's staged front-exit alibi completely collapses."
+        },
+        {
+          "evidenceId": "restoration_solvent_inventory",
+          "contradictionId": "contradiction_chemical_means",
+          "defenseReaction": "Solvent evaporates. Inventory logs are updated weekly.",
+          "brokenReaction": "2.5 liters doesn't evaporate in an afternoon... Elias told me he was going to the federal board tomorrow morning. He was going to destroy everything I built!",
+          "newFactUnlocked": "Mara Voss confesses to incapacitating Elias with xylene solvent."
+        }
+      ]
     },
     {
       "suspectId": "suspect_theo",
@@ -55,7 +98,30 @@
       "knownFacts": [
         "Argued loudly with Elias over provenance at 7:30 PM"
       ],
-      "unlockedFacts": []
+      "unlockedFacts": [],
+      "interrogationTopics": [
+        {
+          "topicId": "theo_topic_argument",
+          "questionText": "What were you arguing with Elias about at 7:30?",
+          "initialResponse": "The Holbein was genuine. Elias was getting cold feet because of some anonymous provenance rumor. I told him he was being foolish.",
+          "stressDelta": 0.1
+        },
+        {
+          "topicId": "theo_topic_yacht_club",
+          "questionText": "Can anyone vouch for you at the Yacht Club?",
+          "initialResponse": "Check my credit card tab. I was sitting at the waterfront bar from eight till past midnight with half the harbor committee.",
+          "stressDelta": 0.05
+        }
+      ],
+      "confrontations": [
+        {
+          "evidenceId": "theo_bar_receipt",
+          "contradictionId": "contradiction_theo_alibi",
+          "defenseReaction": "See? That receipt verifies every drink from 19:55 onward.",
+          "brokenReaction": "That receipt is airtight, Detective. I was nowhere near that vault when Elias died.",
+          "newFactUnlocked": "Theo Grant's alibi is corroborated by timestamps and witnesses."
+        }
+      ]
     },
     {
       "suspectId": "suspect_lin",
@@ -74,7 +140,30 @@
       "knownFacts": [
         "Maintains master override keycards"
       ],
-      "unlockedFacts": []
+      "unlockedFacts": [],
+      "interrogationTopics": [
+        {
+          "topicId": "lin_topic_system",
+          "questionText": "How secure is the digital vault lock?",
+          "initialResponse": "Triple-redundant biometric and RFID. Unless someone used an emergency engineer bypass badge, that door seals hermetically.",
+          "stressDelta": 0.1
+        },
+        {
+          "topicId": "lin_topic_whereabouts",
+          "questionText": "Where were you between 8:00 and 9:00 PM?",
+          "initialResponse": "Central dispatch monitoring rack telemetry. I have server log logins recorded by the district telecom.",
+          "stressDelta": 0.05
+        }
+      ],
+      "confrontations": [
+        {
+          "evidenceId": "service_door_override_log",
+          "contradictionId": "contradiction_lin_badge",
+          "defenseReaction": "That badge was issued to me, but I didn't scan it! Someone took my duplicate from the server room drawer!",
+          "brokenReaction": "Look at the badge serial: #ENG-88. I reported that duplicate missing three days ago! Someone in the museum stole it.",
+          "newFactUnlocked": "Lin Park confirms emergency badge #ENG-88 was stolen prior to the murder."
+        }
+      ]
     }
   ],
   "evidence": [

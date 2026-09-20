@@ -3,6 +3,7 @@ import SwiftUI
 public enum WorkspaceTab: String, CaseIterable, Identifiable {
     case briefing = "Briefing"
     case evidence = "Evidence"
+    case forensicLab = "Forensic Lab"
     case caseboard = "Caseboard"
     case timeline = "Timeline"
     case suspects = "Suspects"
@@ -14,6 +15,7 @@ public enum WorkspaceTab: String, CaseIterable, Identifiable {
         switch self {
         case .briefing: return "doc.plaintext.fill"
         case .evidence: return "magnifyingglass"
+        case .forensicLab: return "waveform.path.ecg"
         case .caseboard: return "square.grid.2x2.fill"
         case .timeline: return "clock.arrow.circlepath"
         case .suspects: return "person.3.fill"
@@ -102,6 +104,8 @@ public struct CaseWorkspaceView: View {
                     BriefingView(caseModel: caseModel)
                 case .evidence:
                     EvidenceListView(caseModel: caseModel)
+                case .forensicLab:
+                    ForensicLabWorkbenchView(caseModel: caseModel)
                 case .caseboard:
                     CaseboardCanvasView(caseModel: caseModel)
                 case .timeline:

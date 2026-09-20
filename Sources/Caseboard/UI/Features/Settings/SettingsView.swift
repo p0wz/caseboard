@@ -11,6 +11,7 @@ public struct SettingsView: View {
     @State private var appearanceMode: AppearanceMode = .system
     @State private var showResetConfirmation: Bool = false
     @State private var showPaywall: Bool = false
+    @State private var selectedLegalDoc: LegalDocumentType? = nil
 
     public init() {}
 
@@ -92,6 +93,33 @@ public struct SettingsView: View {
                     .padding(.vertical, 4)
                 }
 
+                // Legal & Compliance
+                Section("Legal & Compliance") {
+                    Button {
+                        selectedLegalDoc = .privacyPolicy
+                    } label: {
+                        HStack {
+                            Text("Privacy Policy")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+
+                    Button {
+                        selectedLegalDoc = .termsOfService
+                    } label: {
+                        HStack {
+                            Text("Terms of Service (EULA)")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+
                 // Danger Zone
                 Section("Data Reset") {
                     Button(role: .destructive) {
@@ -142,6 +170,9 @@ public struct SettingsView: View {
             }
             .sheet(isPresented: $showPaywall) {
                 PremiumPaywallView()
+            }
+            .sheet(item: $selectedLegalDoc) { doc in
+                LegalDocumentModalView(documentType: doc)
             }
         }
     }

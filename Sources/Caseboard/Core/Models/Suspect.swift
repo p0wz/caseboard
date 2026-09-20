@@ -97,6 +97,9 @@ public struct Suspect: Identifiable, Codable, Sendable, Hashable {
     public var unlockedFacts: [String]
     public var playerNotes: String?
 
+    public var interrogationTopics: [InterrogationTopic]
+    public var confrontations: [ConfrontationPair]
+
     public init(
         suspectId: String,
         caseId: String,
@@ -113,7 +116,9 @@ public struct Suspect: Identifiable, Codable, Sendable, Hashable {
         initialAlibi: String? = nil,
         knownFacts: [String] = [],
         unlockedFacts: [String] = [],
-        playerNotes: String? = nil
+        playerNotes: String? = nil,
+        interrogationTopics: [InterrogationTopic] = [],
+        confrontations: [ConfrontationPair] = []
     ) {
         self.suspectId = suspectId
         self.caseId = caseId
@@ -131,6 +136,8 @@ public struct Suspect: Identifiable, Codable, Sendable, Hashable {
         self.knownFacts = knownFacts
         self.unlockedFacts = unlockedFacts
         self.playerNotes = playerNotes
+        self.interrogationTopics = interrogationTopics
+        self.confrontations = confrontations
     }
 
     public init(from decoder: Decoder) throws {
@@ -151,13 +158,51 @@ public struct Suspect: Identifiable, Codable, Sendable, Hashable {
         self.knownFacts = try container.decodeIfPresent([String].self, forKey: .knownFacts) ?? []
         self.unlockedFacts = try container.decodeIfPresent([String].self, forKey: .unlockedFacts) ?? []
         self.playerNotes = try container.decodeIfPresent(String.self, forKey: .playerNotes)
+        self.interrogationTopics = try container.decodeIfPresent([InterrogationTopic].self, forKey: .interrogationTopics) ?? []
+        self.confrontations = try container.decodeIfPresent([ConfrontationPair].self, forKey: .confrontations) ?? []
     }
 
     private enum CodingKeys: String, CodingKey {
-        case suspectId, caseId, name, role, age, relationshipToVictim, profile, motiveScore, meansScore, opportunityScore, alibiStatus, suspicionLevel, initialAlibi, knownFacts, unlockedFacts, playerNotes
+        case suspectId, caseId, name, role, age, relationshipToVictim, profile, motiveScore, meansScore, opportunityScore, alibiStatus, suspicionLevel, initialAlibi, knownFacts, unlockedFacts, playerNotes, interrogationTopics, confrontations
     }
 
     public var compositeThreatIndex: Double {
         return (motiveScore * 0.35) + (meansScore * 0.35) + (opportunityScore * 0.30)
     }
 }
+
+// MARK: - Interrogation Dialogue & Confrontation Models
+
+public struct InterrogationTopic: Identifiable, Codable, Sendable, Hashable {
+    public var id: String { topicId }
+    public let topicId: String
+    public let questionText: String
+    public let initialResponse: String
+    public let stressDelta: Double
+    public let unlockedByEvidenceId: String?
+
+    public init(topicId: String, questionText: String, initialResponse: String, stressDelta: Double = 0.1, unlockedByEvidenceId: String? = nil) {
+        self.topicId = topicId
+        self.questionText = questionText
+        self.initialResponse = initialResponse
+        self.stressDelta = stressDelta
+        self.unlockedByEvidenceId = unlockedByEvidenceId
+    }
+}
+
+public struct ConfrontationPair: Codable, Sendable, Hashable {
+    public let evidenceId: String
+    public let contradictionId: String
+    public let defenseReaction: String
+    public let brokenReaction: String
+    public let newFactUnlocked: String
+
+    public init(evidenceId: String, contradictionId: String, defenseReaction: String, brokenReaction: String, newFactUnlocked: String) {
+        self.evidenceId = evidenceId
+        self.contradictionId = contradictionId
+        self.defenseReaction = defenseReaction
+        self.brokenReaction = brokenReaction
+        self.newFactUnlocked = newFactUnlocked
+    }
+}
+

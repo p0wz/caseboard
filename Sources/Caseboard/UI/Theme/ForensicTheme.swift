@@ -13,6 +13,7 @@ public enum ForensicTheme {
     public static let forensicGold = Color(red: 255/255, green: 215/255, blue: 0/255)
     public static let criticalRed = Color(red: 255/255, green: 69/255, blue: 58/255)
     public static let verifiedGreen = Color(red: 52/255, green: 199/255, blue: 89/255)
+    public static let forensicGreen = verifiedGreen
     public static let graphite = Color(red: 142/255, green: 142/255, blue: 147/255)
 
     public static func backgroundColor(for scheme: ColorScheme) -> Color {

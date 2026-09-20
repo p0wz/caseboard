@@ -141,6 +141,7 @@ public struct SuspectDetailView: View {
     public let caseModel: CaseModel
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var progressStore = ProgressStore.shared
+    @State private var isShowingInterrogation = false
 
     private var caseProgress: CaseProgress {
         progressStore.progress(for: caseModel.caseId)
@@ -364,8 +365,57 @@ public struct SuspectDetailView: View {
                         }
                     }
                 }
+
+                // Action Buttons
+                VStack(spacing: 12) {
+                    // Enter Interrogation Room
+                    Button {
+                        HapticsManager.shared.mediumTap()
+                        isShowingInterrogation = true
+                    } label: {
+                        HStack {
+                            Image(systemName: "person.wave.2.fill")
+                            Text("ENTER INTERROGATION ROOM")
+                        }
+                        .font(.system(size: 13, weight: .black, design: .monospaced))
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .fill(ForensicTheme.forensicGold)
+                        )
+                    }
+
+                    // Pin to Caseboard Canvas
+                    let isPinned = caseProgress.pinnedNodes.contains { $0.nodeId == suspect.suspectId }
+                    Button {
+                        HapticsManager.shared.evidencePin()
+                        SoundManager.shared.playPin()
+                        progressStore.togglePinNode(caseId: caseModel.caseId, nodeId: suspect.suspectId, itemType: .suspect)
+                    } label: {
+                        HStack {
+                            Image(systemName: isPinned ? "pin.slash.fill" : "pin.fill")
+                            Text(isPinned ? "Unpin from Caseboard Canvas" : "Pin Suspect to Caseboard")
+                        }
+                        .font(.headline)
+                        .foregroundColor(isPinned ? .red : .white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .fill(isPinned ? Color.red.opacity(0.15) : ForensicTheme.forensicBlue)
+                        )
+                    }
+                }
+                .padding(.top, 8)
             }
             .padding(16)
+        }
+        .sheet(isPresented: $isShowingInterrogation) {
+            NavigationStack {
+                InterrogationRoomView(suspect: suspect, caseModel: caseModel)
+            }
         }
         .navigationTitle(suspect.name)
         .forensicInlineTitle()

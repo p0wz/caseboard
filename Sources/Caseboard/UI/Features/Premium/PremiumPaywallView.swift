@@ -4,6 +4,7 @@ import StoreKit
 public struct PremiumPaywallView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var premiumManager = PremiumManager.shared
+    @State private var selectedLegalDoc: LegalDocumentType? = nil
 
     public init() {}
 
@@ -113,6 +114,19 @@ public struct PremiumPaywallView: View {
                     }
                     .font(.footnote)
                     .foregroundColor(.secondary)
+
+                    HStack(spacing: 12) {
+                        Button("Terms of Service") {
+                            selectedLegalDoc = .termsOfService
+                        }
+                        Text("•")
+                            .foregroundColor(.secondary.opacity(0.5))
+                        Button("Privacy Policy") {
+                            selectedLegalDoc = .privacyPolicy
+                        }
+                    }
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)
@@ -121,6 +135,9 @@ public struct PremiumPaywallView: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close") { dismiss() }
                 }
+            }
+            .sheet(item: $selectedLegalDoc) { doc in
+                LegalDocumentModalView(documentType: doc)
             }
         }
     }

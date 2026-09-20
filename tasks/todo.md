@@ -32,3 +32,32 @@
   - Run `xcodebuild test` on iPhone 17 Pro (18/18 tests passed in 0.083s).
   - Verified macro evidence photography (chemical solvent flask, sealed vault door) with 2.5x Loupe inspection.
   - Capture simulator screenshots of new visual caseboard and forensic lab tools.
+
+## Phase 2: Revolutionary Expansion & App Store Preflight
+
+- [x] Task 7: Interactive Interrogation & Cross-Examination System
+  - Define `InterrogationDialogue`, questions, answers, and confrontation pair models in `Suspect.swift`.
+  - Implement `InterrogationEngine.swift` (evaluating stress levels, dialogue state, and contradiction triggers).
+  - Build `InterrogationRoomView.swift` (ambient interrogation room UI, suspect reactions, "Confront with Evidence" sheet).
+  - Verify build succeeds.
+
+- [x] Task 8: Dedicated Forensic Lab Workbench in Workspace
+  - Create `ForensicLabWorkbenchView.swift` unifying Biometric, Ballistics, Spectrogram, and Declassifier tools with case progress unlock signals.
+  - Add "Forensic Lab" as a dedicated segment in `CaseWorkspaceView.swift`.
+  - Verify build succeeds.
+
+- [x] Task 9: Case Content & Dialogue Tree Expansion
+  - Update `locked_gallery.json` and `room_312.json` with comprehensive interrogation dialogues and evidence confrontation triggers.
+  - Verify case content loader and validity tests pass.
+
+- [x] Task 10: App Store Preflight Compliance (`app-store-preflight-skills`)
+  - Create `Sources/Caseboard/Resources/PrivacyInfo.xcprivacy` with Apple-required privacy declaration (Zero tracking, Zero collected data, UserDefaults reason CA92.1).
+  - Add in-app Terms of Service (EULA) and Privacy Policy modals in `PremiumPaywallView.swift` and `SettingsView.swift`.
+  - Create `APP_STORE_PREFLIGHT.md` documenting 6-part Review Notes, Guideline 2.1, 2.3, 3.1.2, 4.2, 5.1 compliance.
+  - Re-generate `Caseboard.xcodeproj` with new files.
+
+- [x] Task 11: Multi-Axis Code Review (`/review`) & Automated Test Suite
+  - Write unit tests in `Tests/CaseboardTests/InterrogationTests.swift`.
+  - Perform 5-axis code review (Correctness, Readability, Architecture, Security, Performance).
+  - Run headless `xcodebuild test` on iPhone 17 Pro Simulator and `swift test` on macOS (23/23 passed).
+
