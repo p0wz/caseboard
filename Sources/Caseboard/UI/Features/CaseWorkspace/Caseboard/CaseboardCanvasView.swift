@@ -41,35 +41,37 @@ public struct CaseboardCanvasView: View {
                         connectingTargetNodeId = nil
                     }
 
-                // Render Connection Threads
-                ForEach(caseProgress.connections) { connection in
-                    if let source = nodeMap[connection.sourceId],
-                       let target = nodeMap[connection.targetId] {
-                        let start = CGPoint(x: source.x + 76, y: source.y + 2)
-                        let end = CGPoint(x: target.x + 76, y: target.y + 2)
+                // Render Connection Threads (Metal GPU accelerated)
+                ZStack {
+                    ForEach(caseProgress.connections) { connection in
+                        if let source = nodeMap[connection.sourceId],
+                           let target = nodeMap[connection.targetId] {
+                            let start = CGPoint(x: source.x + 76, y: source.y + 2)
+                            let end = CGPoint(x: target.x + 76, y: target.y + 2)
 
-                        ConnectionLineShape(start: start, end: end, curvature: 0.12)
-                            .stroke(
-                                Color(hex: connection.connectionType.threadColorHex),
-                                style: StrokeStyle(
-                                    lineWidth: connection.evaluation == .critical ? 3.5 : 2.2,
-                                    lineCap: .round,
-                                    dash: connection.evaluation == .untested ? [6, 4] : []
+                            ConnectionLineShape(start: start, end: end, curvature: 0.12)
+                                .stroke(
+                                    Color(hex: connection.connectionType.threadColorHex),
+                                    style: StrokeStyle(
+                                        lineWidth: connection.evaluation == .critical ? 3.5 : 2.2,
+                                        lineCap: .round,
+                                        dash: connection.evaluation == .untested ? [6, 4] : []
+                                    )
                                 )
-                            )
-                            .shadow(color: Color(hex: connection.connectionType.threadColorHex).opacity(0.5), radius: 4)
 
-                        // Knot anchor rings on pushpin heads
-                        Circle()
-                            .fill(Color(hex: connection.connectionType.threadColorHex))
-                            .frame(width: 6, height: 6)
-                            .position(start)
-                        Circle()
-                            .fill(Color(hex: connection.connectionType.threadColorHex))
-                            .frame(width: 6, height: 6)
-                            .position(end)
+                            // Knot anchor rings on pushpin heads
+                            Circle()
+                                .fill(Color(hex: connection.connectionType.threadColorHex))
+                                .frame(width: 6, height: 6)
+                                .position(start)
+                            Circle()
+                                .fill(Color(hex: connection.connectionType.threadColorHex))
+                                .frame(width: 6, height: 6)
+                                .position(end)
+                        }
                     }
                 }
+                .drawingGroup()
 
                 // Render Pinned Cards
                 ForEach(pinnedNodes) { node in

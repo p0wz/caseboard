@@ -51,71 +51,55 @@ public struct EvidenceDetailView: View {
                 }
 
                 // Crime Scene Macro Photography & Loupe Inspection
-                if let imageName = matchingImageAsset(for: item) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        HStack {
-                            Label("CRIME SCENE MACRO PHOTOGRAPHY", systemImage: "camera.viewfinder")
-                                .font(.system(size: 11, weight: .bold))
-                                .foregroundColor(.secondary)
-                            Spacer()
-                            Text("DRAG TO INSPECT (2.5X LOUPE)")
-                                .font(.system(size: 8, weight: .bold, design: .monospaced))
-                                .foregroundColor(ForensicTheme.forensicBlue)
-                        }
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Label("FORENSIC EVIDENCE VISUAL DOSSIER", systemImage: "camera.viewfinder")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundColor(.secondary)
+                        Spacer()
+                        Text("DRAG TO INSPECT (2.5X LOUPE)")
+                            .font(.system(size: 8, weight: .bold, design: .monospaced))
+                            .foregroundColor(ForensicTheme.forensicBlue)
+                    }
 
-                        // Multispectral Filter Selector Pills
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 8) {
-                                ForEach(MultispectralFilter.allCases) { filter in
-                                    Button {
-                                        HapticsManager.shared.lightTap()
-                                        SoundManager.shared.playCameraShutter()
-                                        withAnimation(.easeInOut(duration: 0.2)) {
-                                            selectedSpectralFilter = filter
-                                        }
-                                    } label: {
-                                        HStack(spacing: 4) {
-                                            Image(systemName: filter.sfSymbol)
-                                                .font(.system(size: 9))
-                                            Text(filter.rawValue)
-                                                .font(.system(size: 9, weight: .semibold, design: .monospaced))
-                                        }
-                                        .padding(.horizontal, 8)
-                                        .padding(.vertical, 5)
-                                        .background(
-                                            Capsule()
-                                                .fill(selectedSpectralFilter == filter ? ForensicTheme.forensicBlue.opacity(0.3) : Color.white.opacity(0.06))
-                                        )
-                                        .overlay(
-                                            Capsule()
-                                                .stroke(selectedSpectralFilter == filter ? ForensicTheme.forensicBlue : Color.white.opacity(0.12), lineWidth: 1)
-                                        )
-                                        .foregroundColor(selectedSpectralFilter == filter ? .white : .secondary)
+                    // Multispectral Filter Selector Pills
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            ForEach(MultispectralFilter.allCases) { filter in
+                                Button {
+                                    HapticsManager.shared.lightTap()
+                                    SoundManager.shared.playCameraShutter()
+                                    withAnimation(.easeInOut(duration: 0.2)) {
+                                        selectedSpectralFilter = filter
                                     }
+                                } label: {
+                                    HStack(spacing: 4) {
+                                        Image(systemName: filter.sfSymbol)
+                                            .font(.system(size: 9))
+                                        Text(filter.rawValue)
+                                            .font(.system(size: 9, weight: .semibold, design: .monospaced))
+                                    }
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 5)
+                                    .background(
+                                        Capsule()
+                                            .fill(selectedSpectralFilter == filter ? ForensicTheme.forensicBlue.opacity(0.3) : Color.white.opacity(0.06))
+                                    )
+                                    .overlay(
+                                        Capsule()
+                                            .stroke(selectedSpectralFilter == filter ? ForensicTheme.forensicBlue : Color.white.opacity(0.12), lineWidth: 1)
+                                    )
+                                    .foregroundColor(selectedSpectralFilter == filter ? .white : .secondary)
                                 }
                             }
                         }
-
-                        ZStack(alignment: .bottomTrailing) {
-                            ForensicImageView(name: imageName, contentMode: .fill)
-                                .multispectralFilter(selectedSpectralFilter)
-                                .frame(height: 220)
-                                .frame(maxWidth: .infinity)
-                                .clipped()
-                                .cornerRadius(10)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.primary.opacity(0.15), lineWidth: 1)
-                                )
-                                .forensicLoupeInspection()
-
-                            BarcodeEvidenceTagView(
-                                serialId: item.evidenceId,
-                                category: item.reliability.displayName
-                            )
-                            .padding(8)
-                        }
                     }
+
+                    CaseSpecificEvidenceView(
+                        evidence: item,
+                        spectralFilter: selectedSpectralFilter,
+                        height: 220
+                    )
                 }
 
                 // Interactive Forensic Lab Workbench (Biometric, Spectrogram, Ballistics, Redacted)

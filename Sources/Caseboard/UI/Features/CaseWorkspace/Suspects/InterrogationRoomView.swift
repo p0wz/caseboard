@@ -121,14 +121,16 @@ public struct InterrogationRoomView: View {
         HStack(spacing: 14) {
             // Suspect Mugshot Thumbnail
             ZStack {
-                ForensicImageView(name: suspect.suspectId, fallbackSymbol: "person.fill", contentMode: .fill)
-                    .frame(width: 58, height: 72)
-                    .clipped()
-                    .cornerRadius(6)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 6)
-                            .stroke(stressColor, lineWidth: 2)
-                    )
+                ProceduralDossierCardView(
+                    suspect: suspect,
+                    size: CGSize(width: 58, height: 72),
+                    showFullPlacard: false
+                )
+                .cornerRadius(6)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(stressColor, lineWidth: 2)
+                )
             }
 
             VStack(alignment: .leading, spacing: 5) {

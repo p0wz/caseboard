@@ -64,6 +64,7 @@ public struct CaseboardCardNodeView: View {
                 PushPinView(isSelected ? .cobalt : (isConnectionTarget ? .amber : .crimson))
                     .offset(y: -7)
             }
+            .compositingGroup()
             .rotationEffect(.degrees(cardTiltAngle))
         }
         .buttonStyle(.plain)
@@ -97,7 +98,7 @@ public struct CaseboardCardNodeView: View {
                 Circle()
                     .fill(badgeColor.opacity(0.15))
                     .frame(width: 22, height: 22)
-                ForensicImageView(name: node.nodeId, fallbackSymbol: iconSymbol, contentMode: .fill)
+                ForensicImageView(name: node.nodeId, fallbackSymbol: iconSymbol, contentMode: .fill, targetSize: CGSize(width: 44, height: 44))
                     .frame(width: 22, height: 22)
                     .clipShape(Circle())
                     .foregroundColor(badgeColor)

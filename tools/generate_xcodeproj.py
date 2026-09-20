@@ -18,7 +18,7 @@ sources_swift.sort()
 resources = []
 for root, _, files in os.walk(sources_dir):
     for f in files:
-        if f.endswith(".json") or f.endswith(".storekit") or f.endswith(".plist") or f.endswith(".jpg") or f.endswith(".png") or f.endswith(".jpeg") or f.endswith(".xcprivacy"):
+        if f.endswith(".json") or f.endswith(".storekit") or f.endswith(".plist") or f.endswith(".jpg") or f.endswith(".png") or f.endswith(".jpeg") or f.endswith(".xcprivacy") or f.endswith(".wav"):
             resources.append(os.path.relpath(os.path.join(root, f), base_dir))
 resources.sort()
 
@@ -57,6 +57,8 @@ for rf in resources:
         file_type = "image.jpeg"
     elif rf.endswith(".png"):
         file_type = "image.png"
+    elif rf.endswith(".wav"):
+        file_type = "audio.wav"
     else:
         file_type = "text"
     pbx_file_refs.append(f'\t\t{file_id} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = {file_type}; path = "{rf}"; sourceTree = SOURCE_ROOT; }};')

@@ -30,7 +30,18 @@ public final class ProgressStore: ObservableObject {
         }
     }
 
+    private var autosaveTask: Task<Void, Never>?
+
     // MARK: - Persistence Engine
+
+    public func scheduleAutosave(delayMs: UInt64 = 300) {
+        autosaveTask?.cancel()
+        autosaveTask = Task { @MainActor in
+            try? await Task.sleep(nanoseconds: delayMs * 1_000_000)
+            guard !Task.isCancelled else { return }
+            self.save()
+        }
+    }
 
     public func save() {
         do {
@@ -66,12 +77,7 @@ public final class ProgressStore: ObservableObject {
     // MARK: - Case Progress
 
     public func progress(for caseId: String) -> CaseProgress {
-        if let existing = userProgress.caseProgress[caseId] {
-            return existing
-        }
-        let fresh = CaseProgress(caseId: caseId)
-        userProgress.caseProgress[caseId] = fresh
-        return fresh
+        userProgress.caseProgress[caseId] ?? CaseProgress(caseId: caseId)
     }
 
     public func markEvidenceRead(caseId: String, evidenceId: String) {
@@ -111,7 +117,7 @@ public final class ProgressStore: ObservableObject {
             cp.pinnedNodes[idx].x = x
             cp.pinnedNodes[idx].y = y
             userProgress.caseProgress[caseId] = cp
-            save()
+            scheduleAutosave()
         }
     }
 

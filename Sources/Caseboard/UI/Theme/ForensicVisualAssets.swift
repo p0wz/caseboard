@@ -372,48 +372,9 @@ public extension View {
 
 // MARK: - Forensic Asset Loader & Image View
 
-#if canImport(UIKit)
-import UIKit
-public typealias PlatformImage = UIImage
-#elseif canImport(AppKit)
-import AppKit
-public typealias PlatformImage = NSImage
-#endif
-
 public enum ForensicAssetLoader {
-    public static func image(named name: String) -> PlatformImage? {
-        let cleanName = (name as NSString).deletingPathExtension
-        
-        #if canImport(UIKit)
-        for ext in ["jpg", "jpeg", "png"] {
-            if let path = Bundle.main.path(forResource: cleanName, ofType: ext) {
-                if let img = UIImage(contentsOfFile: path) { return img }
-            }
-        }
-        
-        if let resPath = Bundle.main.resourcePath {
-            for ext in ["jpg", "jpeg", "png"] {
-                let p1 = (resPath as NSString).appendingPathComponent("\(cleanName).\(ext)")
-                if FileManager.default.fileExists(atPath: p1), let img = UIImage(contentsOfFile: p1) {
-                    return img
-                }
-                let p2 = (resPath as NSString).appendingPathComponent("Assets/\(cleanName).\(ext)")
-                if FileManager.default.fileExists(atPath: p2), let img = UIImage(contentsOfFile: p2) {
-                    return img
-                }
-            }
-        }
-        return UIImage(named: cleanName)
-        #elseif canImport(AppKit)
-        for ext in ["jpg", "jpeg", "png"] {
-            if let path = Bundle.main.path(forResource: cleanName, ofType: ext) {
-                if let img = NSImage(contentsOfFile: path) { return img }
-            }
-        }
-        return NSImage(named: cleanName)
-        #else
-        return nil
-        #endif
+    public static func image(named name: String, targetSize: CGSize? = nil) -> PlatformImage? {
+        ForensicImageCache.shared.image(named: name, targetSize: targetSize)
     }
 }
 
@@ -421,16 +382,18 @@ public struct ForensicImageView: View {
     public let name: String
     public let fallbackSymbol: String
     public let contentMode: ContentMode
+    public let targetSize: CGSize?
 
-    public init(name: String, fallbackSymbol: String = "photo", contentMode: ContentMode = .fill) {
+    public init(name: String, fallbackSymbol: String = "photo", contentMode: ContentMode = .fill, targetSize: CGSize? = nil) {
         self.name = name
         self.fallbackSymbol = fallbackSymbol
         self.contentMode = contentMode
+        self.targetSize = targetSize
     }
 
     public var body: some View {
         #if canImport(UIKit)
-        if let uiImage = ForensicAssetLoader.image(named: name) {
+        if let uiImage = ForensicAssetLoader.image(named: name, targetSize: targetSize) {
             Image(uiImage: uiImage)
                 .resizable()
                 .aspectRatio(contentMode: contentMode)
@@ -440,7 +403,7 @@ public struct ForensicImageView: View {
                 .aspectRatio(contentMode: .fit)
         }
         #elseif canImport(AppKit)
-        if let nsImage = ForensicAssetLoader.image(named: name) {
+        if let nsImage = ForensicAssetLoader.image(named: name, targetSize: targetSize) {
             Image(nsImage: nsImage)
                 .resizable()
                 .aspectRatio(contentMode: contentMode)

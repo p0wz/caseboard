@@ -13,6 +13,7 @@
 		2ED8A2340A674A7E46BFA10C /* AnalogAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B92BD7DA58A15B086CCB05 /* AnalogAudioEngine.swift */; };
 		1C1A9C4F9B6FD17A0C284DC5 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFB23D03178AC73E79318C /* SoundManager.swift */; };
 		018DB846C4F1043475F95535 /* CaseContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26678D5886FEFEF366EFA993 /* CaseContentLoader.swift */; };
+		136C123FA482A0CB15938E44 /* ForensicImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D7848AC19FD4097E2FBF62 /* ForensicImageCache.swift */; };
 		234739E1ECFDC3B471A6447E /* CaseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C9D611CF6B0557D1318E5 /* CaseValidator.swift */; };
 		6077CB9DD41C741E7431B567 /* DailyCaseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF503D2ABC120B8023A5E23E /* DailyCaseGenerator.swift */; };
 		067CBD42697C51007C4972DE /* DeductionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB7B978F247768D40CAF7D8 /* DeductionEngine.swift */; };
@@ -32,6 +33,8 @@
 		ED0A418A1024F5BF320B0097 /* ProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E1C021205452C63C5AAC10 /* ProgressStore.swift */; };
 		0D984329C99DFE5629ADCFF9 /* PremiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F67CF081B90ADCCFF4782E /* PremiumManager.swift */; };
 		F43F72C38462752DB8996D11 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEF825E183FF8867B25431B /* AppIcon.swift */; };
+		4B1BC0DDE7C5A20F88B870AC /* CaseSpecificEvidenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31E8E753EDBE3E68925EE0D /* CaseSpecificEvidenceView.swift */; };
+		ED229088A475D6D52DAEE4D9 /* ProceduralDossierCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8847A3A483DA44D44F4C70C /* ProceduralDossierCardView.swift */; };
 		7F236E119C94EAB5558E9F43 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C4B5CBA87AE174D076D9F /* AchievementsView.swift */; };
 		7510DF1B1A9BCFED1C0444A5 /* CaseArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0855C053ECE21B341B438DA9 /* CaseArchiveView.swift */; };
 		3BB402E7431C316B9CB2F76E /* BriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29B79AA8B0E36FF0B652 /* BriefingView.swift */; };
@@ -55,6 +58,7 @@
 		ACCEE1CF9214C9E48A692D9C /* PremiumPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81297931D8EE2B91D86C864E /* PremiumPaywallView.swift */; };
 		67B92E4E4471C71BF37CB562 /* LegalDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B050B22BC12CA12F24CDF1 /* LegalDocumentsView.swift */; };
 		56FCC3A7675F2B4AB2182341 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */; };
+		00D80CCFC06C29DECF73B5A6 /* CaseIdentityTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBD5631443B3F3B40DFE2D9 /* CaseIdentityTheme.swift */; };
 		78186FE5D86F942959B7B0FB /* ForensicTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FEBB3A875673702677A6E /* ForensicTheme.swift */; };
 		F80284A504FDE3C222B643E2 /* ForensicVisualAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0CFF444FD2E156E6C0F73 /* ForensicVisualAssets.swift */; };
 		6CED7602E602F3B6E604493D /* coroner_chen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B75CC1786B7A67016F5B5CFA /* coroner_chen.jpg */; };
@@ -70,6 +74,13 @@
 		0EC36BBD23BEF2ED08D6DD9F /* suspect_maria.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 641805A85A34243252F2987B /* suspect_maria.jpg */; };
 		AF89F29ED697EF52C52FE695 /* suspect_theo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AABE89D332D5EF41EFAF1ABC /* suspect_theo.jpg */; };
 		B26000B1F84472D8C8B885B1 /* suspect_victor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49EC48B5F318CF41A9233F49 /* suspect_victor.jpg */; };
+		DC5D33A4D3F1304EF7FE20CB /* alibi_break.wav in Resources */ = {isa = PBXBuildFile; fileRef = 545820E5B4D15B3E74C49E95 /* alibi_break.wav */; };
+		A1DC95AB9A765B99ECE2A5B1 /* card_tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 55E9180AEFA028F695B7BC31 /* card_tap.wav */; };
+		44A46AE14F3C7A16844E6B45 /* clue_connect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0018BB5204FC51A22369CA0A /* clue_connect.wav */; };
+		5AF25893DB207C327972EE9B /* contradiction_fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2417DABA82CB52991A64FA22 /* contradiction_fail.wav */; };
+		AE8D3225AD3EC3A8D1A1D6E4 /* folder_close.wav in Resources */ = {isa = PBXBuildFile; fileRef = E044BB7C53E6F6A9CBCF516C /* folder_close.wav */; };
+		570A6B881A80ED53D0FDE600 /* pin_drop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B283A8F9503D1C064150C0A /* pin_drop.wav */; };
+		C618F0BD73B94BE8135CD5D3 /* switch_toggle.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1F299DCAD1CD4EA823F1819 /* switch_toggle.wav */; };
 		B19359AFF191945F3763FAD6 /* cold_signal.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A4102A7C1C4308B127AACE6 /* cold_signal.json */; };
 		B6781329B47AA1947B3FBE66 /* dead_drop.json in Resources */ = {isa = PBXBuildFile; fileRef = 91068A3EF5D3F6C35C605920 /* dead_drop.json */; };
 		B1229E4499E6FCC46D620ABB /* glass_house.json in Resources */ = {isa = PBXBuildFile; fileRef = 0824C10A5F896DAEB84E6DB8 /* glass_house.json */; };
@@ -116,6 +127,7 @@
 		60B92BD7DA58A15B086CCB05 /* AnalogAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Audio/AnalogAudioEngine.swift"; sourceTree = SOURCE_ROOT; };
 		BACFB23D03178AC73E79318C /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Audio/SoundManager.swift"; sourceTree = SOURCE_ROOT; };
 		26678D5886FEFEF366EFA993 /* CaseContentLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Content/CaseContentLoader.swift"; sourceTree = SOURCE_ROOT; };
+		42D7848AC19FD4097E2FBF62 /* ForensicImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Content/ForensicImageCache.swift"; sourceTree = SOURCE_ROOT; };
 		D24C9D611CF6B0557D1318E5 /* CaseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Engine/CaseValidator.swift"; sourceTree = SOURCE_ROOT; };
 		DF503D2ABC120B8023A5E23E /* DailyCaseGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Engine/DailyCaseGenerator.swift"; sourceTree = SOURCE_ROOT; };
 		5FB7B978F247768D40CAF7D8 /* DeductionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Engine/DeductionEngine.swift"; sourceTree = SOURCE_ROOT; };
@@ -135,6 +147,8 @@
 		58E1C021205452C63C5AAC10 /* ProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Persistence/ProgressStore.swift"; sourceTree = SOURCE_ROOT; };
 		61F67CF081B90ADCCFF4782E /* PremiumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/Core/Store/PremiumManager.swift"; sourceTree = SOURCE_ROOT; };
 		DDEF825E183FF8867B25431B /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Assets/AppIcon.swift"; sourceTree = SOURCE_ROOT; };
+		C31E8E753EDBE3E68925EE0D /* CaseSpecificEvidenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Components/CaseSpecificEvidenceView.swift"; sourceTree = SOURCE_ROOT; };
+		B8847A3A483DA44D44F4C70C /* ProceduralDossierCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Components/ProceduralDossierCardView.swift"; sourceTree = SOURCE_ROOT; };
 		8C4C4B5CBA87AE174D076D9F /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Achievements/AchievementsView.swift"; sourceTree = SOURCE_ROOT; };
 		0855C053ECE21B341B438DA9 /* CaseArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Archive/CaseArchiveView.swift"; sourceTree = SOURCE_ROOT; };
 		859A29B79AA8B0E36FF0B652 /* BriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/CaseWorkspace/Briefing/BriefingView.swift"; sourceTree = SOURCE_ROOT; };
@@ -158,6 +172,7 @@
 		81297931D8EE2B91D86C864E /* PremiumPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Premium/PremiumPaywallView.swift"; sourceTree = SOURCE_ROOT; };
 		24B050B22BC12CA12F24CDF1 /* LegalDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Settings/LegalDocumentsView.swift"; sourceTree = SOURCE_ROOT; };
 		A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Features/Settings/SettingsView.swift"; sourceTree = SOURCE_ROOT; };
+		5EBD5631443B3F3B40DFE2D9 /* CaseIdentityTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Theme/CaseIdentityTheme.swift"; sourceTree = SOURCE_ROOT; };
 		AF5FEBB3A875673702677A6E /* ForensicTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Theme/ForensicTheme.swift"; sourceTree = SOURCE_ROOT; };
 		A0D0CFF444FD2E156E6C0F73 /* ForensicVisualAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Caseboard/UI/Theme/ForensicVisualAssets.swift"; sourceTree = SOURCE_ROOT; };
 		B75CC1786B7A67016F5B5CFA /* coroner_chen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/coroner_chen.jpg"; sourceTree = SOURCE_ROOT; };
@@ -173,6 +188,13 @@
 		641805A85A34243252F2987B /* suspect_maria.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_maria.jpg"; sourceTree = SOURCE_ROOT; };
 		AABE89D332D5EF41EFAF1ABC /* suspect_theo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_theo.jpg"; sourceTree = SOURCE_ROOT; };
 		49EC48B5F318CF41A9233F49 /* suspect_victor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sources/Caseboard/Resources/Assets/suspect_victor.jpg"; sourceTree = SOURCE_ROOT; };
+		545820E5B4D15B3E74C49E95 /* alibi_break.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sources/Caseboard/Resources/Audio/alibi_break.wav"; sourceTree = SOURCE_ROOT; };
+		55E9180AEFA028F695B7BC31 /* card_tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sources/Caseboard/Resources/Audio/card_tap.wav"; sourceTree = SOURCE_ROOT; };
+		0018BB5204FC51A22369CA0A /* clue_connect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sources/Caseboard/Resources/Audio/clue_connect.wav"; sourceTree = SOURCE_ROOT; };
+		2417DABA82CB52991A64FA22 /* contradiction_fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sources/Caseboard/Resources/Audio/contradiction_fail.wav"; sourceTree = SOURCE_ROOT; };
+		E044BB7C53E6F6A9CBCF516C /* folder_close.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sources/Caseboard/Resources/Audio/folder_close.wav"; sourceTree = SOURCE_ROOT; };
+		1B283A8F9503D1C064150C0A /* pin_drop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sources/Caseboard/Resources/Audio/pin_drop.wav"; sourceTree = SOURCE_ROOT; };
+		D1F299DCAD1CD4EA823F1819 /* switch_toggle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sources/Caseboard/Resources/Audio/switch_toggle.wav"; sourceTree = SOURCE_ROOT; };
 		8A4102A7C1C4308B127AACE6 /* cold_signal.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Sources/Caseboard/Resources/Cases/cold_signal.json"; sourceTree = SOURCE_ROOT; };
 		91068A3EF5D3F6C35C605920 /* dead_drop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Sources/Caseboard/Resources/Cases/dead_drop.json"; sourceTree = SOURCE_ROOT; };
 		0824C10A5F896DAEB84E6DB8 /* glass_house.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Sources/Caseboard/Resources/Cases/glass_house.json"; sourceTree = SOURCE_ROOT; };
@@ -240,6 +262,7 @@
 				60B92BD7DA58A15B086CCB05 /* AnalogAudioEngine.swift */,
 				BACFB23D03178AC73E79318C /* SoundManager.swift */,
 				26678D5886FEFEF366EFA993 /* CaseContentLoader.swift */,
+				42D7848AC19FD4097E2FBF62 /* ForensicImageCache.swift */,
 				D24C9D611CF6B0557D1318E5 /* CaseValidator.swift */,
 				DF503D2ABC120B8023A5E23E /* DailyCaseGenerator.swift */,
 				5FB7B978F247768D40CAF7D8 /* DeductionEngine.swift */,
@@ -259,6 +282,8 @@
 				58E1C021205452C63C5AAC10 /* ProgressStore.swift */,
 				61F67CF081B90ADCCFF4782E /* PremiumManager.swift */,
 				DDEF825E183FF8867B25431B /* AppIcon.swift */,
+				C31E8E753EDBE3E68925EE0D /* CaseSpecificEvidenceView.swift */,
+				B8847A3A483DA44D44F4C70C /* ProceduralDossierCardView.swift */,
 				8C4C4B5CBA87AE174D076D9F /* AchievementsView.swift */,
 				0855C053ECE21B341B438DA9 /* CaseArchiveView.swift */,
 				859A29B79AA8B0E36FF0B652 /* BriefingView.swift */,
@@ -282,6 +307,7 @@
 				81297931D8EE2B91D86C864E /* PremiumPaywallView.swift */,
 				24B050B22BC12CA12F24CDF1 /* LegalDocumentsView.swift */,
 				A2A0FFD21B607DE9D77E7DE0 /* SettingsView.swift */,
+				5EBD5631443B3F3B40DFE2D9 /* CaseIdentityTheme.swift */,
 				AF5FEBB3A875673702677A6E /* ForensicTheme.swift */,
 				A0D0CFF444FD2E156E6C0F73 /* ForensicVisualAssets.swift */,
 				B75CC1786B7A67016F5B5CFA /* coroner_chen.jpg */,
@@ -297,6 +323,13 @@
 				641805A85A34243252F2987B /* suspect_maria.jpg */,
 				AABE89D332D5EF41EFAF1ABC /* suspect_theo.jpg */,
 				49EC48B5F318CF41A9233F49 /* suspect_victor.jpg */,
+				545820E5B4D15B3E74C49E95 /* alibi_break.wav */,
+				55E9180AEFA028F695B7BC31 /* card_tap.wav */,
+				0018BB5204FC51A22369CA0A /* clue_connect.wav */,
+				2417DABA82CB52991A64FA22 /* contradiction_fail.wav */,
+				E044BB7C53E6F6A9CBCF516C /* folder_close.wav */,
+				1B283A8F9503D1C064150C0A /* pin_drop.wav */,
+				D1F299DCAD1CD4EA823F1819 /* switch_toggle.wav */,
 				8A4102A7C1C4308B127AACE6 /* cold_signal.json */,
 				91068A3EF5D3F6C35C605920 /* dead_drop.json */,
 				0824C10A5F896DAEB84E6DB8 /* glass_house.json */,
@@ -437,6 +470,13 @@
 				0EC36BBD23BEF2ED08D6DD9F /* suspect_maria.jpg in Resources */,
 				AF89F29ED697EF52C52FE695 /* suspect_theo.jpg in Resources */,
 				B26000B1F84472D8C8B885B1 /* suspect_victor.jpg in Resources */,
+				DC5D33A4D3F1304EF7FE20CB /* alibi_break.wav in Resources */,
+				A1DC95AB9A765B99ECE2A5B1 /* card_tap.wav in Resources */,
+				44A46AE14F3C7A16844E6B45 /* clue_connect.wav in Resources */,
+				5AF25893DB207C327972EE9B /* contradiction_fail.wav in Resources */,
+				AE8D3225AD3EC3A8D1A1D6E4 /* folder_close.wav in Resources */,
+				570A6B881A80ED53D0FDE600 /* pin_drop.wav in Resources */,
+				C618F0BD73B94BE8135CD5D3 /* switch_toggle.wav in Resources */,
 				B19359AFF191945F3763FAD6 /* cold_signal.json in Resources */,
 				B6781329B47AA1947B3FBE66 /* dead_drop.json in Resources */,
 				B1229E4499E6FCC46D620ABB /* glass_house.json in Resources */,
@@ -475,6 +515,13 @@
 				0EC36BBD23BEF2ED08D6DD9F /* suspect_maria.jpg in Resources */,
 				AF89F29ED697EF52C52FE695 /* suspect_theo.jpg in Resources */,
 				B26000B1F84472D8C8B885B1 /* suspect_victor.jpg in Resources */,
+				DC5D33A4D3F1304EF7FE20CB /* alibi_break.wav in Resources */,
+				A1DC95AB9A765B99ECE2A5B1 /* card_tap.wav in Resources */,
+				44A46AE14F3C7A16844E6B45 /* clue_connect.wav in Resources */,
+				5AF25893DB207C327972EE9B /* contradiction_fail.wav in Resources */,
+				AE8D3225AD3EC3A8D1A1D6E4 /* folder_close.wav in Resources */,
+				570A6B881A80ED53D0FDE600 /* pin_drop.wav in Resources */,
+				C618F0BD73B94BE8135CD5D3 /* switch_toggle.wav in Resources */,
 				B19359AFF191945F3763FAD6 /* cold_signal.json in Resources */,
 				B6781329B47AA1947B3FBE66 /* dead_drop.json in Resources */,
 				B1229E4499E6FCC46D620ABB /* glass_house.json in Resources */,
@@ -509,6 +556,7 @@
 				2ED8A2340A674A7E46BFA10C /* AnalogAudioEngine.swift in Sources */,
 				1C1A9C4F9B6FD17A0C284DC5 /* SoundManager.swift in Sources */,
 				018DB846C4F1043475F95535 /* CaseContentLoader.swift in Sources */,
+				136C123FA482A0CB15938E44 /* ForensicImageCache.swift in Sources */,
 				234739E1ECFDC3B471A6447E /* CaseValidator.swift in Sources */,
 				6077CB9DD41C741E7431B567 /* DailyCaseGenerator.swift in Sources */,
 				067CBD42697C51007C4972DE /* DeductionEngine.swift in Sources */,
@@ -528,6 +576,8 @@
 				ED0A418A1024F5BF320B0097 /* ProgressStore.swift in Sources */,
 				0D984329C99DFE5629ADCFF9 /* PremiumManager.swift in Sources */,
 				F43F72C38462752DB8996D11 /* AppIcon.swift in Sources */,
+				4B1BC0DDE7C5A20F88B870AC /* CaseSpecificEvidenceView.swift in Sources */,
+				ED229088A475D6D52DAEE4D9 /* ProceduralDossierCardView.swift in Sources */,
 				7F236E119C94EAB5558E9F43 /* AchievementsView.swift in Sources */,
 				7510DF1B1A9BCFED1C0444A5 /* CaseArchiveView.swift in Sources */,
 				3BB402E7431C316B9CB2F76E /* BriefingView.swift in Sources */,
@@ -551,6 +601,7 @@
 				ACCEE1CF9214C9E48A692D9C /* PremiumPaywallView.swift in Sources */,
 				67B92E4E4471C71BF37CB562 /* LegalDocumentsView.swift in Sources */,
 				56FCC3A7675F2B4AB2182341 /* SettingsView.swift in Sources */,
+				00D80CCFC06C29DECF73B5A6 /* CaseIdentityTheme.swift in Sources */,
 				78186FE5D86F942959B7B0FB /* ForensicTheme.swift in Sources */,
 				F80284A504FDE3C222B643E2 /* ForensicVisualAssets.swift in Sources */,
 			);
