@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support & FAQ — Caseboard: Detective Mystery</title>
+  <meta name="description" content="Support, User Guide, and Frequently Asked Questions for Caseboard: Detective Mystery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <img src="assets/app_icon.png" alt="Caseboard Logo">
+        <span>CASEBOARD</span>
+        <span class="badge">HELP DESK</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Overview</a>
+        <a href="support.html" class="active">Support & FAQ</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="document-container">
+      <header class="doc-header">
+        <h1>Support & Help Center</h1>
+        <div class="doc-meta">Need help cracking a case or experiencing technical difficulties? We are here to help.</div>
+      </header>
+
+      <div class="doc-content">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-list">
+          <div class="faq-item active">
+            <button class="faq-question">How does Caseboard deduction work?</button>
+            <div class="faq-answer">
+              Caseboard provides authentic cold cases with no artificial guessing. Open the case dossier, inspect physical evidence (forensic lab sheets, autopsy reports, ballistics, audio memos), and examine suspect interrogation logs. When you find conflicting testimonies or physical proof disproving an alibi, pin the clue on your corkboard. Once all requisite evidence is linked, submit your arrest warrant to the District Attorney.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Do I need an internet connection to play?</button>
+            <div class="faq-answer">
+              No! Caseboard is 100% offline. All cases, high-resolution forensic images, audio tracks, and logic run entirely on your device. You can play on airplanes, subways, or anywhere without cell reception or Wi-Fi.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Are there any subscriptions, energy timers, or advertisements?</button>
+            <div class="faq-answer">
+              No. Caseboard features zero video ads, zero pop-up banners, and zero energy timers. You can investigate at your own pace without arbitrary interruptions or paywalls.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How do I reset my progress to replay cases?</button>
+            <div class="faq-answer">
+              You can reset your progress at any time inside the app by opening the Settings menu from the main dashboard and selecting "Reset Investigation Progress". This will clear your pinned clues and allow you to re-solve cases from scratch.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Which iOS versions and devices are supported?</button>
+            <div class="faq-answer">
+              Caseboard is designed for iPhone and iPad running iOS 16.0 or newer. It is optimized for all modern display sizes, including iPhone 16 Pro Max, iPhone 15 series, and dynamic retina displays.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How do I report a bug or submit feedback?</button>
+            <div class="faq-answer">
+              We take quality and player feedback seriously. If you encounter an issue or have suggestions for new cold case stories, please email us directly with your device model and iOS version.
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Box -->
+        <div class="contact-card">
+          <h3>Contact Detective Squad Dispatch</h3>
+          <p>Have a question that wasn't answered in the FAQ? Send us an email and we will respond within 24 hours.</p>
+          <a href="mailto:p0wzcb@gmail.com?subject=Caseboard%20Support%20Request" class="btn-primary" id="btn-email-support">
+            ✉️ Email Support: p0wzcb@gmail.com
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="support.html">Support & FAQ</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:p0wzcb@gmail.com">Contact Developer</a>
+    </div>
+    <p>&copy; 2026 Caseboard. Developed by p0wz. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

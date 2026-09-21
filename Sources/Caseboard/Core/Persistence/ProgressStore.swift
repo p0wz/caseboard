@@ -282,4 +282,9 @@ public final class ProgressStore: ObservableObject {
         userProgress.isPremiumUnlocked = true
         save()
     }
+
+    public func debugSetCaseProgress(caseId: String, progress: CaseProgress) {
+        userProgress.caseProgress[caseId] = progress
+        save()
+    }
 }
