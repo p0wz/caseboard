@@ -1,0 +1,321 @@
+{
+  "caseId": "the_founders_exit",
+  "title": "The Founder's Exit",
+  "subtitle": "Tech unicorn founder collapses during high-stakes board buyout vote.",
+  "difficulty": "expert",
+  "estimatedMinutes": 26,
+  "isPremium": true,
+  "briefing": {
+    "location": "AeroSpace Tower, Floor 50",
+    "date": "2026-05-15",
+    "victimOrSubject": "Evelyn Vance",
+    "summary": "Evelyn suffered sudden respiratory failure during executive boardroom vote. Digital stylus pen contained micro-injection reservoir.",
+    "objective": "Expose the truth behind the incident at AeroSpace Tower, Floor 50."
+  },
+  "suspects": [
+    {
+      "suspectId": "suspect_simon",
+      "caseId": "the_founders_exit",
+      "name": "Simon Reed",
+      "role": "Managing Partner",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Venture capital board director orchestrating hostile removal",
+      "motiveScore": 0.7,
+      "meansScore": 0.5,
+      "opportunityScore": 0.6,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "moderate",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_lucas",
+      "caseId": "the_founders_exit",
+      "name": "Lucas Vance",
+      "role": "Estranged Brother & Co-founder",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Fighting over founder equity dilution",
+      "motiveScore": 0.4,
+      "meansScore": 0.3,
+      "opportunityScore": 0.3,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_diana",
+      "caseId": "the_founders_exit",
+      "name": "Diana Croft",
+      "role": "Executive Assistant",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Scheduled the signing dinner and catered drinks",
+      "motiveScore": 0.2,
+      "meansScore": 0.2,
+      "opportunityScore": 0.2,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "ev_incident_the_founders_exit",
+      "caseId": "the_founders_exit",
+      "title": "Incident & Autopsy File",
+      "type": "medical_report",
+      "summary": "Incident analysis confirms foul play targeting Evelyn Vance.",
+      "fullText": "Forensic analysis reveals clear evidence of premeditated action resulting in the death of Evelyn Vance.",
+      "timestamp": "23:00",
+      "source": "Forensic Bureau",
+      "reliability": "verified",
+      "tags": [
+        "Forensics"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_simon"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "boardroom_liquidation_clause",
+      "caseId": "the_founders_exit",
+      "title": "Critical Financial / Motive Record",
+      "type": "financial_record",
+      "summary": "Documentation establishing definitive motive against the accused.",
+      "fullText": "Classified communication and financial transactions exposing urgent criminal motivation.",
+      "timestamp": "18:00",
+      "source": "Encrypted Safe File",
+      "reliability": "high",
+      "tags": [
+        "Motive"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_simon"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "pneumatic_stylus_pen",
+      "caseId": "the_founders_exit",
+      "title": "Instrument & Technical Means",
+      "type": "object_report",
+      "summary": "Physical mechanism or weapon matching incident marks.",
+      "fullText": "Specialized equipment registered to or possessed by the primary suspect.",
+      "timestamp": "21:30",
+      "source": "Scene Recovery",
+      "reliability": "verified",
+      "tags": [
+        "Means"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_simon"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "digital_contract_timestamp",
+      "caseId": "the_founders_exit",
+      "title": "Telemetry Log A",
+      "type": "security_record",
+      "summary": "Access or sensor telemetry establishing presence at scene.",
+      "fullText": "Electronic sensor audit trails contradicting the suspect's public statement.",
+      "timestamp": "21:15",
+      "source": "Infrastructure DB",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_simon"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "boardroom_telepresence_log",
+      "caseId": "the_founders_exit",
+      "title": "Telemetry Log B",
+      "type": "location_data",
+      "summary": "Corroborating physical or digital surveillance record.",
+      "fullText": "Independent digital trail verifying uncompromised opportunity window.",
+      "timestamp": "21:20",
+      "source": "Auxiliary Sensor",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_simon"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_statement_the_founders_exit",
+      "caseId": "the_founders_exit",
+      "title": "Suspect Alibi Deposition",
+      "type": "statement",
+      "summary": "Formal interview claiming complete absence from incident zone.",
+      "fullText": "\"I was completely separated from the area and have zero knowledge of these events.\"",
+      "timestamp": "23:30",
+      "source": "Investigator Deposition",
+      "reliability": "medium",
+      "tags": [
+        "Alibi"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_simon"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_unlocked_the_founders_exit",
+      "caseId": "the_founders_exit",
+      "title": "Concealed Artifact Recovery",
+      "type": "object_report",
+      "summary": "Crucial evidence recovered following contradiction breakthrough.",
+      "fullText": "Concealed personal item linking the suspect beyond reasonable doubt to the crime scene.",
+      "timestamp": "02:00",
+      "source": "Targeted Warrant Search",
+      "reliability": "verified",
+      "tags": [
+        "Physical"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_simon"
+      ],
+      "discoveredInitially": false,
+      "unlockCondition": "contradiction_digital_pen"
+    }
+  ],
+  "timeline": [
+    {
+      "eventId": "t_motive_the_founders_exit",
+      "caseId": "the_founders_exit",
+      "title": "Motive Trigger Event",
+      "eventDescription": "Financial or legal crisis triggers action.",
+      "timeWindow": "18:00",
+      "exactTime": "18:00",
+      "canonicalOrder": 1,
+      "sourceEvidenceId": "boardroom_liquidation_clause"
+    },
+    {
+      "eventId": "t_incident_the_founders_exit",
+      "caseId": "the_founders_exit",
+      "title": "Incident at AeroSpace Tower, Floor 50",
+      "eventDescription": "Offense executed against Evelyn Vance.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 2,
+      "sourceEvidenceId": "ev_incident_the_founders_exit"
+    },
+    {
+      "eventId": "t_claim_the_founders_exit",
+      "caseId": "the_founders_exit",
+      "title": "Fabricated Alibi Claim",
+      "eventDescription": "Suspect claims offsite presence.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 3,
+      "sourceEvidenceId": "ev_statement_the_founders_exit",
+      "isFalseClaim": true,
+      "conflictsWithEventIds": [
+        "t_incident_the_founders_exit"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "contradictionId": "contradiction_digital_pen",
+      "caseId": "the_founders_exit",
+      "title": "Critical Discrepancy: The Founder's Exit",
+      "requiredEvidenceIds": [
+        "ev_statement_the_founders_exit",
+        "digital_contract_timestamp"
+      ],
+      "type": "alibi_break",
+      "explanation": "Simon claimed Evelyn signed the surrender of equity voluntarily, but digital stylus biometric sensors prove pressure was applied by a second hand over hers.",
+      "severity": "critical",
+      "affectedSuspectId": "suspect_simon",
+      "motiveDelta": 0.3,
+      "meansDelta": 0.3,
+      "opportunityDelta": 0.6,
+      "newAlibiStatus": "broken",
+      "unlocks": [
+        "ev_unlocked_the_founders_exit"
+      ]
+    }
+  ],
+  "solution": {
+    "culpritId": "suspect_simon",
+    "requiredMotiveEvidenceIds": [
+      "boardroom_liquidation_clause"
+    ],
+    "requiredMeansEvidenceIds": [
+      "pneumatic_stylus_pen"
+    ],
+    "requiredOpportunityEvidenceIds": [
+      "digital_contract_timestamp"
+    ],
+    "requiredContradictionIds": [
+      "contradiction_digital_pen"
+    ],
+    "requiredTimelineEventIds": [
+      "t_incident_the_founders_exit"
+    ],
+    "resolutionNarrative": "The case against suspect_simon is proven conclusively. Forensic logs, shattered alibis, and recovered physical mechanisms establish culpability beyond reasonable doubt."
+  },
+  "hints": [
+    {
+      "tier": "nudge",
+      "text": "Scrutinize the statement of suspect_simon against the telemetry sensor logs.",
+      "targetSuspectId": "suspect_simon",
+      "relatedEvidenceIds": [
+        "ev_statement_the_founders_exit",
+        "digital_contract_timestamp"
+      ]
+    },
+    {
+      "tier": "direction",
+      "text": "Connect the alibi deposition with digital_contract_timestamp to expose the chronological contradiction.",
+      "targetSuspectId": "suspect_simon",
+      "relatedEvidenceIds": [
+        "digital_contract_timestamp"
+      ]
+    },
+    {
+      "tier": "near_solution",
+      "text": "Simon claimed Evelyn signed the surrender of equity voluntarily, but digital stylus biometric sensors prove pressure was applied by a second hand over hers.",
+      "targetSuspectId": "suspect_simon",
+      "relatedEvidenceIds": [
+        "ev_unlocked_the_founders_exit"
+      ]
+    }
+  ]
+}

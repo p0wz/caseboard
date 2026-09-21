@@ -1,0 +1,588 @@
+{
+  "caseId": "locked_gallery",
+  "title": "The Locked Gallery",
+  "subtitle": "Curator Elias Vorn discovered dead in a secured exhibition chamber.",
+  "difficulty": "intro",
+  "estimatedMinutes": 12,
+  "isPremium": false,
+  "briefing": {
+    "location": "North Pier Gallery, Bay District",
+    "date": "2026-03-14",
+    "victimOrSubject": "Elias Vorn",
+    "summary": "At 22:15, gallery curator Elias Vorn was found deceased inside the climate-controlled Old Masters vault. The electronic bolt was secured from the inside, but ventilation seals had been disabled.",
+    "objective": "Identify the culprit who entered after closing, broke their alibi, and staged the sealed vault.",
+    "requiredSolveConditions": [
+      "Identify the true culprit",
+      "Prove the false departure alibi",
+      "Establish physical means and service door entry"
+    ]
+  },
+  "suspects": [
+    {
+      "suspectId": "suspect_mara",
+      "caseId": "locked_gallery",
+      "name": "Mara Voss",
+      "role": "Assistant Curator",
+      "age": 31,
+      "relationshipToVictim": "Direct subordinate, prospective heir to gallery directorship",
+      "profile": "Expert art restorer with detailed knowledge of museum chemical solvents and electronic security locks.",
+      "motiveScore": 0.35,
+      "meansScore": 0.4,
+      "opportunityScore": 0.2,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "moderate",
+      "initialAlibi": "Claims she left the gallery before the evening downpour at 8:00 PM and took the metro home.",
+      "knownFacts": [
+        "Possesses laboratory access",
+        "Scheduled the private viewing"
+      ],
+      "unlockedFacts": [],
+      "interrogationTopics": [
+        {
+          "topicId": "mara_topic_rain",
+          "questionText": "When exactly did you leave the museum?",
+          "initialResponse": "As I said in my initial statement, I left right around 7:55 PM. The pavement was completely dry.",
+          "stressDelta": 0.15
+        },
+        {
+          "topicId": "mara_topic_solvent",
+          "questionText": "What chemicals do you use in restoration?",
+          "initialResponse": "Standard non-reactive varnishes and xylene compounds for oil varnish removal. All locked in my studio under bio-metric key.",
+          "stressDelta": 0.2
+        },
+        {
+          "topicId": "mara_topic_elias_dispute",
+          "questionText": "Did Elias confront you about provenance audits?",
+          "initialResponse": "Elias was paranoid about every auction item. He questioned everyone, not just me.",
+          "stressDelta": 0.25
+        }
+      ],
+      "confrontations": [
+        {
+          "evidenceId": "weather_log_811",
+          "contradictionId": "contradiction_alibi_time",
+          "defenseReaction": "A weather report doesn't change when I stepped through the door.",
+          "brokenReaction": "...Fine. The rain started at 8:11, yes. But my badge was scanned later because the front turnstile jammed!",
+          "newFactUnlocked": "Mara admits presence in the gallery lobby after 8:11 PM."
+        },
+        {
+          "evidenceId": "dry_umbrella_locker",
+          "contradictionId": "contradiction_dry_umbrella",
+          "defenseReaction": "I left my spare umbrella in the locker. What does that prove?",
+          "brokenReaction": "You think I walked out into an 18mm/hour downpour without an umbrella? ...Damn you.",
+          "newFactUnlocked": "Mara's staged front-exit alibi completely collapses."
+        },
+        {
+          "evidenceId": "restoration_solvent_inventory",
+          "contradictionId": "contradiction_chemical_means",
+          "defenseReaction": "Solvent evaporates. Inventory logs are updated weekly.",
+          "brokenReaction": "2.5 liters doesn't evaporate in an afternoon... Elias told me he was going to the federal board tomorrow morning. He was going to destroy everything I built!",
+          "newFactUnlocked": "Mara Voss confesses to incapacitating Elias with xylene solvent."
+        }
+      ]
+    },
+    {
+      "suspectId": "suspect_theo",
+      "caseId": "locked_gallery",
+      "name": "Theo Grant",
+      "role": "Private Collector & Bidder",
+      "age": 54,
+      "relationshipToVictim": "Disputed buyer for the Holbein painting",
+      "profile": "High-net-worth investor rumored to be facing financial freeze due to forged provenance inquiries.",
+      "motiveScore": 0.5,
+      "meansScore": 0.15,
+      "opportunityScore": 0.25,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Remained at the North Pier Yacht Club bar from 8:00 PM to midnight.",
+      "knownFacts": [
+        "Argued loudly with Elias over provenance at 7:30 PM"
+      ],
+      "unlockedFacts": [],
+      "interrogationTopics": [
+        {
+          "topicId": "theo_topic_argument",
+          "questionText": "What were you arguing with Elias about at 7:30?",
+          "initialResponse": "The Holbein was genuine. Elias was getting cold feet because of some anonymous provenance rumor. I told him he was being foolish.",
+          "stressDelta": 0.1
+        },
+        {
+          "topicId": "theo_topic_yacht_club",
+          "questionText": "Can anyone vouch for you at the Yacht Club?",
+          "initialResponse": "Check my credit card tab. I was sitting at the waterfront bar from eight till past midnight with half the harbor committee.",
+          "stressDelta": 0.05
+        }
+      ],
+      "confrontations": [
+        {
+          "evidenceId": "theo_bar_receipt",
+          "contradictionId": "contradiction_theo_alibi",
+          "defenseReaction": "See? That receipt verifies every drink from 19:55 onward.",
+          "brokenReaction": "That receipt is airtight, Detective. I was nowhere near that vault when Elias died.",
+          "newFactUnlocked": "Theo Grant's alibi is corroborated by timestamps and witnesses."
+        }
+      ]
+    },
+    {
+      "suspectId": "suspect_lin",
+      "caseId": "locked_gallery",
+      "name": "Lin Park",
+      "role": "Contract Security Engineer",
+      "age": 28,
+      "relationshipToVictim": "Facility maintenance contractor",
+      "profile": "Installed the new digital access control system two weeks prior to the incident.",
+      "motiveScore": 0.1,
+      "meansScore": 0.6,
+      "opportunityScore": 0.2,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Monitoring server racks in central district dispatch during incident.",
+      "knownFacts": [
+        "Maintains master override keycards"
+      ],
+      "unlockedFacts": [],
+      "interrogationTopics": [
+        {
+          "topicId": "lin_topic_system",
+          "questionText": "How secure is the digital vault lock?",
+          "initialResponse": "Triple-redundant biometric and RFID. Unless someone used an emergency engineer bypass badge, that door seals hermetically.",
+          "stressDelta": 0.1
+        },
+        {
+          "topicId": "lin_topic_whereabouts",
+          "questionText": "Where were you between 8:00 and 9:00 PM?",
+          "initialResponse": "Central dispatch monitoring rack telemetry. I have server log logins recorded by the district telecom.",
+          "stressDelta": 0.05
+        }
+      ],
+      "confrontations": [
+        {
+          "evidenceId": "service_door_override_log",
+          "contradictionId": "contradiction_lin_badge",
+          "defenseReaction": "That badge was issued to me, but I didn't scan it! Someone took my duplicate from the server room drawer!",
+          "brokenReaction": "Look at the badge serial: #ENG-88. I reported that duplicate missing three days ago! Someone in the museum stole it.",
+          "newFactUnlocked": "Lin Park confirms emergency badge #ENG-88 was stolen prior to the murder."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "coroner_report_vorn",
+      "caseId": "locked_gallery",
+      "title": "Coroner Report: Elias Vorn",
+      "type": "medical_report",
+      "summary": "Death caused by acute inhalation of volatile industrial solvent between 20:15 and 20:45.",
+      "fullText": "Coroner autopsy indicates asphyxiation due to concentrated isopropanol-xylene vapor compound. The victim exhibited no defensive wounds, indicating incapacitation occurred rapidly within an enclosed space.",
+      "timestamp": "22:45",
+      "source": "Metropolitan Medical Examiner",
+      "reliability": "verified",
+      "tags": [
+        "Medical",
+        "Autopsy"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_mara",
+        "suspect_theo",
+        "suspect_lin"
+      ],
+      "relatedEvidenceIds": [
+        "restoration_solvent_inventory"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "weather_log_811",
+      "caseId": "locked_gallery",
+      "title": "Meteorological Telemetry: Bay District",
+      "type": "location_data",
+      "summary": "Severe torrential downpour commenced at North Pier at precisely 20:11.",
+      "fullText": "National Weather Service coastal radar records zero precipitation between 18:00 and 20:10. At precisely 20:11, heavy thunderstorm activity recorded 18mm/hr precipitation across North Pier.",
+      "timestamp": "20:11",
+      "source": "National Weather Radar",
+      "reliability": "verified",
+      "tags": [
+        "Telemetry",
+        "Weather"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_mara"
+      ],
+      "relatedEvidenceIds": [
+        "door_sensor_824",
+        "mara_statement_alibi"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "door_sensor_824",
+      "caseId": "locked_gallery",
+      "title": "Main Entrance Door Sensor Log",
+      "type": "security_record",
+      "summary": "Badge 'M-VOSS' registered exit through front revolving door at 20:24.",
+      "fullText": "Electronic audit trail at Main Entrance Port A: 20:24:18 - RFID badge 'M-VOSS' scanned outbound. No further reads registered at front portals until police arrival.",
+      "timestamp": "20:24",
+      "source": "Gallery Access Control DB",
+      "reliability": "verified",
+      "tags": [
+        "Access",
+        "Security"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_mara"
+      ],
+      "relatedEvidenceIds": [
+        "weather_log_811",
+        "mara_statement_alibi"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "mara_statement_alibi",
+      "caseId": "locked_gallery",
+      "title": "Mara Voss Witness Statement",
+      "type": "statement",
+      "summary": "Mara claims she walked out into dry evening air before 8:00 PM without needing an umbrella.",
+      "fullText": "\"Elias asked me to leave early so he could confer privately with a buyer. I clocked out and walked to the metro before the rain started, around 7:55 PM. My coat and umbrella never even got wet.\"",
+      "timestamp": "23:05",
+      "source": "Interrogation Room 2",
+      "reliability": "medium",
+      "tags": [
+        "Statement",
+        "Alibi"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_mara"
+      ],
+      "relatedEvidenceIds": [
+        "weather_log_811",
+        "door_sensor_824",
+        "dry_umbrella_locker"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "dry_umbrella_locker",
+      "caseId": "locked_gallery",
+      "title": "Personal Umbrella in Staff Locker 04",
+      "type": "object_report",
+      "summary": "Mara's folding umbrella found completely dry and bone-dry canopy in staff locker.",
+      "fullText": "Forensic sweep of staff lockers located personal umbrella belonging to Mara Voss. Fabric shows 0% residual moisture under ultraviolet inspection.",
+      "timestamp": "23:40",
+      "source": "Forensic Search Unit",
+      "reliability": "verified",
+      "tags": [
+        "Physical",
+        "Forensics"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_mara"
+      ],
+      "relatedEvidenceIds": [
+        "mara_statement_alibi",
+        "weather_log_811"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "theo_bar_receipt",
+      "caseId": "locked_gallery",
+      "title": "Yacht Club Tab: Theo Grant",
+      "type": "receipt",
+      "summary": "Continuous bar purchases by Theo Grant from 19:55 to 23:30 corroborated by bartender.",
+      "fullText": "Point-of-Sale terminal records at North Pier Yacht Club show orders opened by Theo Grant at 19:55 and settled at 23:30 with continuous beverage updates. Bartender confirms physical presence.",
+      "timestamp": "19:55 - 23:30",
+      "source": "North Pier Yacht Club POS",
+      "reliability": "verified",
+      "tags": [
+        "Receipt",
+        "Alibi"
+      ],
+      "isKeyEvidence": false,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_theo"
+      ],
+      "relatedEvidenceIds": [],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "restoration_solvent_inventory",
+      "caseId": "locked_gallery",
+      "title": "Conservation Chemical Dispensary Log",
+      "type": "financial_record",
+      "summary": "2.5 Liters of Xylene-Isopropanol solvent unaccounted for in conservation lab.",
+      "fullText": "Inventory audit of the restoration studio shows container X-404 missing 2.5L of volatile solvent. Access to this cabinet requires bio-metric clearance assigned only to Senior Restorer Mara Voss.",
+      "timestamp": "19:00",
+      "source": "Gallery Studio Inventory",
+      "reliability": "high",
+      "tags": [
+        "Chemical",
+        "Means"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_mara"
+      ],
+      "relatedEvidenceIds": [
+        "coroner_report_vorn"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "service_door_override_log",
+      "caseId": "locked_gallery",
+      "title": "Rear Service Loading Door Override Audit",
+      "type": "security_record",
+      "summary": "Rear dock door unlocked via Lin Park's emergency badge at 20:31 from inside corridor.",
+      "fullText": "Sub-level loading bay audit: Emergency bypass badge #ENG-88 registered an exit at 20:31:12. Contractor Lin Park was verified offsite, indicating badge was misappropriated.",
+      "timestamp": "20:31",
+      "source": "Service Bay Digital Gateway",
+      "reliability": "verified",
+      "tags": [
+        "Access",
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_mara",
+        "suspect_lin"
+      ],
+      "relatedEvidenceIds": [
+        "stolen_badge_confession"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "stolen_badge_confession",
+      "caseId": "locked_gallery",
+      "title": "Mara Voss Desk Drawer Search",
+      "type": "object_report",
+      "summary": "Lin Park's duplicate emergency badge found hidden in Mara's desk organizer.",
+      "fullText": "Crime scene technicians recovered emergency bypass badge #ENG-88 concealed beneath felt lining in Mara Voss's private desk drawer.",
+      "timestamp": "23:55",
+      "source": "Crime Scene Investigation",
+      "reliability": "verified",
+      "tags": [
+        "Physical",
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_mara"
+      ],
+      "relatedEvidenceIds": [
+        "service_door_override_log"
+      ],
+      "discoveredInitially": false,
+      "unlockCondition": "contradiction_alibi_time"
+    },
+    {
+      "evidenceId": "provenance_audit_memorandum",
+      "caseId": "locked_gallery",
+      "title": "Elias Vorn Private Memo: Provenance Fraud",
+      "type": "statement",
+      "summary": "Elias discovered Mara had authenticated three forged Dutch master paintings for personal kickbacks.",
+      "fullText": "\"To the Board of Trustees: I have confirmed that Assistant Curator Mara Voss falsified spectral analysis reports for the Van Dyck and Holbein acquisitions. I am notifying the Federal Antiquities Division tomorrow morning at 09:00.\"",
+      "timestamp": "17:15",
+      "source": "Elias Vorn Encrypted Laptop",
+      "reliability": "verified",
+      "tags": [
+        "Motive",
+        "Fraud"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_mara"
+      ],
+      "relatedEvidenceIds": [],
+      "discoveredInitially": true
+    }
+  ],
+  "timeline": [
+    {
+      "eventId": "t_vorn_memo",
+      "caseId": "locked_gallery",
+      "title": "Elias drafts fraud memorandum",
+      "eventDescription": "Elias documents Mara's forgery and schedules disclosure.",
+      "timeWindow": "17:15",
+      "exactTime": "17:15",
+      "canonicalOrder": 1,
+      "sourceEvidenceId": "provenance_audit_memorandum"
+    },
+    {
+      "eventId": "t_theo_arrives_bar",
+      "caseId": "locked_gallery",
+      "title": "Theo Grant arrives at Yacht Club",
+      "eventDescription": "Theo establishes verified alibi at waterfront bar.",
+      "timeWindow": "19:55",
+      "exactTime": "19:55",
+      "canonicalOrder": 2,
+      "sourceEvidenceId": "theo_bar_receipt"
+    },
+    {
+      "eventId": "t_rain_begins",
+      "caseId": "locked_gallery",
+      "title": "Torrential rain begins",
+      "eventDescription": "Coastal downpour starts across North Pier at 20:11.",
+      "timeWindow": "20:11",
+      "exactTime": "20:11",
+      "canonicalOrder": 3,
+      "sourceEvidenceId": "weather_log_811"
+    },
+    {
+      "eventId": "t_mara_front_exit",
+      "caseId": "locked_gallery",
+      "title": "Mara badges through front door",
+      "eventDescription": "Mara scans badge out front door after rain started.",
+      "timeWindow": "20:24",
+      "exactTime": "20:24",
+      "canonicalOrder": 4,
+      "sourceEvidenceId": "door_sensor_824"
+    },
+    {
+      "eventId": "t_service_door_exit",
+      "caseId": "locked_gallery",
+      "title": "Service dock emergency exit",
+      "eventDescription": "Perpetrator flees via rear service door using stolen override badge.",
+      "timeWindow": "20:31",
+      "exactTime": "20:31",
+      "canonicalOrder": 5,
+      "sourceEvidenceId": "service_door_override_log"
+    },
+    {
+      "eventId": "t_mara_false_claim",
+      "caseId": "locked_gallery",
+      "title": "Mara's claimed dry departure",
+      "eventDescription": "Mara claims departure before rain in dry air.",
+      "timeWindow": "19:55",
+      "exactTime": "19:55",
+      "canonicalOrder": 6,
+      "sourceEvidenceId": "mara_statement_alibi",
+      "isFalseClaim": true,
+      "conflictsWithEventIds": [
+        "t_mara_front_exit",
+        "t_rain_begins"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "contradictionId": "contradiction_alibi_time",
+      "caseId": "locked_gallery",
+      "title": "Rainfall vs Departure Sensor Discrepancy",
+      "requiredEvidenceIds": [
+        "door_sensor_824",
+        "mara_statement_alibi",
+        "weather_log_811"
+      ],
+      "type": "alibi_break",
+      "explanation": "Mara claimed she left before the rain began at 7:55 PM, but the electronic door sensor logged her exit at 8:24 PM—thirteen minutes after torrential rainfall started.",
+      "severity": "critical",
+      "affectedSuspectId": "suspect_mara",
+      "motiveDelta": 0.2,
+      "meansDelta": 0.2,
+      "opportunityDelta": 0.6,
+      "newAlibiStatus": "broken",
+      "unlocks": [
+        "stolen_badge_confession"
+      ]
+    },
+    {
+      "contradictionId": "contradiction_dry_umbrella",
+      "caseId": "locked_gallery",
+      "title": "Dry Umbrella Contradiction",
+      "requiredEvidenceIds": [
+        "dry_umbrella_locker",
+        "door_sensor_824"
+      ],
+      "type": "contradiction",
+      "explanation": "If Mara exited at 20:24 during torrential rain, her umbrella in the staff locker would not be bone-dry, proving she staged her front-door exit and re-entered.",
+      "severity": "major",
+      "affectedSuspectId": "suspect_mara",
+      "opportunityDelta": 0.2,
+      "newAlibiStatus": "broken",
+      "unlocks": null
+    },
+    {
+      "contradictionId": "contradiction_chemical_means",
+      "caseId": "locked_gallery",
+      "title": "Solvent Inventory Matches Fatal Chemical",
+      "requiredEvidenceIds": [
+        "coroner_report_vorn",
+        "restoration_solvent_inventory"
+      ],
+      "type": "physical_proof",
+      "explanation": "The coroner's fatal xylene compound matches the exact 2.5L volume missing from Mara's private conservation lab locker.",
+      "severity": "major",
+      "affectedSuspectId": "suspect_mara",
+      "meansDelta": 0.5,
+      "newAlibiStatus": null,
+      "unlocks": null
+    }
+  ],
+  "solution": {
+    "culpritId": "suspect_mara",
+    "requiredMotiveEvidenceIds": [
+      "provenance_audit_memorandum"
+    ],
+    "requiredMeansEvidenceIds": [
+      "restoration_solvent_inventory"
+    ],
+    "requiredOpportunityEvidenceIds": [
+      "door_sensor_824",
+      "service_door_override_log"
+    ],
+    "requiredContradictionIds": [
+      "contradiction_alibi_time"
+    ],
+    "requiredTimelineEventIds": [
+      "t_mara_front_exit",
+      "t_service_door_exit"
+    ],
+    "resolutionNarrative": "Faced with career ruin over forged provenance authentication, Mara Voss released toxic conservation solvent inside the vault, badged out the front to manufacture a fake alibi, and escaped out the service door using Lin Park's stolen bypass badge."
+  },
+  "hints": [
+    {
+      "tier": "nudge",
+      "text": "Compare the weather radar precipitation timing against the main entrance door logs.",
+      "targetSuspectId": "suspect_mara",
+      "relatedEvidenceIds": [
+        "weather_log_811",
+        "door_sensor_824"
+      ]
+    },
+    {
+      "tier": "direction",
+      "text": "Mara claims she walked home in dry air, but radar records heavy rain before her badge was scanned.",
+      "targetSuspectId": "suspect_mara",
+      "relatedEvidenceIds": [
+        "mara_statement_alibi",
+        "door_sensor_824"
+      ]
+    },
+    {
+      "tier": "near_solution",
+      "text": "Mara's alibi is shattered: she logged out at 20:24 in heavy rain while her umbrella remained dry, and used the rear service door to flee.",
+      "targetSuspectId": "suspect_mara",
+      "relatedEvidenceIds": [
+        "stolen_badge_confession",
+        "service_door_override_log"
+      ]
+    }
+  ]
+}

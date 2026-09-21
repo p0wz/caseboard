@@ -1,0 +1,321 @@
+{
+  "caseId": "the_ninth_witness",
+  "title": "The Ninth Witness",
+  "subtitle": "Key government witness poisoned in sequestered hotel room before grand jury testimony.",
+  "difficulty": "advanced",
+  "estimatedMinutes": 25,
+  "isPremium": true,
+  "briefing": {
+    "location": "Federal Court Annex Hotel",
+    "date": "2026-05-15",
+    "victimOrSubject": "David Ross",
+    "summary": "David Ross ingested aconite toxin mixed into his room service tea 30 minutes before testifying.",
+    "objective": "Expose the truth behind the incident at Federal Court Annex Hotel."
+  },
+  "suspects": [
+    {
+      "suspectId": "suspect_karen",
+      "caseId": "the_ninth_witness",
+      "name": "Karen Vance",
+      "role": "Deputy US Marshal",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Security detail lead with undisclosed offshore account",
+      "motiveScore": 0.6,
+      "meansScore": 0.5,
+      "opportunityScore": 0.5,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "moderate",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_hugo",
+      "caseId": "the_ninth_witness",
+      "name": "Hugo Drake",
+      "role": "Defense Attorney",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Legal counsel representing the indicted cartel kingpin",
+      "motiveScore": 0.4,
+      "meansScore": 0.2,
+      "opportunityScore": 0.1,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_charlie",
+      "caseId": "the_ninth_witness",
+      "name": "Charlie Sim",
+      "role": "Room Service Waiter",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Hotel staff member delivering dinner cart",
+      "motiveScore": 0.1,
+      "meansScore": 0.2,
+      "opportunityScore": 0.2,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "ev_incident_the_ninth_witness",
+      "caseId": "the_ninth_witness",
+      "title": "Incident & Autopsy File",
+      "type": "medical_report",
+      "summary": "Incident analysis confirms foul play targeting David Ross.",
+      "fullText": "Forensic analysis reveals clear evidence of premeditated action resulting in the death of David Ross.",
+      "timestamp": "23:00",
+      "source": "Forensic Bureau",
+      "reliability": "verified",
+      "tags": [
+        "Forensics"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_karen"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "bribe_offshore_transfer",
+      "caseId": "the_ninth_witness",
+      "title": "Critical Financial / Motive Record",
+      "type": "financial_record",
+      "summary": "Documentation establishing definitive motive against the accused.",
+      "fullText": "Classified communication and financial transactions exposing urgent criminal motivation.",
+      "timestamp": "18:00",
+      "source": "Encrypted Safe File",
+      "reliability": "high",
+      "tags": [
+        "Motive"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_karen"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "aconite_tincture_vial",
+      "caseId": "the_ninth_witness",
+      "title": "Instrument & Technical Means",
+      "type": "object_report",
+      "summary": "Physical mechanism or weapon matching incident marks.",
+      "fullText": "Specialized equipment registered to or possessed by the primary suspect.",
+      "timestamp": "21:30",
+      "source": "Scene Recovery",
+      "reliability": "verified",
+      "tags": [
+        "Means"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_karen"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "hotel_floor_keycard_audit",
+      "caseId": "the_ninth_witness",
+      "title": "Telemetry Log A",
+      "type": "security_record",
+      "summary": "Access or sensor telemetry establishing presence at scene.",
+      "fullText": "Electronic sensor audit trails contradicting the suspect's public statement.",
+      "timestamp": "21:15",
+      "source": "Infrastructure DB",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_karen"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "tea_cart_seal_log",
+      "caseId": "the_ninth_witness",
+      "title": "Telemetry Log B",
+      "type": "location_data",
+      "summary": "Corroborating physical or digital surveillance record.",
+      "fullText": "Independent digital trail verifying uncompromised opportunity window.",
+      "timestamp": "21:20",
+      "source": "Auxiliary Sensor",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_karen"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_statement_the_ninth_witness",
+      "caseId": "the_ninth_witness",
+      "title": "Suspect Alibi Deposition",
+      "type": "statement",
+      "summary": "Formal interview claiming complete absence from incident zone.",
+      "fullText": "\"I was completely separated from the area and have zero knowledge of these events.\"",
+      "timestamp": "23:30",
+      "source": "Investigator Deposition",
+      "reliability": "medium",
+      "tags": [
+        "Alibi"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_karen"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_unlocked_the_ninth_witness",
+      "caseId": "the_ninth_witness",
+      "title": "Concealed Artifact Recovery",
+      "type": "object_report",
+      "summary": "Crucial evidence recovered following contradiction breakthrough.",
+      "fullText": "Concealed personal item linking the suspect beyond reasonable doubt to the crime scene.",
+      "timestamp": "02:00",
+      "source": "Targeted Warrant Search",
+      "reliability": "verified",
+      "tags": [
+        "Physical"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_karen"
+      ],
+      "discoveredInitially": false,
+      "unlockCondition": "contradiction_tea_seal"
+    }
+  ],
+  "timeline": [
+    {
+      "eventId": "t_motive_the_ninth_witness",
+      "caseId": "the_ninth_witness",
+      "title": "Motive Trigger Event",
+      "eventDescription": "Financial or legal crisis triggers action.",
+      "timeWindow": "18:00",
+      "exactTime": "18:00",
+      "canonicalOrder": 1,
+      "sourceEvidenceId": "bribe_offshore_transfer"
+    },
+    {
+      "eventId": "t_incident_the_ninth_witness",
+      "caseId": "the_ninth_witness",
+      "title": "Incident at Federal Court Annex Hotel",
+      "eventDescription": "Offense executed against David Ross.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 2,
+      "sourceEvidenceId": "ev_incident_the_ninth_witness"
+    },
+    {
+      "eventId": "t_claim_the_ninth_witness",
+      "caseId": "the_ninth_witness",
+      "title": "Fabricated Alibi Claim",
+      "eventDescription": "Suspect claims offsite presence.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 3,
+      "sourceEvidenceId": "ev_statement_the_ninth_witness",
+      "isFalseClaim": true,
+      "conflictsWithEventIds": [
+        "t_incident_the_ninth_witness"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "contradictionId": "contradiction_tea_seal",
+      "caseId": "the_ninth_witness",
+      "title": "Critical Discrepancy: The Ninth Witness",
+      "requiredEvidenceIds": [
+        "ev_statement_the_ninth_witness",
+        "hotel_floor_keycard_audit"
+      ],
+      "type": "alibi_break",
+      "explanation": "Marshal Vance signed that the tea cart seal was intact upon room delivery, but chemical analysis shows poison was infused in the pantry before delivery.",
+      "severity": "critical",
+      "affectedSuspectId": "suspect_karen",
+      "motiveDelta": 0.3,
+      "meansDelta": 0.3,
+      "opportunityDelta": 0.6,
+      "newAlibiStatus": "broken",
+      "unlocks": [
+        "ev_unlocked_the_ninth_witness"
+      ]
+    }
+  ],
+  "solution": {
+    "culpritId": "suspect_karen",
+    "requiredMotiveEvidenceIds": [
+      "bribe_offshore_transfer"
+    ],
+    "requiredMeansEvidenceIds": [
+      "aconite_tincture_vial"
+    ],
+    "requiredOpportunityEvidenceIds": [
+      "hotel_floor_keycard_audit"
+    ],
+    "requiredContradictionIds": [
+      "contradiction_tea_seal"
+    ],
+    "requiredTimelineEventIds": [
+      "t_incident_the_ninth_witness"
+    ],
+    "resolutionNarrative": "The case against suspect_karen is proven conclusively. Forensic logs, shattered alibis, and recovered physical mechanisms establish culpability beyond reasonable doubt."
+  },
+  "hints": [
+    {
+      "tier": "nudge",
+      "text": "Scrutinize the statement of suspect_karen against the telemetry sensor logs.",
+      "targetSuspectId": "suspect_karen",
+      "relatedEvidenceIds": [
+        "ev_statement_the_ninth_witness",
+        "hotel_floor_keycard_audit"
+      ]
+    },
+    {
+      "tier": "direction",
+      "text": "Connect the alibi deposition with hotel_floor_keycard_audit to expose the chronological contradiction.",
+      "targetSuspectId": "suspect_karen",
+      "relatedEvidenceIds": [
+        "hotel_floor_keycard_audit"
+      ]
+    },
+    {
+      "tier": "near_solution",
+      "text": "Marshal Vance signed that the tea cart seal was intact upon room delivery, but chemical analysis shows poison was infused in the pantry before delivery.",
+      "targetSuspectId": "suspect_karen",
+      "relatedEvidenceIds": [
+        "ev_unlocked_the_ninth_witness"
+      ]
+    }
+  ]
+}

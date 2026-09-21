@@ -1,0 +1,321 @@
+{
+  "caseId": "glass_house",
+  "title": "Glass House",
+  "subtitle": "Botanical conservatory director found collapsed inside rare tropical orchid pavilion.",
+  "difficulty": "standard",
+  "estimatedMinutes": 20,
+  "isPremium": true,
+  "briefing": {
+    "location": "Wellington Conservatory",
+    "date": "2026-05-15",
+    "victimOrSubject": "Dr. Gerald Thorne",
+    "summary": "Director died from acute neurotoxic pesticide injection. Automated climate greenhouse glass vents were sealed shut.",
+    "objective": "Expose the truth behind the incident at Wellington Conservatory."
+  },
+  "suspects": [
+    {
+      "suspectId": "suspect_nadia",
+      "caseId": "glass_house",
+      "name": "Nadia Mercer",
+      "role": "Senior Botanist",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Researcher whose patented cross-breed was claimed by Thorne",
+      "motiveScore": 0.5,
+      "meansScore": 0.6,
+      "opportunityScore": 0.4,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "moderate",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_felix",
+      "caseId": "glass_house",
+      "name": "Felix Brandt",
+      "role": "Greenhouse Architect",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Designer of digital climate control system",
+      "motiveScore": 0.2,
+      "meansScore": 0.3,
+      "opportunityScore": 0.2,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_teresa",
+      "caseId": "glass_house",
+      "name": "Teresa Dunn",
+      "role": "Benefactor Trustee",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Foundation patron threatening endowment pullout",
+      "motiveScore": 0.3,
+      "meansScore": 0.1,
+      "opportunityScore": 0.1,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "ev_incident_glass_house",
+      "caseId": "glass_house",
+      "title": "Incident & Autopsy File",
+      "type": "medical_report",
+      "summary": "Incident analysis confirms foul play targeting Dr. Gerald Thorne.",
+      "fullText": "Forensic analysis reveals clear evidence of premeditated action resulting in the death of Dr. Gerald Thorne.",
+      "timestamp": "23:00",
+      "source": "Forensic Bureau",
+      "reliability": "verified",
+      "tags": [
+        "Forensics"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_nadia"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "patent_theft_memorandum",
+      "caseId": "glass_house",
+      "title": "Critical Financial / Motive Record",
+      "type": "financial_record",
+      "summary": "Documentation establishing definitive motive against the accused.",
+      "fullText": "Classified communication and financial transactions exposing urgent criminal motivation.",
+      "timestamp": "18:00",
+      "source": "Encrypted Safe File",
+      "reliability": "high",
+      "tags": [
+        "Motive"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_nadia"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "pesticide_injector_syringe",
+      "caseId": "glass_house",
+      "title": "Instrument & Technical Means",
+      "type": "object_report",
+      "summary": "Physical mechanism or weapon matching incident marks.",
+      "fullText": "Specialized equipment registered to or possessed by the primary suspect.",
+      "timestamp": "21:30",
+      "source": "Scene Recovery",
+      "reliability": "verified",
+      "tags": [
+        "Means"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_nadia"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "humidity_controller_log",
+      "caseId": "glass_house",
+      "title": "Telemetry Log A",
+      "type": "security_record",
+      "summary": "Access or sensor telemetry establishing presence at scene.",
+      "fullText": "Electronic sensor audit trails contradicting the suspect's public statement.",
+      "timestamp": "21:15",
+      "source": "Infrastructure DB",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_nadia"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "greenhouse_thermal_scan",
+      "caseId": "glass_house",
+      "title": "Telemetry Log B",
+      "type": "location_data",
+      "summary": "Corroborating physical or digital surveillance record.",
+      "fullText": "Independent digital trail verifying uncompromised opportunity window.",
+      "timestamp": "21:20",
+      "source": "Auxiliary Sensor",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_nadia"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_statement_glass_house",
+      "caseId": "glass_house",
+      "title": "Suspect Alibi Deposition",
+      "type": "statement",
+      "summary": "Formal interview claiming complete absence from incident zone.",
+      "fullText": "\"I was completely separated from the area and have zero knowledge of these events.\"",
+      "timestamp": "23:30",
+      "source": "Investigator Deposition",
+      "reliability": "medium",
+      "tags": [
+        "Alibi"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_nadia"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_unlocked_glass_house",
+      "caseId": "glass_house",
+      "title": "Concealed Artifact Recovery",
+      "type": "object_report",
+      "summary": "Crucial evidence recovered following contradiction breakthrough.",
+      "fullText": "Concealed personal item linking the suspect beyond reasonable doubt to the crime scene.",
+      "timestamp": "02:00",
+      "source": "Targeted Warrant Search",
+      "reliability": "verified",
+      "tags": [
+        "Physical"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_nadia"
+      ],
+      "discoveredInitially": false,
+      "unlockCondition": "contradiction_humidity_alibi"
+    }
+  ],
+  "timeline": [
+    {
+      "eventId": "t_motive_glass_house",
+      "caseId": "glass_house",
+      "title": "Motive Trigger Event",
+      "eventDescription": "Financial or legal crisis triggers action.",
+      "timeWindow": "18:00",
+      "exactTime": "18:00",
+      "canonicalOrder": 1,
+      "sourceEvidenceId": "patent_theft_memorandum"
+    },
+    {
+      "eventId": "t_incident_glass_house",
+      "caseId": "glass_house",
+      "title": "Incident at Wellington Conservatory",
+      "eventDescription": "Offense executed against Dr. Gerald Thorne.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 2,
+      "sourceEvidenceId": "ev_incident_glass_house"
+    },
+    {
+      "eventId": "t_claim_glass_house",
+      "caseId": "glass_house",
+      "title": "Fabricated Alibi Claim",
+      "eventDescription": "Suspect claims offsite presence.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 3,
+      "sourceEvidenceId": "ev_statement_glass_house",
+      "isFalseClaim": true,
+      "conflictsWithEventIds": [
+        "t_incident_glass_house"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "contradictionId": "contradiction_humidity_alibi",
+      "caseId": "glass_house",
+      "title": "Critical Discrepancy: Glass House",
+      "requiredEvidenceIds": [
+        "ev_statement_glass_house",
+        "humidity_controller_log"
+      ],
+      "type": "alibi_break",
+      "explanation": "Nadia claimed she was in the herbarium all evening, but the digital humidity sensor recorded her bio-chip badge entering the tropical pavilion.",
+      "severity": "critical",
+      "affectedSuspectId": "suspect_nadia",
+      "motiveDelta": 0.3,
+      "meansDelta": 0.3,
+      "opportunityDelta": 0.6,
+      "newAlibiStatus": "broken",
+      "unlocks": [
+        "ev_unlocked_glass_house"
+      ]
+    }
+  ],
+  "solution": {
+    "culpritId": "suspect_nadia",
+    "requiredMotiveEvidenceIds": [
+      "patent_theft_memorandum"
+    ],
+    "requiredMeansEvidenceIds": [
+      "pesticide_injector_syringe"
+    ],
+    "requiredOpportunityEvidenceIds": [
+      "humidity_controller_log"
+    ],
+    "requiredContradictionIds": [
+      "contradiction_humidity_alibi"
+    ],
+    "requiredTimelineEventIds": [
+      "t_incident_glass_house"
+    ],
+    "resolutionNarrative": "The case against suspect_nadia is proven conclusively. Forensic logs, shattered alibis, and recovered physical mechanisms establish culpability beyond reasonable doubt."
+  },
+  "hints": [
+    {
+      "tier": "nudge",
+      "text": "Scrutinize the statement of suspect_nadia against the telemetry sensor logs.",
+      "targetSuspectId": "suspect_nadia",
+      "relatedEvidenceIds": [
+        "ev_statement_glass_house",
+        "humidity_controller_log"
+      ]
+    },
+    {
+      "tier": "direction",
+      "text": "Connect the alibi deposition with humidity_controller_log to expose the chronological contradiction.",
+      "targetSuspectId": "suspect_nadia",
+      "relatedEvidenceIds": [
+        "humidity_controller_log"
+      ]
+    },
+    {
+      "tier": "near_solution",
+      "text": "Nadia claimed she was in the herbarium all evening, but the digital humidity sensor recorded her bio-chip badge entering the tropical pavilion.",
+      "targetSuspectId": "suspect_nadia",
+      "relatedEvidenceIds": [
+        "ev_unlocked_glass_house"
+      ]
+    }
+  ]
+}

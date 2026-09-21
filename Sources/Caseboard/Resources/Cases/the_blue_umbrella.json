@@ -1,0 +1,321 @@
+{
+  "caseId": "the_blue_umbrella",
+  "title": "The Blue Umbrella",
+  "subtitle": "Subway platform commuter pushed onto tracks during crowded rush hour.",
+  "difficulty": "advanced",
+  "estimatedMinutes": 24,
+  "isPremium": true,
+  "briefing": {
+    "location": "Lexington Central Metro Station",
+    "date": "2026-05-15",
+    "victimOrSubject": "Gordon Price",
+    "summary": "Financial whistleblower pushed in front of incoming uptown express. Attacker carried distinctive blue umbrella.",
+    "objective": "Expose the truth behind the incident at Lexington Central Metro Station."
+  },
+  "suspects": [
+    {
+      "suspectId": "suspect_richard",
+      "caseId": "the_blue_umbrella",
+      "name": "Richard Hayes",
+      "role": "Corporate Executive",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Target of Gordon's upcoming SEC whistleblower testimony",
+      "motiveScore": 0.7,
+      "meansScore": 0.4,
+      "opportunityScore": 0.5,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "moderate",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_derek",
+      "caseId": "the_blue_umbrella",
+      "name": "Derek Moss",
+      "role": "Transit Janitor",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Recovered dropped briefcase on platform",
+      "motiveScore": 0.1,
+      "meansScore": 0.2,
+      "opportunityScore": 0.1,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_tanya",
+      "caseId": "the_blue_umbrella",
+      "name": "Tanya Vance",
+      "role": "Platform Commuter",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Standing adjacent to victim on platform edge",
+      "motiveScore": 0.2,
+      "meansScore": 0.1,
+      "opportunityScore": 0.2,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "ev_incident_the_blue_umbrella",
+      "caseId": "the_blue_umbrella",
+      "title": "Incident & Autopsy File",
+      "type": "medical_report",
+      "summary": "Incident analysis confirms foul play targeting Gordon Price.",
+      "fullText": "Forensic analysis reveals clear evidence of premeditated action resulting in the death of Gordon Price.",
+      "timestamp": "23:00",
+      "source": "Forensic Bureau",
+      "reliability": "verified",
+      "tags": [
+        "Forensics"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_richard"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "sec_subpoena_notice",
+      "caseId": "the_blue_umbrella",
+      "title": "Critical Financial / Motive Record",
+      "type": "financial_record",
+      "summary": "Documentation establishing definitive motive against the accused.",
+      "fullText": "Classified communication and financial transactions exposing urgent criminal motivation.",
+      "timestamp": "18:00",
+      "source": "Encrypted Safe File",
+      "reliability": "high",
+      "tags": [
+        "Motive"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_richard"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "modified_umbrella_tip",
+      "caseId": "the_blue_umbrella",
+      "title": "Instrument & Technical Means",
+      "type": "object_report",
+      "summary": "Physical mechanism or weapon matching incident marks.",
+      "fullText": "Specialized equipment registered to or possessed by the primary suspect.",
+      "timestamp": "21:30",
+      "source": "Scene Recovery",
+      "reliability": "verified",
+      "tags": [
+        "Means"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_richard"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "subway_turnstile_rfid",
+      "caseId": "the_blue_umbrella",
+      "title": "Telemetry Log A",
+      "type": "security_record",
+      "summary": "Access or sensor telemetry establishing presence at scene.",
+      "fullText": "Electronic sensor audit trails contradicting the suspect's public statement.",
+      "timestamp": "21:15",
+      "source": "Infrastructure DB",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_richard"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "platform_camera_timestamp",
+      "caseId": "the_blue_umbrella",
+      "title": "Telemetry Log B",
+      "type": "location_data",
+      "summary": "Corroborating physical or digital surveillance record.",
+      "fullText": "Independent digital trail verifying uncompromised opportunity window.",
+      "timestamp": "21:20",
+      "source": "Auxiliary Sensor",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_richard"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_statement_the_blue_umbrella",
+      "caseId": "the_blue_umbrella",
+      "title": "Suspect Alibi Deposition",
+      "type": "statement",
+      "summary": "Formal interview claiming complete absence from incident zone.",
+      "fullText": "\"I was completely separated from the area and have zero knowledge of these events.\"",
+      "timestamp": "23:30",
+      "source": "Investigator Deposition",
+      "reliability": "medium",
+      "tags": [
+        "Alibi"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_richard"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_unlocked_the_blue_umbrella",
+      "caseId": "the_blue_umbrella",
+      "title": "Concealed Artifact Recovery",
+      "type": "object_report",
+      "summary": "Crucial evidence recovered following contradiction breakthrough.",
+      "fullText": "Concealed personal item linking the suspect beyond reasonable doubt to the crime scene.",
+      "timestamp": "02:00",
+      "source": "Targeted Warrant Search",
+      "reliability": "verified",
+      "tags": [
+        "Physical"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_richard"
+      ],
+      "discoveredInitially": false,
+      "unlockCondition": "contradiction_turnstile_exit"
+    }
+  ],
+  "timeline": [
+    {
+      "eventId": "t_motive_the_blue_umbrella",
+      "caseId": "the_blue_umbrella",
+      "title": "Motive Trigger Event",
+      "eventDescription": "Financial or legal crisis triggers action.",
+      "timeWindow": "18:00",
+      "exactTime": "18:00",
+      "canonicalOrder": 1,
+      "sourceEvidenceId": "sec_subpoena_notice"
+    },
+    {
+      "eventId": "t_incident_the_blue_umbrella",
+      "caseId": "the_blue_umbrella",
+      "title": "Incident at Lexington Central Metro Station",
+      "eventDescription": "Offense executed against Gordon Price.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 2,
+      "sourceEvidenceId": "ev_incident_the_blue_umbrella"
+    },
+    {
+      "eventId": "t_claim_the_blue_umbrella",
+      "caseId": "the_blue_umbrella",
+      "title": "Fabricated Alibi Claim",
+      "eventDescription": "Suspect claims offsite presence.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 3,
+      "sourceEvidenceId": "ev_statement_the_blue_umbrella",
+      "isFalseClaim": true,
+      "conflictsWithEventIds": [
+        "t_incident_the_blue_umbrella"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "contradictionId": "contradiction_turnstile_exit",
+      "caseId": "the_blue_umbrella",
+      "title": "Critical Discrepancy: The Blue Umbrella",
+      "requiredEvidenceIds": [
+        "ev_statement_the_blue_umbrella",
+        "subway_turnstile_rfid"
+      ],
+      "type": "alibi_break",
+      "explanation": "Richard claimed he took a private limousine uptown, but transit MetroCard telemetry recorded his personal card scanning out turnstile 4 seconds after the incident.",
+      "severity": "critical",
+      "affectedSuspectId": "suspect_richard",
+      "motiveDelta": 0.3,
+      "meansDelta": 0.3,
+      "opportunityDelta": 0.6,
+      "newAlibiStatus": "broken",
+      "unlocks": [
+        "ev_unlocked_the_blue_umbrella"
+      ]
+    }
+  ],
+  "solution": {
+    "culpritId": "suspect_richard",
+    "requiredMotiveEvidenceIds": [
+      "sec_subpoena_notice"
+    ],
+    "requiredMeansEvidenceIds": [
+      "modified_umbrella_tip"
+    ],
+    "requiredOpportunityEvidenceIds": [
+      "subway_turnstile_rfid"
+    ],
+    "requiredContradictionIds": [
+      "contradiction_turnstile_exit"
+    ],
+    "requiredTimelineEventIds": [
+      "t_incident_the_blue_umbrella"
+    ],
+    "resolutionNarrative": "The case against suspect_richard is proven conclusively. Forensic logs, shattered alibis, and recovered physical mechanisms establish culpability beyond reasonable doubt."
+  },
+  "hints": [
+    {
+      "tier": "nudge",
+      "text": "Scrutinize the statement of suspect_richard against the telemetry sensor logs.",
+      "targetSuspectId": "suspect_richard",
+      "relatedEvidenceIds": [
+        "ev_statement_the_blue_umbrella",
+        "subway_turnstile_rfid"
+      ]
+    },
+    {
+      "tier": "direction",
+      "text": "Connect the alibi deposition with subway_turnstile_rfid to expose the chronological contradiction.",
+      "targetSuspectId": "suspect_richard",
+      "relatedEvidenceIds": [
+        "subway_turnstile_rfid"
+      ]
+    },
+    {
+      "tier": "near_solution",
+      "text": "Richard claimed he took a private limousine uptown, but transit MetroCard telemetry recorded his personal card scanning out turnstile 4 seconds after the incident.",
+      "targetSuspectId": "suspect_richard",
+      "relatedEvidenceIds": [
+        "ev_unlocked_the_blue_umbrella"
+      ]
+    }
+  ]
+}

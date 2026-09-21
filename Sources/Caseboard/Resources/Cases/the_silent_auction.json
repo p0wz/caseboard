@@ -1,0 +1,321 @@
+{
+  "caseId": "the_silent_auction",
+  "title": "The Silent Auction",
+  "subtitle": "Stolen Renaissance painting replaced with high-grade counterfeit during black-tie gala.",
+  "difficulty": "advanced",
+  "estimatedMinutes": 22,
+  "isPremium": true,
+  "briefing": {
+    "location": "Vanderbilt Heritage Hall",
+    "date": "2026-05-15",
+    "victimOrSubject": "Lord Alistair Sterling",
+    "summary": "Curator Lord Alistair was found strangled in the restoration vault after discovering a counterfeit Rembrandt in lot 14.",
+    "objective": "Expose the truth behind the incident at Vanderbilt Heritage Hall."
+  },
+  "suspects": [
+    {
+      "suspectId": "suspect_clara",
+      "caseId": "the_silent_auction",
+      "name": "Clara Sterling",
+      "role": "Widow & Heir",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Sole beneficiary of family trust facing estate taxation",
+      "motiveScore": 0.5,
+      "meansScore": 0.4,
+      "opportunityScore": 0.3,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_nathan",
+      "caseId": "the_silent_auction",
+      "name": "Nathan Bell",
+      "role": "Chief Appraiser",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Master restorer whose forged provenance letters authenticated the fake",
+      "motiveScore": 0.6,
+      "meansScore": 0.5,
+      "opportunityScore": 0.4,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "moderate",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_marcus",
+      "caseId": "the_silent_auction",
+      "name": "Marcus Cole",
+      "role": "Bidder Syndicate Head",
+      "age": 42,
+      "relationshipToVictim": "Key professional connection",
+      "profile": "Offshore billionaire with private art bunker",
+      "motiveScore": 0.2,
+      "meansScore": 0.1,
+      "opportunityScore": 0.1,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claimed offsite during critical window.",
+      "knownFacts": [
+        "Present at venue earlier in day"
+      ],
+      "unlockedFacts": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "ev_incident_the_silent_auction",
+      "caseId": "the_silent_auction",
+      "title": "Incident & Autopsy File",
+      "type": "medical_report",
+      "summary": "Incident analysis confirms foul play targeting Lord Alistair Sterling.",
+      "fullText": "Forensic analysis reveals clear evidence of premeditated action resulting in the death of Lord Alistair Sterling.",
+      "timestamp": "23:00",
+      "source": "Forensic Bureau",
+      "reliability": "verified",
+      "tags": [
+        "Forensics"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_nathan"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "appraiser_forged_letter",
+      "caseId": "the_silent_auction",
+      "title": "Critical Financial / Motive Record",
+      "type": "financial_record",
+      "summary": "Documentation establishing definitive motive against the accused.",
+      "fullText": "Classified communication and financial transactions exposing urgent criminal motivation.",
+      "timestamp": "18:00",
+      "source": "Encrypted Safe File",
+      "reliability": "high",
+      "tags": [
+        "Motive"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_nathan"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "chemical_oil_pigment",
+      "caseId": "the_silent_auction",
+      "title": "Instrument & Technical Means",
+      "type": "object_report",
+      "summary": "Physical mechanism or weapon matching incident marks.",
+      "fullText": "Specialized equipment registered to or possessed by the primary suspect.",
+      "timestamp": "21:30",
+      "source": "Scene Recovery",
+      "reliability": "verified",
+      "tags": [
+        "Means"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_nathan"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "cctv_vault_corridor",
+      "caseId": "the_silent_auction",
+      "title": "Telemetry Log A",
+      "type": "security_record",
+      "summary": "Access or sensor telemetry establishing presence at scene.",
+      "fullText": "Electronic sensor audit trails contradicting the suspect's public statement.",
+      "timestamp": "21:15",
+      "source": "Infrastructure DB",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_nathan"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "uv_fluorescence_analysis",
+      "caseId": "the_silent_auction",
+      "title": "Telemetry Log B",
+      "type": "location_data",
+      "summary": "Corroborating physical or digital surveillance record.",
+      "fullText": "Independent digital trail verifying uncompromised opportunity window.",
+      "timestamp": "21:20",
+      "source": "Auxiliary Sensor",
+      "reliability": "verified",
+      "tags": [
+        "Opportunity"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_nathan"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_statement_the_silent_auction",
+      "caseId": "the_silent_auction",
+      "title": "Suspect Alibi Deposition",
+      "type": "statement",
+      "summary": "Formal interview claiming complete absence from incident zone.",
+      "fullText": "\"I was completely separated from the area and have zero knowledge of these events.\"",
+      "timestamp": "23:30",
+      "source": "Investigator Deposition",
+      "reliability": "medium",
+      "tags": [
+        "Alibi"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_nathan"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "ev_unlocked_the_silent_auction",
+      "caseId": "the_silent_auction",
+      "title": "Concealed Artifact Recovery",
+      "type": "object_report",
+      "summary": "Crucial evidence recovered following contradiction breakthrough.",
+      "fullText": "Concealed personal item linking the suspect beyond reasonable doubt to the crime scene.",
+      "timestamp": "02:00",
+      "source": "Targeted Warrant Search",
+      "reliability": "verified",
+      "tags": [
+        "Physical"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_nathan"
+      ],
+      "discoveredInitially": false,
+      "unlockCondition": "contradiction_uv_paint"
+    }
+  ],
+  "timeline": [
+    {
+      "eventId": "t_motive_the_silent_auction",
+      "caseId": "the_silent_auction",
+      "title": "Motive Trigger Event",
+      "eventDescription": "Financial or legal crisis triggers action.",
+      "timeWindow": "18:00",
+      "exactTime": "18:00",
+      "canonicalOrder": 1,
+      "sourceEvidenceId": "appraiser_forged_letter"
+    },
+    {
+      "eventId": "t_incident_the_silent_auction",
+      "caseId": "the_silent_auction",
+      "title": "Incident at Vanderbilt Heritage Hall",
+      "eventDescription": "Offense executed against Lord Alistair Sterling.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 2,
+      "sourceEvidenceId": "ev_incident_the_silent_auction"
+    },
+    {
+      "eventId": "t_claim_the_silent_auction",
+      "caseId": "the_silent_auction",
+      "title": "Fabricated Alibi Claim",
+      "eventDescription": "Suspect claims offsite presence.",
+      "timeWindow": "21:15",
+      "exactTime": "21:15",
+      "canonicalOrder": 3,
+      "sourceEvidenceId": "ev_statement_the_silent_auction",
+      "isFalseClaim": true,
+      "conflictsWithEventIds": [
+        "t_incident_the_silent_auction"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "contradictionId": "contradiction_uv_paint",
+      "caseId": "the_silent_auction",
+      "title": "Critical Discrepancy: The Silent Auction",
+      "requiredEvidenceIds": [
+        "ev_statement_the_silent_auction",
+        "cctv_vault_corridor"
+      ],
+      "type": "alibi_break",
+      "explanation": "Nathan Bell claimed painting was authenticated 5 years ago, but UV spectroscopy proves titanium dioxide pigment synthesized in 2024.",
+      "severity": "critical",
+      "affectedSuspectId": "suspect_nathan",
+      "motiveDelta": 0.3,
+      "meansDelta": 0.3,
+      "opportunityDelta": 0.6,
+      "newAlibiStatus": "broken",
+      "unlocks": [
+        "ev_unlocked_the_silent_auction"
+      ]
+    }
+  ],
+  "solution": {
+    "culpritId": "suspect_nathan",
+    "requiredMotiveEvidenceIds": [
+      "appraiser_forged_letter"
+    ],
+    "requiredMeansEvidenceIds": [
+      "chemical_oil_pigment"
+    ],
+    "requiredOpportunityEvidenceIds": [
+      "cctv_vault_corridor"
+    ],
+    "requiredContradictionIds": [
+      "contradiction_uv_paint"
+    ],
+    "requiredTimelineEventIds": [
+      "t_incident_the_silent_auction"
+    ],
+    "resolutionNarrative": "The case against suspect_nathan is proven conclusively. Forensic logs, shattered alibis, and recovered physical mechanisms establish culpability beyond reasonable doubt."
+  },
+  "hints": [
+    {
+      "tier": "nudge",
+      "text": "Scrutinize the statement of suspect_nathan against the telemetry sensor logs.",
+      "targetSuspectId": "suspect_nathan",
+      "relatedEvidenceIds": [
+        "ev_statement_the_silent_auction",
+        "cctv_vault_corridor"
+      ]
+    },
+    {
+      "tier": "direction",
+      "text": "Connect the alibi deposition with cctv_vault_corridor to expose the chronological contradiction.",
+      "targetSuspectId": "suspect_nathan",
+      "relatedEvidenceIds": [
+        "cctv_vault_corridor"
+      ]
+    },
+    {
+      "tier": "near_solution",
+      "text": "Nathan Bell claimed painting was authenticated 5 years ago, but UV spectroscopy proves titanium dioxide pigment synthesized in 2024.",
+      "targetSuspectId": "suspect_nathan",
+      "relatedEvidenceIds": [
+        "ev_unlocked_the_silent_auction"
+      ]
+    }
+  ]
+}

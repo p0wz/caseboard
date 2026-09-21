@@ -1,0 +1,19 @@
+APP REVIEW NOTES - CASEBOARD: DETECTIVE MYSTERY
+
+1. APP PURPOSE:
+Caseboard is an offline interactive detective deduction game where players review crime scenes, examine forensic lab evidence, analyze autopsy reports, interrogate suspects, and connect clues on a tactile investigation board to solve cold cases.
+
+2. DEMO / RECORDING:
+The app is entirely self-contained. All cases, evidence assets, audio files, and forensic documents are packaged locally within the app bundle. A walkthrough of all screens and interactions is available without any network dependencies.
+
+3. TEST ACCOUNT & CREDENTIALS:
+No user account, registration, login, or third-party authentication is required to access any feature of the application. The app runs completely on-device.
+
+4. EXTERNAL SERVICES / HARDWARE:
+The app does not require any external hardware, bluetooth accessories, or external backend services. All game logic runs locally on iOS.
+
+5. REGIONAL / CONFIGURATION DIFFERENCES:
+There are no geo-restricted features or region-specific variations. The app functions identically across all territories. The primary language is English (en-US).
+
+6. REGULATED STATUS:
+The app is an entertainment/puzzle game. It does not provide medical advice, financial transactions, legal services, or real-money gambling. All crime stories, suspects, and forensic data are entirely fictional.

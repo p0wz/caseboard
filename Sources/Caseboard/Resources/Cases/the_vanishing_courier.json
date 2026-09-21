@@ -1,0 +1,322 @@
+{
+  "caseId": "the_vanishing_courier",
+  "title": "The Vanishing Courier",
+  "subtitle": "Armored logistics van found abandoned under river overpass with missing vault crate.",
+  "difficulty": "standard",
+  "estimatedMinutes": 20,
+  "isPremium": false,
+  "briefing": {
+    "location": "Queensboro Industrial Spur, Dock 9",
+    "date": "2026-04-03",
+    "victimOrSubject": "Leo Mercer",
+    "summary": "Courier driver Leo Mercer vanished during an overnight bullion transfer. The armored vehicle was recovered empty with pneumatic door interlocks overridden.",
+    "objective": "Break down the GPS route deviation, establish the insider accomplice, and recover the manifest.",
+    "requiredSolveConditions": [
+      "Expose radio blind spot fabrication",
+      "Identify who possessed the interlock bypass",
+      "Submit final accusation"
+    ]
+  },
+  "suspects": [
+    {
+      "suspectId": "suspect_riley",
+      "caseId": "the_vanishing_courier",
+      "name": "Sean Riley",
+      "role": "Chief Dispatcher",
+      "age": 45,
+      "relationshipToVictim": "Supervisor responsible for route assignment",
+      "profile": "Veteran controller with full authority over radio repeaters and real-time reroutes.",
+      "motiveScore": 0.4,
+      "meansScore": 0.5,
+      "opportunityScore": 0.3,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "moderate",
+      "initialAlibi": "Claims he never authorized any detour away from Route 4A.",
+      "knownFacts": [
+        "Authorized radio frequency switch"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_hannah",
+      "caseId": "the_vanishing_courier",
+      "name": "Hannah Vance",
+      "role": "Relief Driver",
+      "age": 31,
+      "relationshipToVictim": "Shift partner who swapped duty",
+      "profile": "Requested last-minute swap citing sudden migraine.",
+      "motiveScore": 0.2,
+      "meansScore": 0.2,
+      "opportunityScore": 0.1,
+      "alibiStatus": "confirmed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Admitted to urgent care clinic at 21:00.",
+      "knownFacts": [
+        "Verified by hospital check-in timestamp"
+      ],
+      "unlockedFacts": []
+    },
+    {
+      "suspectId": "suspect_brooks",
+      "caseId": "the_vanishing_courier",
+      "name": "Tyler Brooks",
+      "role": "Depot Guard",
+      "age": 38,
+      "relationshipToVictim": "Gatekeeper at origin warehouse",
+      "profile": "Former naval engineer with gambling debts.",
+      "motiveScore": 0.3,
+      "meansScore": 0.3,
+      "opportunityScore": 0.2,
+      "alibiStatus": "claimed",
+      "suspicionLevel": "low",
+      "initialAlibi": "Claims gate log shows normal exit at 22:00.",
+      "knownFacts": [
+        "Logged van out at origin"
+      ],
+      "unlockedFacts": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "gps_telemetry_gap",
+      "caseId": "the_vanishing_courier",
+      "title": "Van Fleet GPS Telemetry",
+      "type": "location_data",
+      "summary": "Transponder signal dropped for 18 minutes near Dock 9 warehouse spur.",
+      "fullText": "Black box telematics records an uncommanded kill switch of secondary transponder at 22:42, resuming at 23:00 at the river overpass.",
+      "timestamp": "22:42",
+      "source": "Logistics Satellite Telemetry",
+      "reliability": "verified",
+      "tags": [
+        "Telemetry",
+        "GPS"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_riley"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "dispatch_recording_riley",
+      "caseId": "the_vanishing_courier",
+      "title": "Dispatch Audio Intercept 22:38",
+      "type": "audio_transcript",
+      "summary": "Riley radioed driver ordering detour to Dock 9 citing simulated gas leak on main expressway.",
+      "fullText": "\"Unit 12, Dispatch. We have severe gas leak advisory on Highway 4A. Divert to Dock 9 spur immediately and hold for escort.\"",
+      "timestamp": "22:38",
+      "source": "Archived Dispatch Audio",
+      "reliability": "verified",
+      "tags": [
+        "Audio",
+        "Dispatch"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_riley"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "riley_denial_statement",
+      "caseId": "the_vanishing_courier",
+      "title": "Sean Riley Statement",
+      "type": "statement",
+      "summary": "Riley denies sending any reroute orders, claiming van went rogue on its own.",
+      "fullText": "\"I watched their dot drift off highway 4A. I tried calling them on emergency channel 1 but got static. I never told Leo to divert.\"",
+      "timestamp": "01:20",
+      "source": "Internal Affairs Interview",
+      "reliability": "low",
+      "tags": [
+        "Statement",
+        "Alibi"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": true,
+      "relatedSuspectIds": [
+        "suspect_riley"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "pneumatic_tool_receipt",
+      "caseId": "the_vanishing_courier",
+      "title": "Bypass Valve Order: Riley",
+      "type": "receipt",
+      "summary": "Purchase order for specialized solenoid release valve delivered to Riley's home.",
+      "fullText": "Receipt from industrial hydraulic supplier for van door release bypass matching the exact tooling marks on recovered van.",
+      "timestamp": "Last Week",
+      "source": "Supplier Transaction DB",
+      "reliability": "high",
+      "tags": [
+        "Means",
+        "Tool"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_riley"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "riley_offshore_crypto",
+      "caseId": "the_vanishing_courier",
+      "title": "Encrypted Wallet Deposit: $250,000",
+      "type": "financial_record",
+      "summary": "Escrow transfer completed upon confirmation of van transponder shutdown.",
+      "fullText": "Blockchain ledger reveals smart contract release of 75 ETH to wallet registered on Riley's personal phone at 22:45.",
+      "timestamp": "22:45",
+      "source": "Financial Cyber Unit",
+      "reliability": "verified",
+      "tags": [
+        "Motive",
+        "Crypto"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_riley"
+      ],
+      "discoveredInitially": true
+    },
+    {
+      "evidenceId": "recovered_mercer_jacket",
+      "caseId": "the_vanishing_courier",
+      "title": "Leo Mercer Driver Badge & Uniform",
+      "type": "object_report",
+      "summary": "Driver's jacket recovered inside Dock 9 storage locker rented under Riley's alias.",
+      "fullText": "Locker #104 at Dock 9 spur contained driver's uniform and empty security seal rings.",
+      "timestamp": "03:15",
+      "source": "Harbor Police Search",
+      "reliability": "verified",
+      "tags": [
+        "Physical",
+        "Evidence"
+      ],
+      "isKeyEvidence": true,
+      "isPinned": false,
+      "relatedSuspectIds": [
+        "suspect_riley"
+      ],
+      "discoveredInitially": false,
+      "unlockCondition": "contradiction_dispatch_reroute"
+    }
+  ],
+  "timeline": [
+    {
+      "eventId": "t_dispatch_audio",
+      "caseId": "the_vanishing_courier",
+      "title": "Riley issues false detour",
+      "eventDescription": "Riley radios driver ordering diversion to Dock 9.",
+      "timeWindow": "22:38",
+      "exactTime": "22:38",
+      "canonicalOrder": 1,
+      "sourceEvidenceId": "dispatch_recording_riley"
+    },
+    {
+      "eventId": "t_gps_cut",
+      "caseId": "the_vanishing_courier",
+      "title": "Van transponder blackout",
+      "eventDescription": "Van satellite signal cut at Dock 9 spur.",
+      "timeWindow": "22:42",
+      "exactTime": "22:42",
+      "canonicalOrder": 2,
+      "sourceEvidenceId": "gps_telemetry_gap"
+    },
+    {
+      "eventId": "t_crypto_release",
+      "caseId": "the_vanishing_courier",
+      "title": "Escrow payment triggered",
+      "eventDescription": "Crypto payment hits Riley's wallet.",
+      "timeWindow": "22:45",
+      "exactTime": "22:45",
+      "canonicalOrder": 3,
+      "sourceEvidenceId": "riley_offshore_crypto"
+    },
+    {
+      "eventId": "t_riley_claim",
+      "caseId": "the_vanishing_courier",
+      "title": "Riley claims static on radio",
+      "eventDescription": "Riley claims he never communicated with van.",
+      "timeWindow": "22:40",
+      "exactTime": "22:40",
+      "canonicalOrder": 4,
+      "sourceEvidenceId": "riley_denial_statement",
+      "isFalseClaim": true,
+      "conflictsWithEventIds": [
+        "t_dispatch_audio"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "contradictionId": "contradiction_dispatch_reroute",
+      "caseId": "the_vanishing_courier",
+      "title": "Dispatch Recording Directly Contradicts Denial",
+      "requiredEvidenceIds": [
+        "dispatch_recording_riley",
+        "riley_denial_statement"
+      ],
+      "type": "contradiction",
+      "explanation": "Sean Riley denied issuing any reroute order, but radio recording archives capture his distinct voice ordering the driver into the Dock 9 trap.",
+      "severity": "critical",
+      "affectedSuspectId": "suspect_riley",
+      "opportunityDelta": 0.6,
+      "newAlibiStatus": "broken",
+      "unlocks": [
+        "recovered_mercer_jacket"
+      ]
+    }
+  ],
+  "solution": {
+    "culpritId": "suspect_riley",
+    "requiredMotiveEvidenceIds": [
+      "riley_offshore_crypto"
+    ],
+    "requiredMeansEvidenceIds": [
+      "pneumatic_tool_receipt"
+    ],
+    "requiredOpportunityEvidenceIds": [
+      "dispatch_recording_riley",
+      "gps_telemetry_gap"
+    ],
+    "requiredContradictionIds": [
+      "contradiction_dispatch_reroute"
+    ],
+    "requiredTimelineEventIds": [
+      "t_dispatch_audio",
+      "t_gps_cut"
+    ],
+    "resolutionNarrative": "Chief Dispatcher Sean Riley orchestrated the bullion theft by fabricating a gas leak to steer Unit 12 into Dock 9, where he used a purchased hydraulic bypass to loot the cargo and claim a $250k bounty."
+  },
+  "hints": [
+    {
+      "tier": "nudge",
+      "text": "Listen to the recorded radio audio logs and compare with Riley's statement.",
+      "targetSuspectId": "suspect_riley",
+      "relatedEvidenceIds": [
+        "dispatch_recording_riley",
+        "riley_denial_statement"
+      ]
+    },
+    {
+      "tier": "direction",
+      "text": "Riley claimed he never spoke with Unit 12, yet dispatch tapes prove he directed them straight to Dock 9.",
+      "targetSuspectId": "suspect_riley",
+      "relatedEvidenceIds": [
+        "riley_denial_statement"
+      ]
+    },
+    {
+      "tier": "near_solution",
+      "text": "Riley is the mastermind. His radio transmission contradicts his denial and unlocks the Dock 9 locker.",
+      "targetSuspectId": "suspect_riley",
+      "relatedEvidenceIds": [
+        "recovered_mercer_jacket"
+      ]
+    }
+  ]
+}
